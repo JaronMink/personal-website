@@ -1,0 +1,87 @@
+# Journals
+tdsc23_web: https://www.computer.org/csdl/journal/tq
+
+# Conferences
+ieeesp25_web: https://sp2025.ieee-security.org/
+ieeesp27_web: https://sp2027.ieee-security.org/
+acmccs25_web: https://www.sigsac.org/ccs/CCS2025/
+satml26_web: https://satml.org/
+satml25_web: https://satml.org/2025/
+satml23_web: https://satml.org/2023/
+eaamo23_web: https://eaamo.org/
+usenix26_web: https://www.usenix.org/conference/usenixsecurity26
+usenix25_web: https://www.usenix.org/conference/usenixsecurity25
+usenix22_web: https://www.usenix.org/conference/usenixsecurity22
+acsac20_web: https://www.acsac.org/
+chi26_web: https://chi2026.acm.org/
+chi25_web: https://chi2025.acm.org/
+chi24_web: https://chi2024.acm.org/
+chi23_web: https://chi2023.acm.org/
+chi22_web: https://chi2022.acm.org/
+chi21_web: https://chi2021.acm.org/
+ndss21_web: https://www.ndss-symposium.org/ndss-2021/
+soups23_web: https://www.usenix.org/conference/soups2023
+soups22_web: https://www.usenix.org/conference/soups2022
+soups21_web: https://www.usenix.org/conference/soups2021
+raid22_web: https://raid2022.cs.ucy.ac.cy/index.html
+
+# General News
+news_2024_human_centered_security_url: &news_2024_human_centered_security_url https://open.spotify.com/episode/1sDfqqkM7jHg1SxSKGW98e?si=9f5bf708723b4b69
+mdi_response_nist_ai_rmf_web: https://mdi.georgetown.edu/news/formal-response-mdi-comment-on-nist-ai-executive-order-feb2024/
+
+# Papers
+tompkins_arxiv26_pdf: https://arxiv.org/abs/2602.17448
+mink_arxiv26_pdf: https://arxiv.org/abs/2601.21028
+ide_arxiv25_pdf: https://arxiv.org/abs/2505.16057
+li_chi_26_pdf: /assets/pdf/papers/i-can-se-clearly_chi26.pdf
+wei_usenix_24_pdf: /assets/pdf/papers/sociodemographic-solk_usenix24.pdf
+mink_chi_24_pdf: /assets/pdf/papers/deepfake-moderation-mistakes_chi24.pdf
+mink_chi_24_talk: https://drive.google.com/file/d/1tn3Xx-y8hn4SirornvA_lxoV66BbgFk9/view?usp=sharing
+mink_usenix_23_pdf: /assets/pdf/papers/security-is-not-my-field_usenix23.pdf
+mink_usenix_23_slides: https://www.usenix.org/system/files/sec23_slides_mink.pdf
+mink_usenix_23_talk: https://www.youtube.com/watch?v=a9meMcS79pM
+inam_ieee_23_pdf: /assets/pdf/papers/history-is-a-vast-warning-system_ieee-23.pdf
+mink_ieee_23_pdf: /assets/pdf/papers/everybodys-got-ml_ieee23.pdf
+mink_ieee_23_teaser: https://drive.google.com/file/d/1pYXwHbTudrwZ-MxGuEBnykbUK4Su0bGz/view?usp=share_link
+mink_ieee_23_slides: /assets/pdf/presentation/everybodys-got-ml_ieee23_talk.pdf
+mink_ieee_23_talk: https://www.youtube.com/watch?v=O6dlZdiJVOQ
+inam_acsac_22_pdf: /assets/pdf/papers/faust_acsac22.pdf
+zhang_www_22_pdf: /assets/pdf/papers/beyond-bot-detection_www22.pdf
+zhang_www_2022_news_the_transmitter_url: &zhang_www_2022_news_the_transmitter_url https://www.thetransmitter.org/ethics/scammers-threaten-quality-of-research-survey-data/
+mink_usenix_22_pdf: /assets/pdf/papers/deepphish_usenix22.pdf
+deepphish_page: /deepphish/
+mink_usenix_22_slides: https://www.usenix.org/system/files/sec22_slides-mink.pdf
+mink_usenix_22_supp: https://github.com/JaronMink/DeepPhish
+mink_usenix_22_talk: https://www.youtube.com/watch?v=wrRQdcXR-98
+news_usenix_2022_futurum_url: &news_usenix_2022_futurum_url https://futurumcareers.com/can-you-trust-what-you-see-online
+news_usenix_2022_new_scientist_url: &news_usenix_2022_new_scientist_url https://www.newscientist.com/article/2308977-people-are-bad-at-spotting-fake-linkedin-profiles-generated-by-ai/
+mink_chi_22_pdf: /assets/pdf/papers/users-can-deduce_chi22.pdf
+mink_chi_22_supp: https://bitbucket.org/sts-lab/epz-game-chi22
+mink_chi_22_talk: https://www.youtube.com/watch?v=eGElBs1VrZE
+mink_chi_22_slides: https://docs.google.com/presentation/d/1wSqnbfuTtRh-FDq6fE_GYEsEFbU55QKV/edit?usp=sharing&ouid=111263531954489916796&rtpof=true&sd=true
+mink_chi_2022_news_the_21st_show_url: &mink_chi_2022_news_the_21st_show_url https://will.illinois.edu/21stshow/story/how-private-is-your-health-tracking-app-data
+michael20_pdf: /assets/pdf/papers/forensicvalidity_acsac20.pdf
+michael20_talk: https://drive.google.com/file/d/1BZu_9k2i830O2Bzt9uXwZkNP-oBEYRdH/view?usp=sharing
+michael20_slides: https://drive.google.com/file/d/1Mmkcrxmp5dYf0Eei3F3-PbE7VgHa1Gp7/view?usp=sharing
+
+# External Links
+asu_web: https://www.asu.edu/
+scai_web: https://scai.engineering.asu.edu/
+illinois_web: https://illinois.edu/
+csillinois_web: https://cs.illinois.edu/
+gwang_web: https://gangw.cs.illinois.edu/
+abates_web: https://adambates.org/
+sts_web: https://sts.cs.illinois.edu/
+ststeam_web: https://sts.cs.illinois.edu/team/
+aaviv_web: https://adamaviv.com/
+gwu_sec_web: https://gwusec.seas.gwu.edu/
+ywang_web: https://yangwang.ischool.illinois.edu/
+salt_web: https://socialcomputing.web.illinois.edu/
+yacar_web: https://yaseminacar.de/
+mpi_sp_web: https://www.mpi-sp.org/
+novacoast_web: https://www.novacoast.com/
+viasat_web: https://www.viasat.com/
+
+# Awards
+google_research_scholar_2025_web: https://research.google/programs-and-events/research-scholar-program/
+nsf_grfp_web: https://www.nsfgrfp.org/

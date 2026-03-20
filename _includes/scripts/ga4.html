@@ -1,0 +1,8 @@
+{% assign ga_tracking_id = site.google_analytics_ga4 %}
+{% if ga_tracking_id and ga_tracking_id != "" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_tracking_id }}"></script>
+<script>
+  window.__GA_TRACKING_ID__ = {{ ga_tracking_id | jsonify }};
+</script>
+<script defer src="{{ '/assets/js/ga-events.js' | relative_url }}"></script>
+{% endif %}

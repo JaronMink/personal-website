@@ -1,0 +1,17 @@
+{% for group in site.data.service %}
+### {{ group.section }}
+<ul>
+  {% for entry in group.entries %}
+  <li>
+    <strong>{{ entry.venue }}</strong>:
+    {% for link in entry.links %}
+      {% assign href = link.url %}
+      {% if link.url_key %}
+        {% assign href = site.data.links[link.url_key] %}
+      {% endif %}
+      <a href="{{ href }}">{{ link.label }}</a>{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  </li>
+  {% endfor %}
+</ul>
+{% endfor %}

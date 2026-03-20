@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+export LANG="${LANG:-en_US.UTF-8}"
+export LC_ALL="${LC_ALL:-C.UTF-8}"
+export RUBYOPT="${RUBYOPT:+$RUBYOPT }-EUTF-8:UTF-8"
+export RUBOCOP_CACHE_ROOT="${RUBOCOP_CACHE_ROOT:-.rubocop_cache}"
+STRICT_WEB_VALIDATION="${STRICT_WEB_VALIDATION:-0}"
+STRICT_CONTENT_LINT="${STRICT_CONTENT_LINT:-0}"
+
+bundle exec jekyll build
+if [ "$STRICT_WEB_VALIDATION" = "1" ]; then
+  bundle exec htmlproofer ./_site --check-html --check-sri
+else
+bundle exec htmlproofer ./_site --check-html --disable-external
+fi
+bundle exec rubocop -D
+bundle exec script/check-theme-consistency
+bundle exec script/validate-html
+bundle exec script/validate-publications
+bundle exec script/validate-site-data
+STRICT_CONTENT_LINT="$STRICT_CONTENT_LINT" script/check-links
+STRICT_CONTENT_LINT="$STRICT_CONTENT_LINT" script/check-spelling

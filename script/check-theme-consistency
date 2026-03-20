@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'pathname'
+
+ROOT = Pathname.new(__dir__).join('..').expand_path
+SCSS = ROOT.join('_sass/minimal-light.scss')
+MULTI_LAYOUT = ROOT.join('_layouts/multi.html')
+POST_LAYOUT = ROOT.join('_layouts/post.html')
+
+def fail_with(message)
+  warn "Theme consistency check failed: #{message}"
+  exit 1
+end
+
+scss_text = SCSS.read
+multi_text = MULTI_LAYOUT.read
+post_text = POST_LAYOUT.read
+
+fail_with('Missing --theme-fade-duration token in _sass/minimal-light.scss') unless scss_text.include?('--theme-fade-duration:')
+
+fail_with('Missing .theme-fade-scope rule in _sass/minimal-light.scss') unless scss_text.include?('.theme-fade-scope')
+
+fail_with('Missing scoped transition selector for .theme-fade-scope content') unless scss_text.match?(/\.theme-fade-scope\s*:where\(/m)
+
+fail_with('Missing theme-fade-scope class in _layouts/multi.html main wrapper') unless multi_text.include?('theme-fade-scope')
+
+fail_with('Missing theme-fade-scope class in _layouts/post.html main wrapper') unless post_text.include?('theme-fade-scope')
+
+puts 'Theme consistency check passed.'

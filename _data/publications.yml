@@ -1,0 +1,345 @@
+- id: pub-ai-cyber-tutors-2026
+  year: 2026
+  date: '2026-02-19'
+  title: 'Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Evaluation
+    of Cybersecurity Student Behaviors and Performance with AI Tutors'
+  authors:
+  - Michael Tompkins
+  - Nihaarika Agarwal
+  - Ananta Soneji
+  - Robert Wasinger
+  - Connor Nelson
+  - Kevin Leach
+  - Rakibul Hasan
+  - Adam Doupé
+  - Daniel Votipka
+  - Yan Shoshitaishvili
+  - Jaron Mink
+  venue: Pre-Print, 2026
+  areas:
+  - ml-for-security-applications
+  links:
+  - label: PDF
+    url_key: tompkins_arxiv26_pdf
+    style: primary
+- id: pub-aig-sc-2026
+  year: 2026
+  date: '2026-01-28'
+  title: '"Unlimited Realm of Exploration and Experimentation": Methods and Motivations
+    of AI-Generated Sexual Content Creators'
+  authors:
+  - Jaron Mink*
+  - Lucy Qin*
+  - Elissa M. Redmiles
+  venue: Pre-Print, 2026
+  areas:
+  - ml-enabled-abuse
+  links:
+  - label: PDF
+    url_key: mink_arxiv26_pdf
+    style: primary
+- id: pub-i-can-se-clearly-2026
+  year: 2026
+  date: '2026-04-13'
+  title: 'I Can SE Clearly Now: Investigating the Effectiveness of GUI-based Symbolic
+    Execution for Software Vulnerability Discovery'
+  authors:
+  - Yi Jou Li
+  - Zeming Yu
+  - James A Mattei
+  - Ananta Soneji
+  - Zhibo Sun
+  - Ruoyu Wang
+  - Jaron Mink
+  - Daniel Votipka
+  - Tiffany Bao
+  venue: ACM CHI Conference on Human Factors in Computing Systems, 2026
+  areas:
+  - non-ml-human-factors
+  - system-security
+  links:
+  - label: PDF
+    url_key: li_chi_26_pdf
+    style: primary
+- id: pub-signals-of-provenance-2026
+  year: 2026
+  date: '2026-10-10'
+  title: 'Signals of Provenance: Practices & Challenges of Navigating Indicators in
+    AI-Generated Media for Sighted and Blind Individuals'
+  authors:
+  - Ayae Ide
+  - Tory Park
+  - Jaron Mink
+  - Tanusree Sharma
+  venue: ACM Conference on Computer-Supported Cooperative Work and Social Computing, 2026
+  areas:
+  - ml-enabled-abuse
+  - non-ml-human-factors
+  links:
+  - label: PDF
+    url_key: ide_arxiv25_pdf
+    style: primary
+- id: pub-solk-2024
+  year: 2024
+  date: '2024-08-14'
+  title: 'SoK (or SoLK?): On the Quantitative Study of Sociodemographic Factors and
+    Computer Security Behaviors'
+  authors:
+  - Miranda Wei
+  - Jaron Mink
+  - Yael Eiger
+  - Tadayoshi Kohno
+  - Elissa M. Redmiles
+  - Franziska Roesner
+  venue: 33rd USENIX Security Symposium, 2024
+  areas:
+  - non-ml-human-factors
+  links:
+  - label: PDF
+    url_key: wei_usenix_24_pdf
+    style: primary
+- id: pub-deepfake-moderation-2024
+  year: 2024
+  date: '2024-05-11'
+  title: 'It''s Trying Too Hard To Look Real: Deepfake Moderation Mistakes and Identity-Based
+    Bias'
+  authors:
+  - Jaron Mink
+  - Miranda Wei
+  - Collins W. Munyendo
+  - Kurt Hugenberg
+  - Tadayoshi Kohno
+  - Elissa M. Redmiles
+  - Gang Wang
+  venue: ACM CHI Conference on Human Factors in Computing Systems, 2024
+  areas:
+  - ml-enabled-abuse
+  links:
+  - label: PDF
+    url_key: mink_chi_24_pdf
+    style: primary
+  - label: Talk
+    url_key: mink_chi_24_talk
+    style: info
+  news:
+  - label: NIST AI Executive Order RFI
+    url_key: mdi_response_nist_ai_rmf_web
+- id: pub-security-not-my-field-2023
+  year: 2023
+  date: '2023-08-09'
+  title: '"Security is not my field, I''m a stats guy": A Qualitative Root Cause Analysis
+    of Barriers to Adversarial Machine Learning Defenses in Industry'
+  authors:
+  - Jaron Mink*
+  - Harjot Kaur*
+  - Juliane Schmüser*
+  - Sascha Fahl
+  - Yasemin Acar
+  venue: 32nd USENIX Security Symposium, 2023
+  areas:
+  - ml-security-and-privacy
+  links:
+  - label: PDF
+    url_key: mink_usenix_23_pdf
+    style: primary
+  - label: Talk
+    url_key: mink_usenix_23_talk
+    style: info
+  - label: Slides
+    url_key: mink_usenix_23_slides
+    style: info
+  news:
+  - label: Human-Centered Security Podcast
+    url_key: news_2024_human_centered_security_url
+  - label: NIST AI Executive Order RFI
+    url_key: mdi_response_nist_ai_rmf_web
+- id: pub-everybodys-got-ml-2023
+  year: 2023
+  date: '2023-05-22'
+  title: 'Everybody''s Got ML, Tell Me What Else You Have: Practitioners'' Perception
+    of ML-Based Security Tools and Explanations'
+  authors:
+  - Jaron Mink
+  - Hadjer Benkraouda
+  - Limin Yang
+  - Arridhana Ciptadi
+  - Ali Ahmadzadeh
+  - Daniel Votipka
+  - Gang Wang
+  venue: 44th IEEE Symposium on Security and Privacy, 2023
+  areas:
+  - ml-for-security-applications
+  - ml-security-and-privacy
+  links:
+  - label: PDF
+    url_key: mink_ieee_23_pdf
+    style: primary
+  - label: Talk
+    url_key: mink_ieee_23_talk
+    style: info
+  - label: Slides
+    url_key: mink_ieee_23_slides
+    style: info
+  - label: Teaser
+    url_key: mink_ieee_23_teaser
+    style: info
+  news:
+  - label: Human-Centered Security Podcast
+    url_key: news_2024_human_centered_security_url
+  - label: NIST AI Executive Order RFI
+    url_key: mdi_response_nist_ai_rmf_web
+- id: pub-history-early-warning-2023
+  year: 2023
+  date: '2023-05-22'
+  title: 'SoK: History is a Vast Early Warning System: Auditing the Provenance of
+    System Intrusions'
+  authors:
+  - Muhammad Adil Inam
+  - Yinfang Chen
+  - Akul Goyal
+  - Jason Liu
+  - Jaron Mink
+  - Noor Michael
+  - Sneha Gaur
+  - Adam Bates
+  - Wajih Ul Hassan
+  venue: 44th IEEE Symposium on Security and Privacy, 2023
+  areas:
+  - system-security
+  links:
+  - label: PDF
+    url_key: inam_ieee_23_pdf
+    style: primary
+- id: pub-faust-2022
+  year: 2022
+  date: '2022-12-05'
+  title: 'FAuST: Striking a Bargain between Forensic Auditing''s Security and Throughput'
+  authors:
+  - Muhammad Adil Inam
+  - Akul Goyal
+  - Jason Liu
+  - Jaron Mink
+  - Noor Michael
+  - Sneha Gaur
+  - Adam Bates
+  - Wajih Ul Hassan
+  venue: 38th Annual Computer Security Applications Conference, 2022
+  areas:
+  - system-security
+  links:
+  - label: PDF
+    url_key: inam_acsac_22_pdf
+    style: primary
+- id: pub-deepphish-2022
+  year: 2022
+  date: '2022-08-10'
+  title: 'DeepPhish: Understanding User Trust Towards Artificially Generated Profiles
+    in Online Social Networks'
+  authors:
+  - Jaron Mink
+  - Licheng Luo
+  - Natã M. Barbosa
+  - Olivia Figueria
+  - Yang Wang
+  - Gang Wang
+  venue: 31st USENIX Security Symposium, 2022
+  areas:
+  - ml-enabled-abuse
+  links:
+  - label: PDF
+    url_key: mink_usenix_22_pdf
+    style: primary
+  - label: Supplemental Materials
+    url_key: mink_usenix_22_supp
+    style: primary
+  - label: Website
+    url_key: deepphish_page
+    style: info
+  - label: Talk
+    url_key: mink_usenix_22_talk
+    style: info
+  - label: Slides
+    url_key: mink_usenix_22_slides
+    style: info
+  news:
+  - label: Futurum
+    url_key: news_usenix_2022_futurum_url
+  - label: New Scientist
+    url_key: news_usenix_2022_new_scientist_url
+  - label: NIST AI Executive Order RFI
+    url_key: mdi_response_nist_ai_rmf_web
+- id: pub-beyond-bot-detection-2022
+  year: 2022
+  date: '2022-04-25'
+  title: 'Beyond Bot Detection: Combating Fraudulent Online Survey Takers'
+  authors:
+  - Ziyi Zhang
+  - Shuofei Zhu
+  - Jaron Mink
+  - Aiping Xiong
+  - Linhai Song
+  - Gang Wang
+  venue: The ACM Web Conference, 2022
+  areas:
+  - non-ml-human-factors
+  links:
+  - label: PDF
+    url_key: zhang_www_22_pdf
+    style: primary
+  news:
+  - label: The Transmitter
+    url_key: zhang_www_2022_news_the_transmitter_url
+- id: pub-users-can-deduce-2022
+  year: 2022
+  date: '2022-04-30'
+  title: Users Can Deduce Sensitive Locations Protected by Privacy Zones on Fitness
+    Tracking App
+  authors:
+  - Jaron Mink
+  - Amanda Rose Yuile
+  - Uma Pal
+  - Adam J Aviv
+  - Adam Bates
+  venue: ACM CHI Conference on Human Factors in Computing Systems, 2022
+  areas:
+  - non-ml-human-factors
+  links:
+  - label: PDF
+    url_key: mink_chi_22_pdf
+    style: primary
+  - label: Supplemental Materials
+    url_key: mink_chi_22_supp
+    style: primary
+  - label: Talk
+    url_key: mink_chi_22_talk
+    style: info
+  - label: Slides
+    url_key: mink_chi_22_slides
+    style: info
+  news:
+  - label: The 21st Show
+    url_key: mink_chi_2022_news_the_21st_show_url
+- id: pub-forensic-validity-2020
+  year: 2020
+  date: '2020-12-07'
+  title: On the Forensic Validity of Approximated Audit Logs
+  authors:
+  - Noor Michael
+  - Jaron Mink
+  - Jason Liu
+  - Sneha Gaur
+  - Wajih Ul Hassan
+  - Adam Bates
+  venue: 36th Annual Computer Security Applications Conference, 2020
+  areas:
+  - system-security
+  links:
+  - label: PDF
+    url_key: michael20_pdf
+    style: primary
+  - label: Talk
+    url_key: michael20_talk
+    style: info
+  - label: Slides
+    url_key: michael20_slides
+    style: info

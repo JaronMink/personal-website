@@ -1,0 +1,25 @@
+---
+layout: base
+---
+<div class="top-shell">
+  <header class="top-bar">
+    <div class="top-brand">
+      <div class="top-brand-text">
+        <a class="top-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      </div>
+    </div>
+    {% include top-nav.html %}
+  </header>
+
+  <main id="main-content" tabindex="-1" class="top-main theme-fade-scope">
+    <article class="post-shell">
+      <header class="post-shell-header">
+        <h1 class="post-shell-title">{{ page.post_title | default: page.title }}</h1>
+        {% if page.date %}
+        <p class="post-shell-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
+        {% endif %}
+      </header>
+      {{ content }}
+    </article>
+  </main>
+</div>

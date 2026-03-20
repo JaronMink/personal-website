@@ -1,0 +1,188 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/AbcSize, Metrics/BlockLength, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity, Style/GuardClause, Style/IfUnlessModifier
+
+require 'yaml'
+require 'pathname'
+require 'date'
+
+ROOT = Pathname.new(__dir__).join('..').expand_path
+PUBLICATIONS_FILE = ROOT.join('_data/publications.yml')
+LINKS_FILE = ROOT.join('_data/links.yml')
+AREAS_FILE = ROOT.join('_data/publication-areas.yml')
+
+PUBLICATION_ID_PATTERN = /\Apub-[a-z0-9-]+\z/.freeze
+PUBLICATION_DATE_PATTERN = /\A\d{4}-\d{2}-\d{2}\z/.freeze
+
+def fail_with(errors)
+  errors.each { |error| warn "Publication validation failed: #{error}" }
+  exit 1
+end
+
+def read_yaml(path)
+  YAML.safe_load(path.read, permitted_classes: [], aliases: true)
+rescue Psych::Exception => e
+  warn "Failed to parse YAML file #{path}: #{e.message}"
+  exit 1
+end
+
+def validate_author(author, pub_id, author_index, errors)
+  unless author.is_a?(String) && !author.strip.empty?
+    errors << "#{pub_id}: author ##{author_index + 1} must be a non-empty string"
+  end
+end
+
+def validate_resource(items, pub_id, key_name, links, errors)
+  return if items.nil?
+
+  unless items.is_a?(Array)
+    errors << "#{pub_id}: #{key_name} must be an array"
+    return
+  end
+
+  items.each_with_index do |item, index|
+    unless item.is_a?(Hash)
+      errors << "#{pub_id}: #{key_name} ##{index + 1} must be an object"
+      next
+    end
+
+    label = item['label']
+    if !label.is_a?(String) || label.strip.empty?
+      errors << "#{pub_id}: #{key_name} ##{index + 1} has missing/invalid label"
+    end
+
+    if key_name == 'links'
+      style = item['style']
+      if style && !%w[primary info].include?(style)
+        errors << "#{pub_id}: links ##{index + 1} style must be 'primary' or 'info' when present"
+      end
+    end
+
+    has_url = item['url'].is_a?(String) && !item['url'].strip.empty?
+    has_url_key = item['url_key'].is_a?(String) && !item['url_key'].strip.empty?
+
+    if has_url == has_url_key
+      errors << "#{pub_id}: #{key_name} ##{index + 1} must define exactly one of url or url_key"
+      next
+    end
+
+    next unless has_url_key
+
+    resolved = links[item['url_key']]
+    if !resolved.is_a?(String) || resolved.strip.empty?
+      errors << "#{pub_id}: #{key_name} ##{index + 1} references unknown/empty url_key '#{item['url_key']}'"
+    end
+  end
+end
+
+publications = read_yaml(PUBLICATIONS_FILE)
+links = read_yaml(LINKS_FILE)
+area_definitions = read_yaml(AREAS_FILE)
+area_slugs = []
+if area_definitions.is_a?(Array)
+  area_slugs = area_definitions.flat_map do |domain|
+    next [] unless domain.is_a?(Hash) && domain['tracks'].is_a?(Array)
+
+    domain['tracks'].flat_map do |track|
+      next [] unless track.is_a?(Hash) && track['areas'].is_a?(Array)
+
+      track['areas'].filter_map do |item|
+        next unless item.is_a?(Hash)
+
+        slug = item['slug']
+        slug if slug.is_a?(String) && !slug.strip.empty?
+      end
+    end
+  end.uniq
+end
+
+errors = []
+
+unless publications.is_a?(Array) && !publications.empty?
+  fail_with(['_data/publications.yml must contain a non-empty array'])
+end
+
+unless links.is_a?(Hash)
+  fail_with(['_data/links.yml must parse to a mapping'])
+end
+
+unless area_definitions.is_a?(Array) && !area_slugs.empty?
+  fail_with(['_data/publication-areas.yml must contain a non-empty array of domains with tracks and area slug values'])
+end
+
+seen_ids = {}
+
+publications.each_with_index do |pub, index|
+  unless pub.is_a?(Hash)
+    errors << "publication ##{index + 1} must be an object"
+    next
+  end
+
+  pub_id = pub['id']
+  if !pub_id.is_a?(String) || pub_id.strip.empty?
+    errors << "publication ##{index + 1} missing required id"
+    next
+  end
+
+  unless pub_id.match?(PUBLICATION_ID_PATTERN)
+    errors << "#{pub_id}: id must match #{PUBLICATION_ID_PATTERN.inspect}"
+  end
+
+  if seen_ids.key?(pub_id)
+    errors << "#{pub_id}: duplicate id (already used at publication ##{seen_ids[pub_id] + 1})"
+  else
+    seen_ids[pub_id] = index
+  end
+
+  title = pub['title']
+  venue = pub['venue']
+  year = pub['year']
+  date = pub['date']
+
+  errors << "#{pub_id}: title must be a non-empty string" unless title.is_a?(String) && !title.strip.empty?
+  errors << "#{pub_id}: venue must be a non-empty string" unless venue.is_a?(String) && !venue.strip.empty?
+  errors << "#{pub_id}: year must be an integer" unless year.is_a?(Integer)
+  if !date.is_a?(String) || !date.match?(PUBLICATION_DATE_PATTERN)
+    errors << "#{pub_id}: date must be a string in YYYY-MM-DD format"
+  else
+    begin
+      parsed_date = Date.iso8601(date)
+      if year.is_a?(Integer) && parsed_date.year != year
+        errors << "#{pub_id}: date year #{parsed_date.year} must match year #{year}"
+      end
+    rescue Date::Error
+      errors << "#{pub_id}: date '#{date}' is not a valid calendar date"
+    end
+  end
+
+  authors = pub['authors']
+  if !authors.is_a?(Array) || authors.empty?
+    errors << "#{pub_id}: authors must be a non-empty array"
+  else
+    authors.each_with_index { |author, i| validate_author(author, pub_id, i, errors) }
+  end
+
+  validate_resource(pub['links'], pub_id, 'links', links, errors)
+  validate_resource(pub['news'], pub_id, 'news', links, errors)
+
+  areas = pub['areas']
+  if !areas.is_a?(Array) || areas.empty?
+    errors << "#{pub_id}: areas must be a non-empty array"
+  else
+    areas.each_with_index do |area, i|
+      if !area.is_a?(String) || area.strip.empty?
+        errors << "#{pub_id}: areas ##{i + 1} must be a non-empty string"
+      elsif !area_slugs.include?(area)
+        errors << "#{pub_id}: areas ##{i + 1} '#{area}' is not defined in _data/publication-areas.yml"
+      end
+    end
+  end
+end
+
+if errors.empty?
+  puts 'Publication data validation passed.'
+else
+  fail_with(errors)
+end
+# rubocop:enable Metrics/AbcSize, Metrics/BlockLength, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity, Style/GuardClause, Style/IfUnlessModifier

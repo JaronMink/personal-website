@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e
+
+STRICT_CONTENT_LINT="${STRICT_CONTENT_LINT:-0}"
+
+if ! command -v lychee >/dev/null 2>&1; then
+  echo "Skipping link checks: 'lychee' is not installed." >&2
+  if [ "$STRICT_CONTENT_LINT" = "1" ]; then
+    echo "Set up lychee (https://github.com/lycheeverse/lychee) or run with STRICT_CONTENT_LINT=0." >&2
+    exit 1
+  fi
+  exit 0
+fi
+
+if [ -z "$(rg --files -g '*.md' -g '*.html' -g '*.yml' -g '*.yaml' .)" ]; then
+  echo "No files found for link checks."
+  exit 0
+fi
+
+rg --files -0 -g '*.md' -g '*.html' -g '*.yml' -g '*.yaml' . | xargs -0 lychee \
+  --no-progress \
+  --exclude-mail \
+  --accept 200,206,429 \
+  --retry-wait-time 2 \
+  --max-retries 2

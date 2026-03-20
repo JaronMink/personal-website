@@ -1,0 +1,167 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/ParameterLists, Metrics/PerceivedComplexity, Style/GuardClause, Style/IfUnlessModifier
+
+require 'yaml'
+require 'pathname'
+
+ROOT = Pathname.new(__dir__).join('..').expand_path
+LINKS_FILE = ROOT.join('_data/links.yml')
+PROFILE_FILE = ROOT.join('_data/profile.yml')
+TEACHING_FILE = ROOT.join('_data/teaching.yml')
+SERVICE_FILE = ROOT.join('_data/service.yml')
+
+def fail_with(errors)
+  errors.each { |error| warn "Site data validation failed: #{error}" }
+  exit 1
+end
+
+def read_yaml(path)
+  YAML.safe_load(path.read, permitted_classes: [], aliases: true)
+rescue Psych::Exception => e
+  warn "Failed to parse YAML file #{path}: #{e.message}"
+  exit 1
+end
+
+def validate_non_empty_string(value, field, errors)
+  errors << "#{field} must be a non-empty string" unless value.is_a?(String) && !value.strip.empty?
+end
+
+def validate_profile(profile, errors)
+  unless profile.is_a?(Hash)
+    errors << '_data/profile.yml must parse to a mapping'
+    return
+  end
+
+  validate_non_empty_string(profile['pronouns_display'], 'profile.pronouns_display', errors)
+  validate_non_empty_string(profile['pronouns_contact_note'], 'profile.pronouns_contact_note', errors)
+  validate_non_empty_string(profile['email'], 'profile.email', errors)
+  if profile['email'].is_a?(String) && profile['email'] !~ /\A[^@\s]+@[^@\s]+\.[^@\s]+\z/
+    errors << 'profile.email must look like a valid email address'
+  end
+
+  lab = profile['lab']
+  unless lab.is_a?(Hash)
+    errors << 'profile.lab must be a mapping'
+    return
+  end
+
+  validate_non_empty_string(lab['short_name'], 'profile.lab.short_name', errors)
+  validate_non_empty_string(lab['full_name'], 'profile.lab.full_name', errors)
+  validate_non_empty_string(lab['url'], 'profile.lab.url', errors)
+end
+
+def validate_teaching(teaching, errors)
+  unless teaching.is_a?(Array) && !teaching.empty?
+    errors << '_data/teaching.yml must contain a non-empty array'
+    return
+  end
+
+  required_keys = %w[term department course_number course institution role]
+
+  teaching.each_with_index do |item, index|
+    unless item.is_a?(Hash)
+      errors << "teaching ##{index + 1} must be an object"
+      next
+    end
+
+    required_keys.each do |key|
+      validate_non_empty_string(item[key], "teaching ##{index + 1}.#{key}", errors)
+    end
+
+    course_url = item['course_url']
+    next unless course_url
+
+    unless course_url.is_a?(String) && course_url.match?(%r{\Ahttps?://})
+      errors << "teaching ##{index + 1}.course_url must be an absolute http(s) URL when present"
+    end
+  end
+end
+
+def validate_service_link(link, group_index, entry_index, link_index, links_map, errors)
+  unless link.is_a?(Hash)
+    errors << "service ##{group_index + 1} entry ##{entry_index + 1} link ##{link_index + 1} must be an object"
+    return
+  end
+
+  validate_non_empty_string(link['label'], "service ##{group_index + 1} entry ##{entry_index + 1} link ##{link_index + 1}.label", errors)
+
+  has_url = link['url'].is_a?(String) && !link['url'].strip.empty?
+  has_url_key = link['url_key'].is_a?(String) && !link['url_key'].strip.empty?
+
+  if has_url == has_url_key
+    errors << "service ##{group_index + 1} entry ##{entry_index + 1} link ##{link_index + 1} must define exactly one of url or url_key"
+    return
+  end
+
+  return unless has_url_key
+
+  resolved = links_map[link['url_key']]
+  if !resolved.is_a?(String) || resolved.strip.empty?
+    errors << "service ##{group_index + 1} entry ##{entry_index + 1} link ##{link_index + 1} references unknown/empty url_key '#{link['url_key']}'"
+  end
+end
+
+def validate_service(service, links_map, errors)
+  unless service.is_a?(Array) && !service.empty?
+    errors << '_data/service.yml must contain a non-empty array'
+    return
+  end
+
+  service.each_with_index do |group, group_index|
+    unless group.is_a?(Hash)
+      errors << "service ##{group_index + 1} must be an object"
+      next
+    end
+
+    validate_non_empty_string(group['section'], "service ##{group_index + 1}.section", errors)
+
+    entries = group['entries']
+    unless entries.is_a?(Array) && !entries.empty?
+      errors << "service ##{group_index + 1}.entries must be a non-empty array"
+      next
+    end
+
+    entries.each_with_index do |entry, entry_index|
+      unless entry.is_a?(Hash)
+        errors << "service ##{group_index + 1} entry ##{entry_index + 1} must be an object"
+        next
+      end
+
+      validate_non_empty_string(entry['venue'], "service ##{group_index + 1} entry ##{entry_index + 1}.venue", errors)
+
+      links = entry['links']
+      unless links.is_a?(Array) && !links.empty?
+        errors << "service ##{group_index + 1} entry ##{entry_index + 1}.links must be a non-empty array"
+        next
+      end
+
+      links.each_with_index do |link, link_index|
+        validate_service_link(link, group_index, entry_index, link_index, links_map, errors)
+      end
+    end
+  end
+end
+
+links_map = read_yaml(LINKS_FILE)
+profile = read_yaml(PROFILE_FILE)
+teaching = read_yaml(TEACHING_FILE)
+service = read_yaml(SERVICE_FILE)
+
+errors = []
+
+unless links_map.is_a?(Hash)
+  fail_with(['_data/links.yml must parse to a mapping'])
+end
+
+validate_profile(profile, errors)
+validate_teaching(teaching, errors)
+validate_service(service, links_map, errors)
+
+if errors.empty?
+  puts 'Site data validation passed.'
+else
+  fail_with(errors)
+end
+# rubocop:enable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/ParameterLists, Metrics/PerceivedComplexity, Style/GuardClause, Style/IfUnlessModifier

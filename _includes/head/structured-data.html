@@ -1,0 +1,26 @@
+{% assign meta_image = page.image | default: site.social_preview_image | default: site.avatar_linkedin %}
+{% assign meta_image_url = meta_image | absolute_url %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": {{ site.title | jsonify }},
+        "url": {{ site.url | jsonify }},
+        "image": {{ meta_image_url | jsonify }},
+        "jobTitle": {{ site.position | jsonify }},
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": {{ site.affiliation | jsonify }}
+        }
+      },
+      {
+        "@type": "WebSite",
+        "name": {{ site.title | jsonify }},
+        "url": {{ site.url | jsonify }},
+        "description": {{ site.description | jsonify }}
+      }
+    ]
+  }
+</script>

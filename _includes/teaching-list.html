@@ -1,0 +1,14 @@
+{% assign teaching_items = site.data.teaching %}
+{% assign teaching_by_course = teaching_items | group_by: 'course' %}
+
+{% for group in teaching_by_course %}
+{% assign lead = group.items | first %}
+### {% if lead.course_url %}<a href="{{ lead.course_url }}">{{ lead.department }} {{ lead.course_number }}</a>{% else %}{{ lead.department }} {{ lead.course_number }}{% endif %} — {{ group.name }}
+{% assign items_by_role = group.items | group_by: 'role' %}
+<ul>
+  {% for role_group in items_by_role %}
+  {% assign role_lead = role_group.items | first %}
+  <li><strong>{{ role_group.name }}</strong> ({{ role_lead.institution }}): {% for item in role_group.items %}{{ item.term }}{% unless forloop.last %}, {% endunless %}{% endfor %}</li>
+  {% endfor %}
+</ul>
+{% endfor %}

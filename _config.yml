@@ -1,0 +1,53 @@
+# Website Attributes
+title: Jaron Mink
+pronouns: they/them
+description: I'm an Assistant Professor studying human-centered security for machine learning at Arizona State University.
+keywords: jaron maurice mink arizona state university asu uiuc university of illinois urbana-champaign urbana champaign usable human factors security machine learning
+google_analytics_ga4: "G-HS4P0K11JB"
+favicon: /assets/img/favicon-asu.ico
+canonical: https://jaronm.ink/
+publication_filters_enabled: true
+social_preview_image: /assets/img/JaronMink_faculty_compressed.jpg
+twitter_username: JaronMink
+
+permalink: pretty
+
+# Personal Info
+position: Assistant Professor
+affiliation: Arizona State University
+google_scholar: https://scholar.google.com/citations?hl=en&user=5kFzEw4AAAAJ
+#github_link: https://github.com/JaronMink/
+twitter_link: https://twitter.com/JaronMink/
+bluesky_link: https://bsky.app/profile/jaronmink.bsky.social
+linkedin: https://www.linkedin.com/in/jaronmink/
+avatar: /assets/img/JaronMink_faculty_compressed.jpg
+avatar_linkedin: /assets/img/JaronMink_faculty_compressed.jpg
+
+# Link registry (papers, conferences, external resources) is in `_data/links.yml`.
+
+#sitemap settings
+url: "https://jaronm.ink"
+plugins:
+ - jekyll-sitemap
+ - jekyll-redirect-from
+exclude:
+ - _site
+ - _legacy
+ - private_archive
+ - personal-site
+ - README.md
+ - MAINTAINER.md
+ - TODO.md
+ - Makefile
+ - Gemfile
+ - Gemfile.lock
+ - LICENSE
+ - minimal-light.gemspec
+ - script
+  - publication-list.md
+defaults:
+  -
+    scope:
+      path: "assets/**/cv.pdf"
+    values:
+      sitemap: false

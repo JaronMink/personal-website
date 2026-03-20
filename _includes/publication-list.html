@@ -1,0 +1,118 @@
+{% assign sorted_publications = site.data.publications | sort: 'date' | reverse %}
+{% assign publication_years = sorted_publications | group_by: 'year' %}
+{% assign publication_areas = site.data.publication-areas %}
+{% assign domain = publication_areas | first %}
+{% assign domain_descendants = '' | split: '' %}
+{% if domain %}
+  {% for track in domain.tracks %}
+    {% assign track_area_slugs = track.areas | map: 'slug' %}
+    {% assign domain_descendants = domain_descendants | concat: track_area_slugs %}
+  {% endfor %}
+{% endif %}
+{% assign hf_track = domain.tracks | where: 'slug', 'human-factors-security-privacy' | first %}
+{% assign system_track = domain.tracks | where: 'slug', 'system-security-track' | first %}
+{% assign system_area = nil %}
+{% if system_track %}
+  {% assign system_area = system_track.areas | first %}
+{% endif %}
+{% assign security_descendants = domain_descendants | join: ' ' %}
+{% assign hf_descendants = '' %}
+{% if hf_track %}
+  {% assign hf_descendants = hf_track.areas | map: 'slug' | join: ' ' %}
+{% endif %}
+{% assign ml_descendants = 'ml-enabled-abuse ml-for-security-applications ml-security-and-privacy' %}
+{% assign system_slug = system_area.slug | default: 'system-security' %}
+
+<div class="pub-layout">
+  <div class="pub-header-row">
+    <p class="pub-equal-note">* Indicates equal co-authorship</p>
+  {% if site.publication_filters_enabled %}
+  <div class="pub-filter-toolbar">
+    <button type="button" class="pub-filter-summary" data-filter-toggle aria-expanded="false" aria-controls="pub-area-controls">By Area</button>
+  </div>
+  {% endif %}
+  </div>
+  {% if site.publication_filters_enabled %}
+  <div id="pub-area-controls" class="pub-filter-panel-row" hidden>
+    <div class="pub-filter-view-toggle" role="tablist" aria-label="Filter view">
+      <button type="button" class="pub-filter-view-button is-active" role="tab" aria-selected="true" data-filter-view-target="diagram">Diagram</button>
+      <button type="button" class="pub-filter-view-button" role="tab" aria-selected="false" data-filter-view-target="list">List</button>
+    </div>
+    <div class="pub-filter-view-stack">
+      <div class="pub-filter-view pub-filter-view--diagram" data-filter-view="diagram">
+        <div class="pub-area-filters" role="toolbar" aria-label="Filter publications by area of work">
+          {% if domain and hf_track %}
+          <div class="pub-filter-panel">
+            <div class="pub-area-venn" aria-label="Geometric subarea selector">
+              <button type="button" class="pub-area-filter pub-area-venn-title" data-area="ml-subset" data-parent="{{ hf_track.slug }}" data-descendants="{{ ml_descendants }}" aria-pressed="false">ML</button>
+              <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-sp-research" data-area="{{ domain.slug }}" data-descendants="{{ security_descendants }}" aria-pressed="false"></button>
+              <button type="button" class="pub-area-filter pub-area-venn-label pub-area-venn-label--centered pub-area-filter--visual-sp-research-label" data-area="{{ domain.slug }}" data-descendants="{{ security_descendants }}" aria-pressed="false">Security and Privacy</button>
+              <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-human-factors" data-area="{{ hf_track.slug }}" data-parent="{{ domain.slug }}" data-descendants="{{ hf_descendants }}" aria-pressed="false"></button>
+              <button type="button" class="pub-area-filter pub-area-venn-label pub-area-filter--visual-human-factors-label" data-area="{{ hf_track.slug }}" data-parent="{{ domain.slug }}" data-descendants="{{ hf_descendants }}" aria-pressed="false">Human Factors</button>
+              <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-leaf pub-area-filter--visual-ml-enabled-abuse" data-area="ml-enabled-abuse" data-parent="{{ hf_track.slug }}" data-descendants="ml-enabled-abuse" aria-pressed="false"><span class="pub-area-filter-label">Abuse</span></button>
+              <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-leaf pub-area-filter--visual-ml-for-security-applications" data-area="ml-for-security-applications" data-parent="{{ hf_track.slug }}" data-descendants="ml-for-security-applications" aria-pressed="false"><span class="pub-area-filter-label">Security Applications</span></button>
+              <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-leaf pub-area-filter--visual-ml-security-and-privacy" data-area="ml-security-and-privacy" data-parent="{{ hf_track.slug }}" data-descendants="ml-security-and-privacy" aria-pressed="false"><span class="pub-area-filter-label">Security and Privacy</span></button>
+              <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-leaf pub-area-filter--visual-non-ml-human-factors" data-area="non-ml-human-factors" data-parent="{{ hf_track.slug }}" data-descendants="non-ml-human-factors" aria-pressed="false"><span class="pub-area-filter-label">Usable<br>S&amp;P</span></button>
+              <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-leaf pub-area-filter--visual-system-security" data-area="{{ system_slug }}" data-parent="non-ml-human-factors" data-descendants="{{ system_slug }}" aria-pressed="false"><span class="pub-area-filter-label">System Security</span></button>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="pub-filter-view pub-filter-view--list" data-filter-view="list" hidden>
+        <div class="pub-area-filters" role="toolbar" aria-label="Filter publications by area of work">
+          <div class="pub-filter-panel">
+          {% if domain and hf_track %}
+            <div class="pub-area-layout">
+            <div class="pub-area-row pub-area-row--domain">
+              <button type="button" class="pub-area-filter pub-area-filter--domain" data-area="{{ domain.slug }}" data-descendants="{{ security_descendants }}" aria-pressed="false">Security and Privacy</button>
+            </div>
+            <div class="pub-area-children pub-area-children--domain">
+              <div class="pub-area-row pub-area-row--tracks">
+                <div class="pub-area-hf-branch">
+                  <button type="button" class="pub-area-filter pub-area-filter--track" data-area="{{ hf_track.slug }}" data-parent="{{ domain.slug }}" data-descendants="{{ hf_descendants }}" aria-pressed="false">Human Factors</button>
+                  <div class="pub-area-children pub-area-children--hf">
+                    <div class="pub-area-row pub-area-row--hf-subtracks">
+                      <div class="pub-area-ml-branch">
+                        <button type="button" class="pub-area-filter pub-area-filter--track" data-area="ml-subset" data-parent="{{ hf_track.slug }}" data-descendants="{{ ml_descendants }}" aria-pressed="false">ML</button>
+                        <div class="pub-area-children pub-area-children--ml">
+                          <div class="pub-area-row pub-area-row--ml-leaves">
+                            <button type="button" class="pub-area-filter pub-area-filter--area" data-area="ml-enabled-abuse" data-parent="ml-subset" data-descendants="ml-enabled-abuse" aria-pressed="false">Abuse</button>
+                            <button type="button" class="pub-area-filter pub-area-filter--area" data-area="ml-security-and-privacy" data-parent="ml-subset" data-descendants="ml-security-and-privacy" aria-pressed="false">Security and Privacy</button>
+                            <button type="button" class="pub-area-filter pub-area-filter--area" data-area="ml-for-security-applications" data-parent="ml-subset" data-descendants="ml-for-security-applications" aria-pressed="false">Sec. Applications</button>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="pub-area-filter pub-area-filter--area pub-area-filter--usable-sp" data-area="non-ml-human-factors" data-parent="{{ hf_track.slug }}" data-descendants="non-ml-human-factors" aria-pressed="false">Usable S&amp;P</button>
+                    </div>
+                  </div>
+                </div>
+                {% if system_area %}
+                <button type="button" class="pub-area-filter pub-area-filter--area" data-area="{{ system_area.slug }}" data-parent="{{ domain.slug }}" data-descendants="{{ system_area.slug }}" aria-pressed="false">System Security</button>
+                {% endif %}
+              </div>
+            </div>
+            </div>
+          {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="pub-list-main">
+    {% for year_group in publication_years %}
+    <div class="pub-year-group">
+      <div class="pub-year-sticky">{{ year_group.name }}</div>
+      <div class="pub-group-items">
+        {% for pub in year_group.items %}
+        {% include publication-item.html pub=pub %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+    <p class="pub-empty-state" hidden aria-live="polite">We leave this area for future work.</p>
+  </div>
+
+</div>

@@ -1,0 +1,12 @@
+---
+---
+
+@import "minimal-light";
+.avatar {
+  vertical-align: middle;
+  max-width: 300px;
+  //maxheight: 200px;
+  border-radius: 20%;
+}
+
+.email { unicode-bidi: bidi-override; direction: rtl; }

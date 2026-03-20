@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+STRICT_CONTENT_LINT="${STRICT_CONTENT_LINT:-0}"
+
+if ! command -v codespell >/dev/null 2>&1; then
+  echo "Skipping spelling checks: 'codespell' is not installed." >&2
+  if [ "$STRICT_CONTENT_LINT" = "1" ]; then
+    echo "Set up codespell (https://github.com/codespell-project/codespell) or run with STRICT_CONTENT_LINT=0." >&2
+    exit 1
+  fi
+  exit 0
+fi
+
+if [ -z "$(rg --files -g '*.md' -g '*.html' -g '*.yml' -g '*.yaml' .)" ]; then
+  echo "No files found for spelling checks."
+  exit 0
+fi
+
+rg --files -0 -g '*.md' -g '*.html' -g '*.yml' -g '*.yaml' . | xargs -0 codespell --check-filenames --ignore-words-list "teh"

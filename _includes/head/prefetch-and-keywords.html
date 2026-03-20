@@ -1,0 +1,9 @@
+{% if page.url == '/' %}
+<link rel="prefetch" href="{{ '/publications/' | relative_url }}">
+<link rel="prefetch" href="{{ '/teaching/' | relative_url }}">
+<link rel="prefetch" href="{{ '/service/' | relative_url }}">
+{% endif %}
+
+{% if site.keywords %}
+<meta name="keywords" content="{{ site.keywords }}">
+{% endif %}

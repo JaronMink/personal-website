@@ -1,0 +1,36 @@
+- term: Spring 2026
+  department: CSE
+  course_number: "365"
+  course: Information Assurance
+  institution: ASU
+  role: Instructor
+- term: Fall 2025
+  department: CSE
+  course_number: "365"
+  course: Information Assurance
+  institution: ASU
+  role: Instructor
+- term: Fall 2024
+  department: CSE
+  course_number: "598"
+  course: Trustworthy Human-ML Interaction
+  institution: ASU
+  role: Instructor
+- term: Fall 2021
+  department: CS
+  course_number: "463"
+  course: Computer Security II
+  institution: UIUC
+  role: Guest Lecturer
+- term: Spring 2021
+  department: CS
+  course_number: "463"
+  course: Computer Security II
+  institution: UIUC
+  role: Teaching Assistant
+- term: Fall 2018
+  department: CS
+  course_number: "33"
+  course: Intro To Computer Architecture
+  institution: UCLA
+  role: Learning Assistant

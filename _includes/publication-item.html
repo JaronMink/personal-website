@@ -1,0 +1,109 @@
+{% assign area_tokens = '' %}
+{% if include.pub.areas and include.pub.areas.size > 0 %}
+  {% assign area_tokens = include.pub.areas | join: ' ' %}
+{% endif %}
+<div class="pub-item" id="{{ include.pub.id }}" data-areas="{{ area_tokens | strip }}">
+  {% assign citation_key = include.pub.id | replace: 'pub-', '' | replace: '-', '' %}
+  {% capture bib_author_line %}{% for author in include.pub.authors %}{{ author | replace: '*', '' }}{% unless forloop.last %} and {% endunless %}{% endfor %}{% endcapture %}
+  {% assign action_layout = site.publication_action_layout | default: "flat" %}
+  {% assign links_map = site.data.links %}
+
+  <p class="pub-title"><strong>{{ include.pub.title }}</strong></p>
+  <p class="pub-authors">
+    {% for author in include.pub.authors %}
+      {{ author }}{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  </p>
+  <p class="pub-venue">{{ include.pub.venue }}</p>
+
+  <div class="pub-links">
+    {% if action_layout == "compact" %}
+      {% assign has_pdf = false %}
+      {% assign has_non_pdf = false %}
+      {% if include.pub.links and include.pub.links.size > 0 %}
+        {% for link in include.pub.links %}
+          {% assign link_label_downcase = link.label | downcase %}
+          {% if link_label_downcase == 'pdf' %}
+            {% assign has_pdf = true %}
+          {% else %}
+            {% assign has_non_pdf = true %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% if has_pdf %}
+        {% for link in include.pub.links %}
+          {% assign link_label_downcase = link.label | downcase %}
+          {% if link_label_downcase == 'pdf' %}
+            {% assign link_href = link.url %}
+            {% if link.url_key %}
+              {% assign link_href = links_map[link.url_key] %}
+            {% endif %}
+            <a class="btn btn-primary btn-xs" href="{{ link_href }}">{{ link.label }}</a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      <details class="pub-more">
+        <summary class="btn btn-info btn-xs pub-more-trigger">More</summary>
+        <div class="pub-more-menu">
+          {% if has_non_pdf %}
+            {% for link in include.pub.links %}
+              {% assign link_label_downcase = link.label | downcase %}
+              {% if link_label_downcase != 'pdf' %}
+                {% assign link_href = link.url %}
+                {% if link.url_key %}
+                  {% assign link_href = links_map[link.url_key] %}
+                {% endif %}
+                <a class="pub-more-link" href="{{ link_href }}">{{ link.label }}</a>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          <button type="button"
+            class="pub-more-bib js-copy-bib"
+            data-citation-key="{{ citation_key }}"
+            data-title="{{ include.pub.title | escape }}"
+            data-authors="{{ bib_author_line | strip | escape }}"
+            data-booktitle="{{ include.pub.venue | escape }}"
+            data-year="{{ include.pub.year }}">
+            Copy Bib
+          </button>
+        </div>
+      </details>
+    {% else %}
+      {% if include.pub.links and include.pub.links.size > 0 %}
+          {% for link in include.pub.links %}
+            {% assign link_href = link.url %}
+            {% if link.url_key %}
+              {% assign link_href = links_map[link.url_key] %}
+            {% endif %}
+            {% if link.style == 'primary' %}
+              {% assign link_class = 'btn btn-primary btn-xs' %}
+            {% else %}
+              {% assign link_class = 'btn btn-info btn-xs' %}
+            {% endif %}
+            <a class="{{ link_class }}" href="{{ link_href }}">{{ link.label }}</a>{% unless forloop.last %} {% endunless %}
+          {% endfor %}
+      {% endif %}
+      <button type="button"
+        class="btn btn-info btn-xs js-copy-bib"
+        data-citation-key="{{ citation_key }}"
+        data-title="{{ include.pub.title | escape }}"
+        data-authors="{{ bib_author_line | strip | escape }}"
+        data-booktitle="{{ include.pub.venue | escape }}"
+        data-year="{{ include.pub.year }}">
+        Bib
+      </button>
+    {% endif %}
+  </div>
+
+  {% if include.pub.news and include.pub.news.size > 0 %}
+  <p class="pub-note"><span style="font-size:80%">News:
+    {% for item in include.pub.news %}
+      {% assign item_href = item.url %}
+      {% if item.url_key %}
+        {% assign item_href = links_map[item.url_key] %}
+      {% endif %}
+      <a href="{{ item_href }}">{{ item.label }}</a>{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  </span></p>
+  {% endif %}
+</div>

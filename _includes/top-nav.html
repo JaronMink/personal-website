@@ -1,0 +1,7 @@
+<nav class="top-nav" aria-label="Main navigation">
+  <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="is-active" aria-current="page"{% endif %}>Home</a>
+  <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} class="is-active" aria-current="page"{% endif %}>Publications</a>
+  <a href="{{ '/teaching/' | relative_url }}"{% if page.url == '/teaching/' %} class="is-active" aria-current="page"{% endif %}>Teaching</a>
+  <a href="{{ '/service/' | relative_url }}"{% if page.url == '/service/' %} class="is-active" aria-current="page"{% endif %}>Service</a>
+  <button id="theme-toggle" class="top-theme-toggle" type="button" aria-label="Toggle color theme">☾</button>
+</nav>

@@ -1,0 +1,1 @@
+<a href="{{ site.data.links.google_research_scholar_2025_web }}" target="_blank" rel="noopener noreferrer">Google Research Scholar Program</a> &bull; <a href="{{ site.data.links.nsf_grfp_web }}" target="_blank" rel="noopener noreferrer">NSF Graduate Research Fellowship Program (GRFP)</a> &bull; Magna Cum Laude, UCLA

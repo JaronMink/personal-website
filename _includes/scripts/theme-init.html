@@ -1,0 +1,13 @@
+<script>
+  (function () {
+    try {
+      document.documentElement.classList.add('theme-preload');
+      var savedTheme = localStorage.getItem('theme');
+      var initialTheme = savedTheme;
+      if (initialTheme !== 'light' && initialTheme !== 'dark') {
+        initialTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', initialTheme);
+    } catch (e) {}
+  })();
+</script>

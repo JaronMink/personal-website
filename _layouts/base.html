@@ -1,0 +1,34 @@
+<!doctype html>
+<html prefix="og: https://ogp.me/ns#" lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    {% include scripts/theme-init.html %}
+    {% include scripts/ga4.html %}
+
+    <link rel="icon" href="{{ site.favicon }}" type="image/png" />
+    <link rel="shortcut icon" href="{{ site.favicon }}" type="image/png" />
+    <link rel="preload" href="{{ '/assets/fonts/public-sans/PublicSans-400.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/public-sans/PublicSans-600.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/public-sans/PublicSans-700.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="{{ '/assets/vendor/academicons/css/academicons.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/fontawesome/css/all.min.css' | relative_url }}">
+    {% include head/prefetch-and-keywords.html %}
+    {% include head/social-meta.html %}
+
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <meta charset="utf-8">
+    {% include head/page-title.html %}
+    {% include head/structured-data.html %}
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    {{ content }}
+    {% if page.url == '/publications/' and site.publication_filters_enabled %}
+    <script defer src="{{ '/assets/js/publication-area-filter.js' | relative_url }}"></script>
+    {% endif %}
+    <script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/publication-highlight.js' | relative_url }}"></script>
+    <script>window.__BIB_POPUP_ENABLED__ = {{ site.bib_popup_enabled | default: false | jsonify }};</script>
+    <script defer src="{{ '/assets/js/copy-bib.js' | relative_url }}"></script>
+  </body>
+</html>

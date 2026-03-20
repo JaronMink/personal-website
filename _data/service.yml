@@ -1,0 +1,87 @@
+- section: Organizing Committee
+  entries:
+    - venue: CVPR
+      links:
+        - label: Humans of Generative AI
+          url: https://humansofgenerativeai.github.io/
+
+- section: Program Committee
+  entries:
+    - venue: ACM CCS
+      links:
+        - label: "2025"
+          url_key: acmccs25_web
+    - venue: USENIX Security
+      links:
+        - label: "2025"
+          url_key: usenix25_web
+        - label: "2026"
+          url_key: usenix26_web
+    - venue: IEEE S&P
+      links:
+        - label: "2025"
+          url_key: ieeesp25_web
+        - label: "2027"
+          url_key: ieeesp27_web
+    - venue: IEEE SaTML
+      links:
+        - label: "2023"
+          url_key: satml23_web
+        - label: "2025"
+          url_key: satml25_web
+        - label: "2026"
+          url_key: satml26_web
+    - venue: ACM CHI
+      links:
+        - label: "2026"
+          url_key: chi26_web
+    - venue: EAAMO
+      links:
+        - label: "2023"
+          url_key: eaamo23_web
+        - label: "2024"
+          url_key: eaamo23_web
+
+- section: Poster Jury
+  entries:
+    - venue: SOUPS
+      links:
+        - label: "2022"
+          url_key: soups22_web
+        - label: "2023"
+          url_key: soups23_web
+
+- section: External Reviewer
+  entries:
+    - venue: ACM CHI
+      links:
+        - label: "2021"
+          url_key: chi21_web
+        - label: "2022"
+          url_key: chi22_web
+        - label: "2023"
+          url_key: chi23_web
+        - label: "2024"
+          url_key: chi24_web
+        - label: "2025"
+          url_key: chi25_web
+    - venue: SOUPS
+      links:
+        - label: "2021"
+          url_key: soups21_web
+    - venue: NDSS
+      links:
+        - label: "2021"
+          url_key: ndss21_web
+    - venue: RAID
+      links:
+        - label: "2022"
+          url_key: raid22_web
+    - venue: TDSC
+      links:
+        - label: "2023"
+          url_key: tdsc23_web
+    - venue: IEEE S&P SPSI
+      links:
+        - label: "2025"
+          url: https://www.computer.org/digital-library/magazines/sp/cfp-gender-and-sexuality-in-online-safety/

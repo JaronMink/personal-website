@@ -1,0 +1,19 @@
+- slug: security-and-privacy
+  label: Areas
+  tracks:
+  - slug: human-factors-security-privacy
+    label: Human Factors in Security and Privacy
+    areas:
+    - slug: ml-enabled-abuse
+      label: ML-Enabled Abuse
+    - slug: ml-security-and-privacy
+      label: ML Security and Privacy
+    - slug: ml-for-security-applications
+      label: ML for Security Applications
+    - slug: non-ml-human-factors
+      label: Usable Security and Privacy
+  - slug: system-security-track
+    label: System Security
+    areas:
+    - slug: system-security
+      label: System Security
