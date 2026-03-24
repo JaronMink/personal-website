@@ -1,6 +1,6 @@
 # Jaron Mink Personal Website
 
-Source for [jaronm.ink](https://jaronm.ink/), built with Jekyll.
+Source for [jaronm.ink](https://jaronm.ink/), built with Jekyll, mostly vibe-coded.
 
 ## Local Development
 
