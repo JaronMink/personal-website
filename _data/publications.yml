@@ -61,24 +61,6 @@
   - label: PDF
     url_key: li_chi_26_pdf
     style: primary
-- id: pub-signals-of-provenance-2026
-  year: 2026
-  date: '2026-10-10'
-  title: 'Signals of Provenance: Practices & Challenges of Navigating Indicators in
-    AI-Generated Media for Sighted and Blind Individuals'
-  authors:
-  - Ayae Ide
-  - Tory Park
-  - Jaron Mink
-  - Tanusree Sharma
-  venue: ACM Conference on Computer-Supported Cooperative Work and Social Computing, 2026
-  areas:
-  - ml-enabled-abuse
-  - non-ml-human-factors
-  links:
-  - label: PDF
-    url_key: ide_arxiv25_pdf
-    style: primary
 - id: pub-solk-2024
   year: 2024
   date: '2024-08-14'

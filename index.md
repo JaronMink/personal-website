@@ -46,7 +46,6 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
         <p class="home-interest-desc">How people abuse ML systems, and how people perceive and respond to abusive AI-generated media.</p>
         <p class="home-interest-links-inline">
           <a href="{{ '/publications/#pub-aig-sc-2026' | relative_url }}">AI Sexual Content</a> &bull;
-          <a href="{{ '/publications/#pub-signals-of-provenance-2026' | relative_url }}">AI Provenance Signals</a> &bull;
           <a href="{{ '/publications/#pub-deepfake-moderation-2024' | relative_url }}">Bias in AI Media Moderation</a> &bull;
           <a href="{{ '/publications/#pub-deepphish-2022' | relative_url }}">Perceptions of AI Media</a>
         </p>
