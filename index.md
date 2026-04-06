@@ -1,6 +1,6 @@
 ---
 layout: multi
-description: Assistant Professor Jaron Mink studies human-centered security for machine learning, including ML-enabled abuse, ML security adoption, and security/privacy behavior.
+description: Assistant Professor Jaron Mink studies human-centered security for AI, including AI-enabled abuse, AI security adoption, and security/privacy behavior.
 ---
 
 <section class="home-split">
@@ -38,12 +38,12 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
 
   <div>
     <p class="home-lead">
-      I'm an Assistant Professor in the School of Computing and Augmented Intelligence at Arizona State University. I direct the <a href="{{ site.data.profile.lab.url }}">{{ site.data.profile.lab.full_name }}</a> ({{ site.data.profile.lab.short_name }}), where we study human-centered security for machine learning systems. Across my work, I examine how human factors are exploited to weaken ML security and how they can be harnessed to make ML systems safer in practice.
+      I'm an Assistant Professor in the School of Computing and Augmented Intelligence at Arizona State University. I direct the <a href="{{ site.data.profile.lab.url }}">{{ site.data.profile.lab.full_name }}</a> ({{ site.data.profile.lab.short_name }}), where we study human-centered security for AI systems. Across my work, I examine how human factors are exploited to weaken AI security and how they can be harnessed to make AI systems safer in practice.
     </p>
     <div class="home-interest-grid">
       <section class="home-interest-item">
-        <h3><a href="{{ '/publications/?area=ml-enabled-abuse' | relative_url }}">ML-Enabled Abuse</a></h3>
-        <p class="home-interest-desc">How people abuse ML systems, and how people perceive and respond to abusive AI-generated media.</p>
+        <h3><a href="{{ '/publications/?area=ml-enabled-abuse' | relative_url }}">AI-Enabled Abuse</a></h3>
+        <p class="home-interest-desc">How people abuse AI systems, and how people perceive and respond to abusive AI-generated media.</p>
         <p class="home-interest-links-inline">
           <a href="{{ '/publications/#pub-aig-sc-2026' | relative_url }}">AI Sexual Content</a> &bull;
           <a href="{{ '/publications/#pub-deepfake-moderation-2024' | relative_url }}">Bias in AI Media Moderation</a> &bull;
@@ -52,19 +52,19 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
       </section>
 
       <section class="home-interest-item">
-        <h3><a href="{{ '/publications/?area=ml-security-and-privacy' | relative_url }}">ML Security and Privacy</a></h3>
-        <p class="home-interest-desc">How sociotechnical factors impact real-world adoption of ML defenses.</p>
+        <h3><a href="{{ '/publications/?area=ml-security-and-privacy' | relative_url }}">AI Security and Privacy</a></h3>
+        <p class="home-interest-desc">How sociotechnical factors impact real-world adoption of AI defenses.</p>
         <p class="home-interest-links-inline">
           <a href="{{ '/publications/#pub-security-not-my-field-2023' | relative_url }}">AML Defense Barriers</a>
         </p>
       </section>
 
       <section class="home-interest-item">
-        <h3><a href="{{ '/publications/?area=ml-for-security-applications' | relative_url }}">ML for Security Applications</a></h3>
-        <p class="home-interest-desc">How ML can be integrated into security-sensitive environments.</p>
+        <h3><a href="{{ '/publications/?area=ml-for-security-applications' | relative_url }}">AI for Security Applications</a></h3>
+        <p class="home-interest-desc">How AI can be integrated into security-sensitive environments.</p>
         <p class="home-interest-links-inline">
           <a href="{{ '/publications/#pub-ai-cyber-tutors-2026' | relative_url }}">AI Cyber Tutors</a> &bull;
-          <a href="{{ '/publications/#pub-everybodys-got-ml-2023' | relative_url }}">ML Tool Perceptions</a>
+          <a href="{{ '/publications/#pub-everybodys-got-ml-2023' | relative_url }}">AI Use in SOCs</a>
         </p>
       </section>
 
