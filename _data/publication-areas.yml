@@ -5,11 +5,11 @@
     label: Human Factors in Security and Privacy
     areas:
     - slug: ml-enabled-abuse
-      label: ML-Enabled Abuse
+      label: AI-Enabled Abuse
     - slug: ml-security-and-privacy
-      label: ML Security and Privacy
+      label: AI Security and Privacy
     - slug: ml-for-security-applications
-      label: ML for Security Applications
+      label: AI for Security Applications
     - slug: non-ml-human-factors
       label: Usable Security and Privacy
   - slug: system-security-track
