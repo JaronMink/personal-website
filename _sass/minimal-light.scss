@@ -2100,7 +2100,9 @@ td {
   margin-top: 0.3rem;
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
   gap: 0.45rem;
+  justify-content: start;
 }
 
 .home-identity-icons a {
@@ -2279,7 +2281,7 @@ td {
   }
 
   .home-identity-icons {
-    justify-content: flex-start;
+    justify-content: start;
   }
 
   .home-title {

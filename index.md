@@ -22,6 +22,11 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
           <i class="ai ai-google-scholar"></i>
         </a>
         {% endif %}
+        {% if site.linkedin %}
+        <a href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        {% endif %}
         {% if site.bluesky_link %}
         <a href="{{ site.bluesky_link }}" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
           <i class="fa-brands fa-bluesky"></i>
