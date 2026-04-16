@@ -57,19 +57,20 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
       </section>
 
       <section class="home-interest-item">
-        <h3><a href="{{ '/publications/?area=ml-security-and-privacy' | relative_url }}">AI Security and Privacy</a></h3>
-        <p class="home-interest-desc">How sociotechnical factors impact real-world adoption of AI defenses.</p>
-        <p class="home-interest-links-inline">
-          <a href="{{ '/publications/#pub-security-not-my-field-2023' | relative_url }}">AML Defense Barriers</a>
-        </p>
-      </section>
-
-      <section class="home-interest-item">
         <h3><a href="{{ '/publications/?area=ml-for-security-applications' | relative_url }}">AI for Security Applications</a></h3>
         <p class="home-interest-desc">How AI can be integrated into security-sensitive environments.</p>
         <p class="home-interest-links-inline">
           <a href="{{ '/publications/#pub-ai-cyber-tutors-2026' | relative_url }}">AI Cyber Tutors</a> &bull;
+          <a href="{{ '/publications/#pub-like-a-hammer-2026' | relative_url }}">LLM Use in SOCs</a> &bull;
           <a href="{{ '/publications/#pub-everybodys-got-ml-2023' | relative_url }}">AI Use in SOCs</a>
+        </p>
+      </section>
+
+      <section class="home-interest-item">
+        <h3><a href="{{ '/publications/?area=ml-security-and-privacy' | relative_url }}">AI Security and Privacy</a></h3>
+        <p class="home-interest-desc">How sociotechnical factors impact real-world adoption of AI defenses.</p>
+        <p class="home-interest-links-inline">
+          <a href="{{ '/publications/#pub-security-not-my-field-2023' | relative_url }}">AML Defense Barriers</a>
         </p>
       </section>
 

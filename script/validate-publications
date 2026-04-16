@@ -76,6 +76,13 @@ def validate_resource(items, pub_id, key_name, links, errors)
   end
 end
 
+def preprint_venue?(venue)
+  return false unless venue.is_a?(String)
+
+  normalized_venue = venue.downcase
+  normalized_venue.include?('pre-print') || normalized_venue.include?('preprint')
+end
+
 publications = read_yaml(PUBLICATIONS_FILE)
 links = read_yaml(LINKS_FILE)
 area_definitions = read_yaml(AREAS_FILE)
@@ -139,10 +146,14 @@ publications.each_with_index do |pub, index|
   venue = pub['venue']
   year = pub['year']
   date = pub['date']
+  preprint = pub['preprint']
 
   errors << "#{pub_id}: title must be a non-empty string" unless title.is_a?(String) && !title.strip.empty?
   errors << "#{pub_id}: venue must be a non-empty string" unless venue.is_a?(String) && !venue.strip.empty?
   errors << "#{pub_id}: year must be an integer" unless year.is_a?(Integer)
+  if !preprint.nil? && preprint != true && preprint != false
+    errors << "#{pub_id}: preprint must be a boolean when present"
+  end
   if !date.is_a?(String) || !date.match?(PUBLICATION_DATE_PATTERN)
     errors << "#{pub_id}: date must be a string in YYYY-MM-DD format"
   else
@@ -154,6 +165,11 @@ publications.each_with_index do |pub, index|
     rescue Date::Error
       errors << "#{pub_id}: date '#{date}' is not a valid calendar date"
     end
+  end
+  if preprint_venue?(venue)
+    errors << "#{pub_id}: preprint must be true when venue marks the entry as a preprint" unless preprint == true
+  elsif preprint == true
+    errors << "#{pub_id}: preprint=true requires the venue to identify the entry as a preprint"
   end
 
   authors = pub['authors']

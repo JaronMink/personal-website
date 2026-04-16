@@ -50,8 +50,8 @@
               <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-human-factors" data-area="{{ hf_track.slug }}" data-parent="{{ domain.slug }}" data-descendants="{{ hf_descendants }}" aria-pressed="false"></button>
               <button type="button" class="pub-area-filter pub-area-venn-label pub-area-filter--visual-human-factors-label" data-area="{{ hf_track.slug }}" data-parent="{{ domain.slug }}" data-descendants="{{ hf_descendants }}" aria-pressed="false">Human Factors</button>
               <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-leaf pub-area-filter--visual-ml-enabled-abuse" data-area="ml-enabled-abuse" data-parent="{{ hf_track.slug }}" data-descendants="ml-enabled-abuse" aria-pressed="false"><span class="pub-area-filter-label">Abuse</span></button>
-              <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-leaf pub-area-filter--visual-ml-for-security-applications" data-area="ml-for-security-applications" data-parent="{{ hf_track.slug }}" data-descendants="ml-for-security-applications" aria-pressed="false"><span class="pub-area-filter-label">Security Applications</span></button>
               <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-leaf pub-area-filter--visual-ml-security-and-privacy" data-area="ml-security-and-privacy" data-parent="{{ hf_track.slug }}" data-descendants="ml-security-and-privacy" aria-pressed="false"><span class="pub-area-filter-label">Security and Privacy</span></button>
+              <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-leaf pub-area-filter--visual-ml-for-security-applications" data-area="ml-for-security-applications" data-parent="{{ hf_track.slug }}" data-descendants="ml-for-security-applications" aria-pressed="false"><span class="pub-area-filter-label">Security Applications</span></button>
               <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-leaf pub-area-filter--visual-non-ml-human-factors" data-area="non-ml-human-factors" data-parent="{{ hf_track.slug }}" data-descendants="non-ml-human-factors" aria-pressed="false"><span class="pub-area-filter-label">Usable<br>S&amp;P</span></button>
               <button type="button" class="pub-area-filter pub-area-filter--visual pub-area-filter--visual-leaf pub-area-filter--visual-system-security" data-area="{{ system_slug }}" data-parent="non-ml-human-factors" data-descendants="{{ system_slug }}" aria-pressed="false"><span class="pub-area-filter-label">System Security</span></button>
             </div>
@@ -78,8 +78,8 @@
                         <div class="pub-area-children pub-area-children--ml">
                           <div class="pub-area-row pub-area-row--ml-leaves">
                             <button type="button" class="pub-area-filter pub-area-filter--area" data-area="ml-enabled-abuse" data-parent="ml-subset" data-descendants="ml-enabled-abuse" aria-pressed="false">Abuse</button>
-                            <button type="button" class="pub-area-filter pub-area-filter--area" data-area="ml-security-and-privacy" data-parent="ml-subset" data-descendants="ml-security-and-privacy" aria-pressed="false">Security and Privacy</button>
                             <button type="button" class="pub-area-filter pub-area-filter--area" data-area="ml-for-security-applications" data-parent="ml-subset" data-descendants="ml-for-security-applications" aria-pressed="false">Sec. Applications</button>
+                            <button type="button" class="pub-area-filter pub-area-filter--area" data-area="ml-security-and-privacy" data-parent="ml-subset" data-descendants="ml-security-and-privacy" aria-pressed="false">Security and Privacy</button>
                           </div>
                         </div>
                       </div>
@@ -106,8 +106,19 @@
     <div class="pub-year-group">
       <div class="pub-year-sticky">{{ year_group.name }}</div>
       <div class="pub-group-items">
+        {% comment %}
+          Keep preprints ahead of formally published papers within a year while
+          preserving the reverse-chronological order already established above.
+        {% endcomment %}
         {% for pub in year_group.items %}
-        {% include publication-item.html pub=pub %}
+          {% if pub.preprint %}
+            {% include publication-item.html pub=pub %}
+          {% endif %}
+        {% endfor %}
+        {% for pub in year_group.items %}
+          {% unless pub.preprint %}
+            {% include publication-item.html pub=pub %}
+          {% endunless %}
         {% endfor %}
       </div>
     </div>

@@ -1,6 +1,7 @@
 - id: pub-ai-cyber-tutors-2026
   year: 2026
   date: '2026-02-19'
+  preprint: true
   title: 'Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Evaluation
     of Cybersecurity Student Behaviors and Performance with AI Tutors'
   authors:
@@ -25,6 +26,7 @@
 - id: pub-aig-sc-2026
   year: 2026
   date: '2026-01-28'
+  preprint: true
   title: '"Unlimited Realm of Exploration and Experimentation": Methods and Motivations
     of AI-Generated Sexual Content Creators'
   authors:
@@ -60,6 +62,26 @@
   links:
   - label: PDF
     url_key: li_chi_26_pdf
+    style: primary
+- id: pub-like-a-hammer-2026
+  year: 2026
+  date: '2026-04-11'
+  preprint: true
+  title: 'Like a Hammer, It Can Build, It Can Break: Large Language Model Uses,
+    Perceptions, and Adoption in Cybersecurity Operations on Reddit'
+  authors:
+  - Souradip Nath
+  - Chih-Yi Huang
+  - Aditi Ganapathi
+  - Kashyap Thimmaraju
+  - Jaron Mink
+  - Gail-Joon Ahn
+  venue: Pre-Print, 2026
+  areas:
+  - ml-for-security-applications
+  links:
+  - label: PDF
+    url_key: nath_arxiv26_pdf
     style: primary
 - id: pub-solk-2024
   year: 2024

@@ -32,6 +32,7 @@ mdi_response_nist_ai_rmf_web: https://mdi.georgetown.edu/news/formal-response-md
 # Papers
 tompkins_arxiv26_pdf: https://arxiv.org/abs/2602.17448
 mink_arxiv26_pdf: https://arxiv.org/abs/2601.21028
+nath_arxiv26_pdf: https://arxiv.org/abs/2604.09998
 li_chi_26_pdf: /assets/pdf/papers/i-can-se-clearly_chi26.pdf
 wei_usenix_24_pdf: /assets/pdf/papers/sociodemographic-solk_usenix24.pdf
 mink_chi_24_pdf: /assets/pdf/papers/deepfake-moderation-mistakes_chi24.pdf
@@ -82,5 +83,7 @@ novacoast_web: https://www.novacoast.com/
 viasat_web: https://www.viasat.com/
 
 # Awards
+dagstuhl_26162_web: https://www.dagstuhl.de/26162
+acm_sigsac_dissertation_award_web: https://www.sigsac.org/award/diss-awards.html
 google_research_scholar_2025_web: https://research.google/programs-and-events/research-scholar-program/
 nsf_grfp_web: https://www.nsfgrfp.org/
