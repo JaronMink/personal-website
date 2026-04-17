@@ -25,14 +25,15 @@
     style: primary
 - id: pub-aig-sc-2026
   year: 2026
-  date: '2026-06-25'
+  date: '2026-01-28'
+  preprint: true
   title: '"Unlimited Realm of Exploration and Experimentation": Methods and Motivations
     of AI-Generated Sexual Content Creators'
   authors:
   - Jaron Mink*
   - Lucy Qin*
   - Elissa M. Redmiles
-  venue: ACM Conference on Fairness, Accountability, and Transparency (FAccT), 2026
+  venue: Pre-Print, 2026
   areas:
   - ml-enabled-abuse
   links:
