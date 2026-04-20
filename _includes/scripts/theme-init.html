@@ -1,13 +1,41 @@
+<style>
+  :root {
+    background-color: #f6f2ea;
+    color: #3f474e;
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      background-color: #1d1b19;
+      color: #d6d0c6;
+      color-scheme: dark;
+    }
+  }
+
+  html[data-theme='light'] {
+    background-color: #f6f2ea;
+    color: #3f474e;
+    color-scheme: light;
+  }
+
+  html[data-theme='dark'] {
+    background-color: #1d1b19;
+    color: #d6d0c6;
+    color-scheme: dark;
+  }
+</style>
 <script>
   (function () {
+    var THEME_KEY = 'theme';
+
+    document.documentElement.classList.add('theme-preload');
+
     try {
-      document.documentElement.classList.add('theme-preload');
-      var savedTheme = localStorage.getItem('theme');
-      var initialTheme = savedTheme;
-      if (initialTheme !== 'light' && initialTheme !== 'dark') {
-        initialTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var theme = localStorage.getItem(THEME_KEY);
+      if (theme === 'light' || theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', theme);
       }
-      document.documentElement.setAttribute('data-theme', initialTheme);
     } catch (e) {}
   })();
 </script>

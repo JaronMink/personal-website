@@ -1,4 +1,6 @@
 (function () {
+  var THEME_KEY = 'theme';
+
   function releaseThemePreload() {
     window.requestAnimationFrame(function () {
       document.documentElement.classList.remove('theme-preload');
@@ -11,12 +13,21 @@
     return;
   }
 
-  var themeToggleLocked = false;
+  function explicitTheme() {
+    var theme = document.documentElement.getAttribute('data-theme');
+    return theme === 'light' || theme === 'dark' ? theme : null;
+  }
+
+  function computedTheme() {
+    if (!window.getComputedStyle) {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var colorScheme = window.getComputedStyle(document.documentElement).colorScheme || '';
+    return colorScheme.indexOf('dark') !== -1 ? 'dark' : 'light';
+  }
 
   function currentTheme() {
-    var explicit = document.documentElement.getAttribute('data-theme');
-    if (explicit === 'light' || explicit === 'dark') return explicit;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return explicitTheme() || computedTheme();
   }
 
   function renderButton(theme) {
@@ -29,20 +40,12 @@
   releaseThemePreload();
 
   button.addEventListener('click', function () {
-    if (themeToggleLocked) return;
-    themeToggleLocked = true;
-
-    var theme = currentTheme();
-    var nextTheme = theme === 'dark' ? 'light' : 'dark';
+    var nextTheme = currentTheme() === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', nextTheme);
+    renderButton(nextTheme);
 
     try {
-      localStorage.setItem('theme', nextTheme);
+      localStorage.setItem(THEME_KEY, nextTheme);
     } catch (e) {}
-
-    renderButton(nextTheme);
-    window.setTimeout(function () {
-      themeToggleLocked = false;
-    }, 250);
   });
 })();

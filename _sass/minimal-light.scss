@@ -146,18 +146,27 @@ $palettes: (
   :root {
     @include emit-theme-vars(dark);
   }
+
+  html:not([data-theme='light']) {
+    color-scheme: dark;
+  }
 }
 
 html[data-theme='light'] {
   @include emit-theme-vars(light);
+  color-scheme: light;
 }
 
 html[data-theme='dark'] {
   @include emit-theme-vars(dark);
+  color-scheme: dark;
 }
 
 html {
   scrollbar-gutter: stable;
+  background-color: var(--bg);
+  color: var(--text);
+  color-scheme: light;
 }
 
 * {
@@ -1544,6 +1553,29 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
   padding-right: 0.3rem;
 }
 
+.pub-year-group + .pub-year-group {
+  position: relative;
+  padding-top: 0.65rem;
+}
+
+.pub-year-group + .pub-year-group::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(4rem + 0.95rem + 0.35rem);
+  right: 0.35rem;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--map-rule) 68%, transparent) 0 0.72rem,
+    transparent 0.72rem 0.98rem,
+    color-mix(in srgb, var(--map-rule) 48%, transparent) 0.98rem 1.06rem,
+    transparent 1.06rem 1.34rem
+  );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 .pub-item {
   margin: 0 0 1.25rem;
   scroll-margin-top: 1rem;
@@ -1902,6 +1934,14 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
     margin-bottom: 1rem;
   }
 
+  .pub-year-group + .pub-year-group {
+    padding-top: 0;
+  }
+
+  .pub-year-group + .pub-year-group::before {
+    content: none;
+  }
+
   .pub-year-sticky {
     font-size: 0.82rem;
     letter-spacing: 0.04em;
@@ -2215,8 +2255,8 @@ td {
   inset: 0.3rem;
   z-index: 0;
   background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--map-rule) 10%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--map-rule) 8%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in srgb, var(--map-rule) 14%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--map-rule) 12%, transparent) 1px, transparent 1px);
   background-position: 0.12rem 0.08rem;
   background-size: 2.35rem 2.35rem;
   opacity: 0.42;
@@ -2226,21 +2266,11 @@ td {
   inset: 0.5rem 0.65rem 0.45rem;
   z-index: 0;
   background-image:
-    linear-gradient(color-mix(in srgb, var(--map-rule) 42%, transparent), color-mix(in srgb, var(--map-rule) 42%, transparent)),
-    linear-gradient(color-mix(in srgb, var(--map-rule) 42%, transparent), color-mix(in srgb, var(--map-rule) 42%, transparent)),
-    repeating-linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--map-rule) 24%, transparent) 0 1px,
-      transparent 1px 11px
-    ),
-    repeating-linear-gradient(
-      to right,
-      color-mix(in srgb, var(--map-rule) 24%, transparent) 0 1px,
-      transparent 1px 11px
-    );
+    linear-gradient(color-mix(in srgb, var(--map-rule) 68%, transparent), color-mix(in srgb, var(--map-rule) 68%, transparent)),
+    linear-gradient(color-mix(in srgb, var(--map-rule) 68%, transparent), color-mix(in srgb, var(--map-rule) 68%, transparent));
   background-repeat: no-repeat;
-  background-position: center top, left center, center top, left center;
-  background-size: 1px 100%, 100% 1px, 0.55rem 100%, 100% 0.55rem;
+  background-position: center top, left center;
+  background-size: 1px 100%, 100% 1px;
   opacity: 0.72;
 }
 
@@ -2303,9 +2333,9 @@ td {
   height: 1px;
   background-image: repeating-linear-gradient(
     90deg,
-    color-mix(in srgb, var(--map-rule) 42%, transparent) 0 0.72rem,
+    color-mix(in srgb, var(--map-rule) 68%, transparent) 0 0.72rem,
     transparent 0.72rem 0.98rem,
-    color-mix(in srgb, var(--map-rule) 24%, transparent) 0.98rem 1.06rem,
+    color-mix(in srgb, var(--map-rule) 48%, transparent) 0.98rem 1.06rem,
     transparent 1.06rem 1.34rem
   );
   opacity: 0.6;
@@ -2404,9 +2434,9 @@ td {
   height: 1px;
   background-image: repeating-linear-gradient(
     90deg,
-    color-mix(in srgb, var(--map-rule) 42%, transparent) 0 0.72rem,
+    color-mix(in srgb, var(--map-rule) 68%, transparent) 0 0.72rem,
     transparent 0.72rem 0.98rem,
-    color-mix(in srgb, var(--map-rule) 24%, transparent) 0.98rem 1.06rem,
+    color-mix(in srgb, var(--map-rule) 48%, transparent) 0.98rem 1.06rem,
     transparent 1.06rem 1.34rem
   );
   opacity: 0.6;
@@ -2432,9 +2462,9 @@ td {
   height: 1px;
   background-image: repeating-linear-gradient(
     90deg,
-    color-mix(in srgb, var(--map-rule) 42%, transparent) 0 0.72rem,
+    color-mix(in srgb, var(--map-rule) 68%, transparent) 0 0.72rem,
     transparent 0.72rem 0.98rem,
-    color-mix(in srgb, var(--map-rule) 24%, transparent) 0.98rem 1.06rem,
+    color-mix(in srgb, var(--map-rule) 48%, transparent) 0.98rem 1.06rem,
     transparent 1.06rem 1.34rem
   );
   opacity: 0.6;
@@ -2586,20 +2616,14 @@ td {
     bottom: 0.58rem;
     left: calc(0.34rem - 0.24rem + 0.5px);
     width: 0.48rem;
-    background-image:
-      linear-gradient(
-        180deg,
-        color-mix(in srgb, var(--map-rule) 42%, transparent) 0%,
-        color-mix(in srgb, var(--map-rule) 20%, transparent) 100%
-      ),
-      repeating-linear-gradient(
-        to bottom,
-        color-mix(in srgb, var(--map-rule) 26%, transparent) 0 1px,
-        transparent 1px 11px
-      );
+    background-image: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--map-rule) 68%, transparent) 0%,
+      color-mix(in srgb, var(--map-rule) 44%, transparent) 100%
+    );
     background-repeat: no-repeat;
-    background-position: center top, center top;
-    background-size: 1px 100%, 0.48rem 100%;
+    background-position: center top;
+    background-size: 1px 100%;
     opacity: 0.6;
   }
 
@@ -2607,8 +2631,8 @@ td {
     display: block;
     inset: 0.3rem 58% 0.3rem 0.02rem;
     background-image:
-      linear-gradient(to right, color-mix(in srgb, var(--map-rule) 10%, transparent) 1px, transparent 1px),
-      linear-gradient(to bottom, color-mix(in srgb, var(--map-rule) 8%, transparent) 1px, transparent 1px);
+      linear-gradient(to right, color-mix(in srgb, var(--map-rule) 14%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, var(--map-rule) 12%, transparent) 1px, transparent 1px);
     background-position: 0.14rem 0.12rem;
     background-size: 2.35rem 2.35rem;
     opacity: 0.46;
@@ -2626,21 +2650,15 @@ td {
     left: -0.66rem;
     right: 0.08rem;
     height: 0.48rem;
-    background-image:
-      linear-gradient(
-        90deg,
-        color-mix(in srgb, var(--map-rule) 34%, transparent) 0%,
-        color-mix(in srgb, var(--map-rule) 16%, transparent) 72%,
-        transparent 100%
-      ),
-      repeating-linear-gradient(
-        90deg,
-        color-mix(in srgb, var(--map-rule) 24%, transparent) 0 1px,
-        transparent 1px 11px
-      );
+    background-image: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--map-rule) 60%, transparent) 0%,
+      color-mix(in srgb, var(--map-rule) 38%, transparent) 72%,
+      transparent 100%
+    );
     background-repeat: no-repeat;
-    background-position: left center, left center;
-    background-size: 100% 1px, 100% 0.48rem;
+    background-position: left center;
+    background-size: 100% 1px;
     opacity: 0.58;
   }
 

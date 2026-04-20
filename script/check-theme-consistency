@@ -7,15 +7,25 @@ ROOT = Pathname.new(__dir__).join('..').expand_path
 SCSS = ROOT.join('_sass/minimal-light.scss')
 MULTI_LAYOUT = ROOT.join('_layouts/multi.html')
 POST_LAYOUT = ROOT.join('_layouts/post.html')
+THEME_INIT = ROOT.join('_includes/scripts/theme-init.html')
+THEME_TOGGLE = ROOT.join('assets/js/theme-toggle.js')
 
 def fail_with(message)
   warn "Theme consistency check failed: #{message}"
   exit 1
 end
 
-scss_text = SCSS.read
-multi_text = MULTI_LAYOUT.read
-post_text = POST_LAYOUT.read
+def read_utf8(path)
+  text = path.binread.force_encoding(Encoding::UTF_8)
+  fail_with("Invalid UTF-8 in #{path.relative_path_from(ROOT)}") unless text.valid_encoding?
+  text
+end
+
+scss_text = read_utf8(SCSS)
+multi_text = read_utf8(MULTI_LAYOUT)
+post_text = read_utf8(POST_LAYOUT)
+theme_init_text = read_utf8(THEME_INIT)
+theme_toggle_text = read_utf8(THEME_TOGGLE)
 
 fail_with('Missing --theme-fade-duration token in _sass/minimal-light.scss') unless scss_text.include?('--theme-fade-duration:')
 
@@ -26,5 +36,26 @@ fail_with('Missing scoped transition selector for .theme-fade-scope content') un
 fail_with('Missing theme-fade-scope class in _layouts/multi.html main wrapper') unless multi_text.include?('theme-fade-scope')
 
 fail_with('Missing theme-fade-scope class in _layouts/post.html main wrapper') unless post_text.include?('theme-fade-scope')
+
+saved_theme_key = theme_init_text[/var THEME_KEY = '([^']+)'/, 1]
+persisted_theme_key = theme_toggle_text[/var THEME_KEY = '([^']+)'/, 1]
+
+fail_with('Missing saved theme read in _includes/scripts/theme-init.html') unless saved_theme_key
+
+fail_with('Missing theme key constant in assets/js/theme-toggle.js') unless persisted_theme_key
+
+fail_with("Theme storage key mismatch between init and toggle scripts: #{saved_theme_key.inspect} vs #{persisted_theme_key.inspect}") unless saved_theme_key == persisted_theme_key
+
+fail_with('Missing saved theme read in _includes/scripts/theme-init.html') unless theme_init_text.include?('localStorage.getItem(THEME_KEY)')
+
+fail_with('Missing prepaint theme style block in _includes/scripts/theme-init.html') unless theme_init_text.include?('<style>') && theme_init_text.include?("@media (prefers-color-scheme: dark)")
+
+fail_with('Missing computed-theme fallback in assets/js/theme-toggle.js') unless theme_toggle_text.include?('function computedTheme()')
+
+fail_with('Missing explicit theme reader in assets/js/theme-toggle.js') unless theme_toggle_text.include?('function explicitTheme()')
+
+fail_with('Missing saved theme write in assets/js/theme-toggle.js') unless theme_toggle_text.include?("localStorage.setItem(THEME_KEY, nextTheme)")
+
+fail_with('Missing explicit theme application in assets/js/theme-toggle.js') unless theme_toggle_text.include?("document.documentElement.setAttribute('data-theme', nextTheme)")
 
 puts 'Theme consistency check passed.'
