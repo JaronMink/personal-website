@@ -14,7 +14,30 @@
   if (!target || !target.classList.contains('pub-item')) return;
 
   target.classList.add('is-target-highlighted');
-  if (reduceMotion) return;
+
+  function alignTargetToUpperThird() {
+    var currentScrollY = window.scrollY || window.pageYOffset || 0;
+    var viewportHeight = (window.visualViewport && window.visualViewport.height) || window.innerHeight || document.documentElement.clientHeight || 0;
+    if (!viewportHeight) return;
+
+    var desiredTop = viewportHeight / 3;
+    var rect = target.getBoundingClientRect();
+    var nextScrollY = currentScrollY + rect.top - desiredTop;
+    var maxScrollY = Math.max(0, document.documentElement.scrollHeight - viewportHeight);
+    var clampedScrollY = Math.max(0, Math.min(nextScrollY, maxScrollY));
+
+    if (Math.abs(clampedScrollY - currentScrollY) < 1) return;
+    window.scrollTo(0, clampedScrollY);
+  }
+
+  if (reduceMotion) {
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        alignTargetToUpperThird();
+      });
+    });
+    return;
+  }
 
   document.documentElement.classList.add('pub-highlight-active');
 
@@ -93,6 +116,7 @@
   // considering scroll deltas as user intent.
   window.requestAnimationFrame(function () {
     window.requestAnimationFrame(function () {
+      alignTargetToUpperThird();
       initialScrollY = window.scrollY || 0;
       scrollBaselineReady = true;
     });
