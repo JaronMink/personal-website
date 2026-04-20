@@ -11,11 +11,11 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
     </div>
     {% endif %}
     <div class="home-identity-details">
-      <p class="home-meta-line">{{ site.data.profile.pronouns_display }}</p>
-      <p class="home-meta-line">{{ site.position }}</p>
-      <p class="home-meta-line"><a href="{{ site.data.links.scai_web }}">{{ site.affiliation }}</a></p>
-      <p class="home-meta-line"><a href="{{ site.data.profile.lab.url }}">{{ site.data.profile.lab.short_name }}</a></p>
-      <p class="home-meta-line"><a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a></p>
+      <p class="home-meta-line"><span class="home-meta-copy">{{ site.data.profile.pronouns_display }}</span></p>
+      <p class="home-meta-line"><span class="home-meta-copy">{{ site.position }}</span></p>
+      <p class="home-meta-line"><a href="{{ site.data.links.scai_web }}"><span class="home-meta-copy">{{ site.affiliation }}</span></a></p>
+      <p class="home-meta-line"><a href="{{ site.data.profile.lab.url }}"><span class="home-meta-copy">{{ site.data.profile.lab.short_name }}</span></a></p>
+      <p class="home-meta-line"><a href="mailto:{{ site.data.profile.email }}"><span class="home-meta-copy">{{ site.data.profile.email }}</span></a></p>
       <div class="home-identity-icons" aria-label="Profile links">
         {% if site.google_scholar %}
         <a href="{{ site.google_scholar }}" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
@@ -68,7 +68,7 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
       </section>
 
       <section class="home-interest-item">
-        <h3><a href="{{ '/publications/?area=ml-security-and-privacy' | relative_url }}">AI Security and Privacy</a></h3>
+        <h3><a href="{{ '/publications/?area=ml-security-and-privacy' | relative_url }}">Security and Privacy of AI</a></h3>
         <p class="home-interest-desc">How sociotechnical factors impact real-world adoption of AI defenses.</p>
         <p class="home-interest-links-inline">
           <span class="home-interest-link-item"><a href="{{ '/publications/#pub-security-not-my-field-2023' | relative_url }}">AML Defense Barriers</a></span>

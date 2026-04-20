@@ -9,7 +9,7 @@
     - slug: ml-for-security-applications
       label: AI for Security Applications
     - slug: ml-security-and-privacy
-      label: AI Security and Privacy
+      label: Security and Privacy of AI
     - slug: non-ml-human-factors
       label: Usable Security and Privacy
   - slug: system-security-track

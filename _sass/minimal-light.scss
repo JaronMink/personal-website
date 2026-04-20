@@ -180,7 +180,7 @@ body {
   background-color: var(--bg);
   color: var(--text);
   font: 16px/1.56 "Public Sans", sans-serif;
-  transition: background-color 180ms ease, color 180ms ease;
+  transition: background-color 180ms ease;
 }
 
 .skip-link {
@@ -267,40 +267,6 @@ a:focus-visible {
   pre,
   th,
   td
-) {
-  transition: background-color var(--theme-fade-duration) ease, color var(--theme-fade-duration) ease, border-color var(--theme-fade-duration) ease;
-}
-
-.theme-fade {
-  transition: background-color var(--theme-fade-duration) ease, color var(--theme-fade-duration) ease, border-color var(--theme-fade-duration) ease;
-}
-
-.theme-fade-scope :where(
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul,
-  ol,
-  li,
-  dl,
-  dt,
-  dd,
-  span,
-  strong,
-  em,
-  small,
-  time,
-  a,
-  blockquote,
-  pre,
-  th,
-  td,
-  .btn,
-  .label
 ) {
   transition: background-color var(--theme-fade-duration) ease, color var(--theme-fade-duration) ease, border-color var(--theme-fade-duration) ease;
 }
@@ -1624,7 +1590,6 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
 .pub-item.is-target-highlighted .pub-note,
 .pub-item.is-target-highlighted .pub-links a,
 .pub-item.is-target-highlighted .pub-title strong {
-  transition: none;
 }
 
 .pub-item .pub-title,
@@ -1634,7 +1599,7 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
 .pub-item .pub-links a,
 .pub-item .pub-title strong {
   opacity: 1;
-  transition: color 320ms cubic-bezier(0.22, 1, 0.36, 1), text-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1), opacity 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 520ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .pub-item.is-filter-entering .pub-title {
@@ -1676,6 +1641,10 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
 
 .pub-title {
   line-height: 1.35;
+}
+
+.pub-title strong {
+  color: inherit;
 }
 
 .pub-authors,
@@ -2128,6 +2097,7 @@ td {
   left: -1.4rem;
   width: 1px;
   background-color: var(--border);
+  transition: background-color var(--theme-fade-duration) ease;
   pointer-events: none;
 }
 
@@ -2162,7 +2132,8 @@ td {
   margin: 0;
   font-size: 0.92rem;
   line-height: 1.35;
-  color: var(--text);
+  color: inherit;
+  transition: none;
 }
 
 .home-meta-line + .home-meta-line {
@@ -2174,8 +2145,12 @@ td {
   transition: none;
 }
 
-.home-meta-line a:hover {
-  color: var(--heading);
+.home-meta-copy {
+  color: var(--text);
+}
+
+.home-meta-line a:hover .home-meta-copy {
+  text-decoration: underline;
 }
 
 .home-identity-icons {
@@ -2254,24 +2229,28 @@ td {
 .home-interest-grid::before {
   inset: 0.3rem;
   z-index: 0;
+  color: var(--map-rule);
   background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--map-rule) 14%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--map-rule) 12%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in srgb, currentColor 14%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, currentColor 12%, transparent) 1px, transparent 1px);
   background-position: 0.12rem 0.08rem;
   background-size: 2.35rem 2.35rem;
   opacity: 0.42;
+  transition: color var(--theme-fade-duration) ease;
 }
 
 .home-interest-grid::after {
   inset: 0.5rem 0.65rem 0.45rem;
   z-index: 0;
+  color: color-mix(in srgb, var(--map-rule) 68%, transparent);
   background-image:
-    linear-gradient(color-mix(in srgb, var(--map-rule) 68%, transparent), color-mix(in srgb, var(--map-rule) 68%, transparent)),
-    linear-gradient(color-mix(in srgb, var(--map-rule) 68%, transparent), color-mix(in srgb, var(--map-rule) 68%, transparent));
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor);
   background-repeat: no-repeat;
   background-position: center top, left center;
   background-size: 1px 100%, 100% 1px;
   opacity: 0.72;
+  transition: color var(--theme-fade-duration) ease;
 }
 
 .home-interest-item::before {
@@ -2322,7 +2301,7 @@ td {
   letter-spacing: 0.08em;
   line-height: 1;
   text-transform: none;
-  color: color-mix(in srgb, var(--map-ink) 60%, var(--muted));
+  color: var(--heading);
   white-space: nowrap;
 }
 
@@ -2331,14 +2310,16 @@ td {
   content: "";
   flex: 1 1 auto;
   height: 1px;
+  color: var(--map-rule);
   background-image: repeating-linear-gradient(
     90deg,
-    color-mix(in srgb, var(--map-rule) 68%, transparent) 0 0.72rem,
+    color-mix(in srgb, currentColor 68%, transparent) 0 0.72rem,
     transparent 0.72rem 0.98rem,
-    color-mix(in srgb, var(--map-rule) 48%, transparent) 0.98rem 1.06rem,
+    color-mix(in srgb, currentColor 48%, transparent) 0.98rem 1.06rem,
     transparent 1.06rem 1.34rem
   );
   opacity: 0.6;
+  transition: color var(--theme-fade-duration) ease;
 }
 
 .home-interest-map-label::before {
@@ -2393,7 +2374,6 @@ td {
   position: relative;
   z-index: 1;
   margin-bottom: 0;
-  color: color-mix(in srgb, var(--map-ink) 80%, var(--muted));
   font-size: 0.9rem;
   line-height: 1.48;
 }
@@ -2432,14 +2412,16 @@ td {
   left: 0;
   width: min(100%, 11.5rem);
   height: 1px;
+  color: var(--map-rule);
   background-image: repeating-linear-gradient(
     90deg,
-    color-mix(in srgb, var(--map-rule) 68%, transparent) 0 0.72rem,
+    color-mix(in srgb, currentColor 68%, transparent) 0 0.72rem,
     transparent 0.72rem 0.98rem,
-    color-mix(in srgb, var(--map-rule) 48%, transparent) 0.98rem 1.06rem,
+    color-mix(in srgb, currentColor 48%, transparent) 0.98rem 1.06rem,
     transparent 1.06rem 1.34rem
   );
   opacity: 0.6;
+  transition: color var(--theme-fade-duration) ease;
 }
 
 .home-subtle-links {
@@ -2460,14 +2442,16 @@ td {
   content: "";
   flex: 1 1 auto;
   height: 1px;
+  color: var(--map-rule);
   background-image: repeating-linear-gradient(
     90deg,
-    color-mix(in srgb, var(--map-rule) 68%, transparent) 0 0.72rem,
+    color-mix(in srgb, currentColor 68%, transparent) 0 0.72rem,
     transparent 0.72rem 0.98rem,
-    color-mix(in srgb, var(--map-rule) 48%, transparent) 0.98rem 1.06rem,
+    color-mix(in srgb, currentColor 48%, transparent) 0.98rem 1.06rem,
     transparent 1.06rem 1.34rem
   );
   opacity: 0.6;
+  transition: color var(--theme-fade-duration) ease;
 }
 
 .home-subtle-links::before {
@@ -2616,26 +2600,30 @@ td {
     bottom: 0.58rem;
     left: calc(0.34rem - 0.24rem + 0.5px);
     width: 0.48rem;
+    color: var(--map-rule);
     background-image: linear-gradient(
       180deg,
-      color-mix(in srgb, var(--map-rule) 68%, transparent) 0%,
-      color-mix(in srgb, var(--map-rule) 44%, transparent) 100%
+      color-mix(in srgb, currentColor 68%, transparent) 0%,
+      color-mix(in srgb, currentColor 44%, transparent) 100%
     );
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 1px 100%;
     opacity: 0.6;
+    transition: color var(--theme-fade-duration) ease;
   }
 
   .home-interest-grid::before {
     display: block;
     inset: 0.3rem 58% 0.3rem 0.02rem;
+    color: var(--map-rule);
     background-image:
-      linear-gradient(to right, color-mix(in srgb, var(--map-rule) 14%, transparent) 1px, transparent 1px),
-      linear-gradient(to bottom, color-mix(in srgb, var(--map-rule) 12%, transparent) 1px, transparent 1px);
+      linear-gradient(to right, color-mix(in srgb, currentColor 14%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, currentColor 12%, transparent) 1px, transparent 1px);
     background-position: 0.14rem 0.12rem;
     background-size: 2.35rem 2.35rem;
     opacity: 0.46;
+    transition: color var(--theme-fade-duration) ease;
   }
 
   .home-interest-item {
@@ -2650,16 +2638,18 @@ td {
     left: -0.66rem;
     right: 0.08rem;
     height: 0.48rem;
+    color: var(--map-rule);
     background-image: linear-gradient(
       90deg,
-      color-mix(in srgb, var(--map-rule) 60%, transparent) 0%,
-      color-mix(in srgb, var(--map-rule) 38%, transparent) 72%,
+      color-mix(in srgb, currentColor 60%, transparent) 0%,
+      color-mix(in srgb, currentColor 38%, transparent) 72%,
       transparent 100%
     );
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 100% 1px;
     opacity: 0.58;
+    transition: color var(--theme-fade-duration) ease;
   }
 
   .home-interest-item:first-child::before {

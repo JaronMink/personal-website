@@ -29,13 +29,25 @@ theme_toggle_text = read_utf8(THEME_TOGGLE)
 
 fail_with('Missing --theme-fade-duration token in _sass/minimal-light.scss') unless scss_text.include?('--theme-fade-duration:')
 
-fail_with('Missing .theme-fade-scope rule in _sass/minimal-light.scss') unless scss_text.include?('.theme-fade-scope')
+fail_with('Unexpected body color transition in _sass/minimal-light.scss') if scss_text.include?('transition: background-color 180ms ease, color 180ms ease;')
 
-fail_with('Missing scoped transition selector for .theme-fade-scope content') unless scss_text.match?(/\.theme-fade-scope\s*:where\(/m)
+fail_with('Unexpected .theme-fade rule in _sass/minimal-light.scss') if scss_text.include?('.theme-fade')
 
-fail_with('Missing theme-fade-scope class in _layouts/multi.html main wrapper') unless multi_text.include?('theme-fade-scope')
+fail_with('Unexpected .theme-fade-scope rule in _sass/minimal-light.scss') if scss_text.include?('.theme-fade-scope')
 
-fail_with('Missing theme-fade-scope class in _layouts/post.html main wrapper') unless post_text.include?('theme-fade-scope')
+fail_with('Unexpected .home-meta-line span transition override in _sass/minimal-light.scss') if scss_text.include?(".home-meta-line span {\n  transition: none;\n}")
+
+if scss_text.match?(/\.home-meta-copy\s*\{[^}]*\btransition\s*:/m)
+  fail_with('Unexpected local transition on .home-meta-copy in _sass/minimal-light.scss')
+end
+
+fail_with('Missing top-main class in _layouts/multi.html main wrapper') unless multi_text.include?('class="top-main')
+
+fail_with('Unexpected theme-fade-scope class in _layouts/multi.html main wrapper') if multi_text.include?('theme-fade-scope')
+
+fail_with('Missing top-main class in _layouts/post.html main wrapper') unless post_text.include?('class="top-main')
+
+fail_with('Unexpected theme-fade-scope class in _layouts/post.html main wrapper') if post_text.include?('theme-fade-scope')
 
 saved_theme_key = theme_init_text[/var THEME_KEY = '([^']+)'/, 1]
 persisted_theme_key = theme_toggle_text[/var THEME_KEY = '([^']+)'/, 1]
