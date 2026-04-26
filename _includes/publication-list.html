@@ -106,19 +106,8 @@
     <div class="pub-year-group">
       <div class="pub-year-sticky">{{ year_group.name }}</div>
       <div class="pub-group-items">
-        {% comment %}
-          Keep preprints ahead of formally published papers within a year while
-          preserving the reverse-chronological order already established above.
-        {% endcomment %}
         {% for pub in year_group.items %}
-          {% if pub.preprint %}
-            {% include publication-item.html pub=pub %}
-          {% endif %}
-        {% endfor %}
-        {% for pub in year_group.items %}
-          {% unless pub.preprint %}
-            {% include publication-item.html pub=pub %}
-          {% endunless %}
+        {% include publication-item.html pub=pub %}
         {% endfor %}
       </div>
     </div>

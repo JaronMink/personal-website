@@ -529,6 +529,10 @@ h2 {
   margin-top: 2rem;
 }
 
+.top-main h2 {
+  color: var(--text);
+}
+
 p,
 ul,
 ol,
@@ -2147,6 +2151,7 @@ td {
 
 .home-meta-copy {
   color: var(--text);
+  transition: color var(--theme-fade-duration) ease;
 }
 
 .home-meta-line a:hover .home-meta-copy {
@@ -2301,7 +2306,7 @@ td {
   letter-spacing: 0.08em;
   line-height: 1;
   text-transform: none;
-  color: var(--heading);
+  color: var(--text);
   white-space: nowrap;
 }
 

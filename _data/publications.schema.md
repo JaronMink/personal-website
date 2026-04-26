@@ -6,8 +6,8 @@ Each publication entry supports the following fields:
 
 - `id` (required, string): stable slug, e.g. `pub-security-not-my-field-2023`
 - `year` (required, integer): publication year
-- `date` (required, string): ISO 8601 publication date in `YYYY-MM-DD` format, used for ordering within a year
-- `preprint` (optional, boolean): set to `true` for preprints; preprints render before published papers within the same year and must match the `venue` text
+- `date` (required, string): ISO 8601 publication date in `YYYY-MM-DD` format, used for chronological ordering; for preprints, use the arXiv posting date
+- `preprint` (optional, boolean): set to `true` for preprints and keep it consistent with the `venue` text
 - `title` (required, string)
 - `authors` (required, non-empty array of strings)
 - `venue` (required, string)

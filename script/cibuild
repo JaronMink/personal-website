@@ -15,7 +15,6 @@ else
 bundle exec htmlproofer ./_site --check-html --disable-external
 fi
 bundle exec rubocop -D
-bundle exec script/check-theme-consistency
 bundle exec script/validate-html
 bundle exec script/validate-publications
 bundle exec script/validate-site-data

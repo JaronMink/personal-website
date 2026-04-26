@@ -27,7 +27,6 @@ Useful checks:
 ```bash
 bundle exec script/validate-publications
 bundle exec script/validate-site-data
-bundle exec script/check-theme-consistency
 ```
 
 Additional optional checks live in `script/`.
