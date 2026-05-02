@@ -76,22 +76,22 @@ $palettes: (
   ),
   "new": (
     light: (
-      bg: #f6f2ea,
-      surface: #fffdf8,
-      text: #3f474e,
-      muted: #5f6973,
-      heading: #2f373f,
-      link: #3f5c74,
-      link-hover: #2f495f,
-      border: #cbbfae,
-      accent: #f1ece2,
-      icon-bg: #3b454f,
-      icon-bg-hover: #2f3842,
-      map-wash: #efe6d6,
-      map-ink: #504e48,
-      map-rule: #aa9d84,
-      map-smudge: #e6dbc5,
-      map-speck: rgba(80, 78, 72, 0.11)
+      bg: #f5f0e7,
+      surface: #fffaf1,
+      text: #353f46,
+      muted: #68635d,
+      heading: #2f2b26,
+      link: #4a6174,
+      link-hover: #344b5e,
+      border: #d5cabb,
+      accent: #ebe4d8,
+      icon-bg: #3d3934,
+      icon-bg-hover: #2f2b27,
+      map-wash: #ece3d6,
+      map-ink: #4b4540,
+      map-rule: #a99f91,
+      map-smudge: #ded2c1,
+      map-speck: rgba(56, 61, 66, 0.1)
     ),
     dark: (
       bg: #1d1b19,
@@ -2093,18 +2093,6 @@ td {
   min-width: 0;
 }
 
-.home-main::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -1.4rem;
-  width: 1px;
-  background-color: var(--border);
-  transition: background-color var(--theme-fade-duration) ease;
-  pointer-events: none;
-}
-
 .home-identity-details {
   min-width: 0;
 }
@@ -2569,10 +2557,6 @@ td {
     gap: 0.8rem;
     align-items: center;
     text-align: left;
-  }
-
-  .home-main::before {
-    content: none;
   }
 
   .home-lead {

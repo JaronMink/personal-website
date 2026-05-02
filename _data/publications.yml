@@ -39,6 +39,9 @@
   - label: PDF
     url_key: mink_arxiv26_pdf
     style: primary
+  - label: Poster
+    url_key: mink_factt_26_poster
+    style: info
 - id: pub-i-can-se-clearly-2026
   year: 2026
   date: '2026-04-13'
