@@ -5,5 +5,4 @@ permalink: /teaching/
 description: Teaching experience across information assurance, trustworthy human-ML interaction, and computer security courses.
 ---
 
-## Teaching
 {% include teaching-list.html %}
