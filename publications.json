@@ -3,7 +3,8 @@ layout: null
 permalink: /publications.json
 ---
 [
-{% for pub in site.data.publications %}
+{% assign visible_publications = site.data.publications | where_exp: 'pub', 'pub.hidden != true' %}
+{% for pub in visible_publications %}
   {
     "id": {{ pub.id | jsonify }},
     "year": {{ pub.year | jsonify }},

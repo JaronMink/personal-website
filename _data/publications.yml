@@ -85,6 +85,47 @@
   - label: PDF
     url_key: nath_arxiv26_pdf
     style: primary
+- id: pub-open-challenges-multi-agent-security-2026
+  year: 2026
+  date: '2026-04-29'
+  preprint: true
+  hidden: true
+  title: 'Open Challenges in Multi-Agent Security: Towards Secure Systems of Interacting
+    AI Agents'
+  authors:
+  - Christian Schroeder de Witt
+  - Klaudia Krawiecka
+  - Igor Krawczuk
+  - Ben Hagag
+  - William L. Anderson
+  - Peter Belcak
+  - Ben Bucknall
+  - Xiaohong Cai
+  - Ayush Chopra
+  - Doron Cohen
+  - Ron F. Del Rosario
+  - Andis Draguns
+  - Annie Gray
+  - Keren Katz
+  - Vasilios Mavroudis
+  - Jaron Mink
+  - Sumeet Ramesh Motwani
+  - Jonathan Petit
+  - Leif-Sebastian Rembeck
+  - Chandler Smith
+  - John Sotiropoulos
+  - Steven Young
+  - Sarah Scheffler
+  - Mary Llewellyn
+  venue: Pre-Print, 2026
+  areas:
+  - ml-security-and-privacy
+  - ml-for-security-applications
+  - ml-enabled-abuse
+  links:
+  - label: PDF
+    url_key: schroeder_de_witt_arxiv25_pdf
+    style: primary
 - id: pub-solk-2024
   year: 2024
   date: '2024-08-14'

@@ -8,6 +8,7 @@ Each publication entry supports the following fields:
 - `year` (required, integer): publication year
 - `date` (required, string): ISO 8601 publication date in `YYYY-MM-DD` format, used for chronological ordering; for preprints, use the arXiv posting date
 - `preprint` (optional, boolean): set to `true` for preprints and keep it consistent with the `venue` text
+- `hidden` (optional, boolean): set to `true` to keep an entry in data while excluding it from public publication lists and JSON output
 - `title` (required, string)
 - `authors` (required, non-empty array of strings)
 - `venue` (required, string)
