@@ -34,7 +34,7 @@
 // - "old" = pre-paper color combo
 // - "parchment-bold" = heavier parchment/map-paper experiment
 // - "paper-pencil" = paper-and-pencil combo
-// - "board" = active whiteboard light mode and chalkboard dark mode
+// - "board" = active tan light mode and crisp grayscale dark mode
 $palette-choice: "board";
 $research-board-enabled: false !default;
 
@@ -160,8 +160,8 @@ $palettes: (
       text: #243038,
       muted: #625d55,
       heading: #18262b,
-      link: #3b536f,
-      link-hover: #293d56,
+      link: #245f8a,
+      link-hover: #173f61,
       border: #b3a58f,
       accent: #eadcca,
       icon-bg: #1f2f36,
@@ -173,22 +173,22 @@ $palettes: (
       map-speck: rgba(36, 48, 56, 0.08)
     ),
     dark: (
-      bg: #0f1f1d,
-      surface: #172926,
-      text: #edf0e6,
-      muted: #bdc8bd,
-      heading: #f8f4df,
-      link: #d7cda2,
-      link-hover: #eee4b8,
-      border: #5f756c,
-      accent: #1b2b24,
-      icon-bg: #295e55,
-      icon-bg-hover: #36796e,
-      map-wash: #192f2b,
-      map-ink: #f8f4df,
-      map-rule: #8fa397,
-      map-smudge: #29483f,
-      map-speck: rgba(248, 244, 223, 0.08)
+      bg: #0c0d0f,
+      surface: #17191d,
+      text: #e6e8eb,
+      muted: #aeb3b9,
+      heading: #fafafa,
+      link: #9fb9cc,
+      link-hover: #c1d3df,
+      border: #3e4248,
+      accent: #222428,
+      icon-bg: #3f444b,
+      icon-bg-hover: #565c65,
+      map-wash: #161719,
+      map-ink: #f1f2f3,
+      map-rule: #767b83,
+      map-smudge: #2a2d31,
+      map-speck: rgba(245, 246, 247, 0.07)
     )
   )
 );
