@@ -69,7 +69,8 @@
             data-title="{{ include.pub.title | escape }}"
             data-authors="{{ bib_author_line | strip | escape }}"
             data-booktitle="{{ include.pub.venue | escape }}"
-            data-year="{{ include.pub.year }}">
+            data-year="{{ include.pub.year }}"
+            data-bibtex="{{ include.pub.citation.bibtex | jsonify | escape }}">
             Copy Bib
           </button>
         </div>
@@ -95,7 +96,8 @@
         data-title="{{ include.pub.title | escape }}"
         data-authors="{{ bib_author_line | strip | escape }}"
         data-booktitle="{{ include.pub.venue | escape }}"
-        data-year="{{ include.pub.year }}">
+        data-year="{{ include.pub.year }}"
+        data-bibtex="{{ include.pub.citation.bibtex | jsonify | escape }}">
         Bib
       </button>
     {% endif %}

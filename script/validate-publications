@@ -14,6 +14,8 @@ AREAS_FILE = ROOT.join('_data/publication-areas.yml')
 
 PUBLICATION_ID_PATTERN = /\Apub-[a-z0-9-]+\z/.freeze
 PUBLICATION_DATE_PATTERN = /\A\d{4}-\d{2}-\d{2}\z/.freeze
+CITATION_URL_PATTERN = %r{\Ahttps?://}.freeze
+CITATION_BIBTEX_PATTERN = /\A@\w+\s*\{[^,]+,/m.freeze
 
 def fail_with(errors)
   errors.each { |error| warn "Publication validation failed: #{error}" }
@@ -81,6 +83,45 @@ def preprint_venue?(venue)
 
   normalized_venue = venue.downcase
   normalized_venue.include?('pre-print') || normalized_venue.include?('preprint')
+end
+
+def validate_iso_date(value, label, errors)
+  if !value.is_a?(String) || !value.match?(PUBLICATION_DATE_PATTERN)
+    errors << "#{label} must be a string in YYYY-MM-DD format"
+    return nil
+  end
+
+  Date.iso8601(value)
+rescue Date::Error
+  errors << "#{label} '#{value}' is not a valid calendar date"
+  nil
+end
+
+def validate_citation(pub, pub_id, errors)
+  citation = pub['citation']
+  unless citation.is_a?(Hash)
+    errors << "#{pub_id}: citation must be an object"
+    return
+  end
+
+  source = citation['source']
+  unless source.is_a?(String) && source.match?(CITATION_URL_PATTERN)
+    errors << "#{pub_id}: citation source must be an http(s) URL"
+  end
+
+  validate_iso_date(citation['verified_date'], "#{pub_id}: citation verified_date", errors)
+
+  bibtex = citation['bibtex']
+  if !bibtex.is_a?(String) || bibtex.strip.empty?
+    errors << "#{pub_id}: citation bibtex must be a non-empty string"
+  elsif !bibtex.strip.match?(CITATION_BIBTEX_PATTERN)
+    errors << "#{pub_id}: citation bibtex must start with a BibTeX entry"
+  end
+
+  notes = citation['notes']
+  if !notes.nil? && (!notes.is_a?(String) || notes.strip.empty?)
+    errors << "#{pub_id}: citation notes must be a non-empty string when present"
+  end
 end
 
 publications = read_yaml(PUBLICATIONS_FILE)
@@ -154,17 +195,9 @@ publications.each_with_index do |pub, index|
   if !preprint.nil? && preprint != true && preprint != false
     errors << "#{pub_id}: preprint must be a boolean when present"
   end
-  if !date.is_a?(String) || !date.match?(PUBLICATION_DATE_PATTERN)
-    errors << "#{pub_id}: date must be a string in YYYY-MM-DD format"
-  else
-    begin
-      parsed_date = Date.iso8601(date)
-      if year.is_a?(Integer) && parsed_date.year != year
-        errors << "#{pub_id}: date year #{parsed_date.year} must match year #{year}"
-      end
-    rescue Date::Error
-      errors << "#{pub_id}: date '#{date}' is not a valid calendar date"
-    end
+  parsed_date = validate_iso_date(date, "#{pub_id}: date", errors)
+  if parsed_date && year.is_a?(Integer) && parsed_date.year != year
+    errors << "#{pub_id}: date year #{parsed_date.year} must match year #{year}"
   end
   if preprint_venue?(venue)
     errors << "#{pub_id}: preprint must be true when venue marks the entry as a preprint" unless preprint == true
@@ -181,6 +214,7 @@ publications.each_with_index do |pub, index|
 
   validate_resource(pub['links'], pub_id, 'links', links, errors)
   validate_resource(pub['news'], pub_id, 'news', links, errors)
+  validate_citation(pub, pub_id, errors)
 
   areas = pub['areas']
   if !areas.is_a?(Array) || areas.empty?

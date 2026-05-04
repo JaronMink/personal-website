@@ -126,7 +126,21 @@
     return base;
   }
 
+  function curatedBibFromButton(button) {
+    var encoded = button.getAttribute('data-bibtex') || '';
+    if (!encoded.trim()) return '';
+
+    try {
+      return JSON.parse(encoded);
+    } catch (e) {
+      return encoded;
+    }
+  }
+
   function buildBibFromButton(button) {
+    var curatedBib = curatedBibFromButton(button);
+    if (curatedBib.trim()) return curatedBib;
+
     var titleRaw = button.getAttribute('data-title') || '';
     var authorsRaw = button.getAttribute('data-authors') || '';
     var venue = button.getAttribute('data-booktitle') || '';
