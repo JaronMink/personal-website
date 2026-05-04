@@ -310,6 +310,9 @@
   - label: Talk
     url_key: mink_usenix_23_talk
     style: info
+  - label: Poster
+    url_key: mink_usenix_23_poster
+    style: info
   - label: Slides
     url_key: mink_usenix_23_slides
     style: info
