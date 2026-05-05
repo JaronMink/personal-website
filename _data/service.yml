@@ -83,5 +83,7 @@
           url_key: tdsc23_web
     - venue: IEEE S&P SPSI
       links:
-        - label: "2025"
-          url: https://www.computer.org/digital-library/magazines/sp/cfp-gender-and-sexuality-in-online-safety/
+        - label: "Gender & Sexuality"
+          url: https://www.computer.org/digital-library/magazines/sp/cfp-gender-and-sexuality-in-online-safety
+        - label: "Autonomous AI Agents"
+          url: https://www.computer.org/digital-library/magazines/sp/cfp-autonomous-ai-agents-computer-security
