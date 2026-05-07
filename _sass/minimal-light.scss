@@ -34,7 +34,7 @@
 // - "old" = pre-paper color combo
 // - "parchment-bold" = heavier parchment/map-paper experiment
 // - "paper-pencil" = paper-and-pencil combo
-// - "board" = active tan light mode and crisp grayscale dark mode
+// - "board" = active tan light mode and crisp slate dark mode
 $palette-choice: "board";
 $research-board-enabled: false !default;
 
@@ -173,22 +173,22 @@ $palettes: (
       map-speck: rgba(36, 48, 56, 0.08)
     ),
     dark: (
-      bg: #0c0d0f,
-      surface: #17191d,
-      text: #e6e8eb,
-      muted: #aeb3b9,
-      heading: #fafafa,
-      link: #9fb9cc,
-      link-hover: #c1d3df,
-      border: #3e4248,
-      accent: #222428,
-      icon-bg: #3f444b,
-      icon-bg-hover: #565c65,
-      map-wash: #161719,
-      map-ink: #f1f2f3,
-      map-rule: #767b83,
-      map-smudge: #2a2d31,
-      map-speck: rgba(245, 246, 247, 0.07)
+      bg: #171c23,
+      surface: #202832,
+      text: #e3e7eb,
+      muted: #a9b1ba,
+      heading: #f7f8f6,
+      link: #9fcff2,
+      link-hover: #c2e4fa,
+      border: #46515d,
+      accent: #243242,
+      icon-bg: #344b60,
+      icon-bg-hover: #416078,
+      map-wash: #202731,
+      map-ink: #f1f3f5,
+      map-rule: #7f8b97,
+      map-smudge: #334150,
+      map-speck: rgba(220, 228, 236, 0.07)
     )
   )
 );
