@@ -44,7 +44,8 @@ exclude:
  - LICENSE
  - minimal-light.gemspec
  - script
-  - publication-list.md
+ - publication-list.md
+ - publication-bibs.md
 defaults:
   -
     scope:
