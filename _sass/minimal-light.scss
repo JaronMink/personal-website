@@ -160,8 +160,8 @@ $palettes: (
       text: #243038,
       muted: #625d55,
       heading: #18262b,
-      link: #245f8a,
-      link-hover: #173f61,
+      link: #1f2a31,
+      link-hover: #0f181d,
       border: #b3a58f,
       accent: #eadcca,
       icon-bg: #1f2f36,
@@ -178,8 +178,8 @@ $palettes: (
       text: #e3e7eb,
       muted: #a9b1ba,
       heading: #f7f8f6,
-      link: #9fcff2,
-      link-hover: #c2e4fa,
+      link: #ffffff,
+      link-hover: #ffffff,
       border: #46515d,
       accent: #243242,
       icon-bg: #344b60,
@@ -627,14 +627,16 @@ ol {
 a {
   color: var(--link);
   text-decoration: none;
-  text-decoration-color: color-mix(in srgb, var(--link) 64%, transparent);
+  text-decoration-color: color-mix(in srgb, currentColor 58%, transparent);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.13em;
+  font-weight: inherit;
 }
 
 a:hover {
   color: var(--link-hover);
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 72%, transparent);
 }
 
 strong {
@@ -2221,6 +2223,9 @@ td {
 .home-meta-line a {
   color: inherit;
   transition: none;
+  text-decoration: none;
+  font-weight: inherit;
+  background-image: none;
 }
 
 .home-meta-copy {
