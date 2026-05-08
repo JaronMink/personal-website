@@ -155,7 +155,6 @@
   year: 2026
   date: '2026-04-29'
   preprint: true
-  hidden: true
   title: 'Open Challenges in Multi-Agent Security: Towards Secure Systems of Interacting
     AI Agents'
   authors:
@@ -195,7 +194,7 @@
   citation:
     source: https://arxiv.org/abs/2505.02077
     verified_date: '2026-05-03'
-    notes: Hidden entry; BibTeX year follows the initial arXiv posting while the site date tracks the latest revision currently stored in YAML.
+    notes: BibTeX year follows the initial arXiv posting while the site date tracks the latest revision currently stored in YAML.
     bibtex: |
       @misc{schroederdewitt2025open,
         title = {Open Challenges in Multi-Agent Security: Towards Secure Systems of Interacting {AI} Agents},

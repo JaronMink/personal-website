@@ -90,13 +90,13 @@ Source: https://arxiv.org/abs/2604.09998
 }
 ```
 
-## pub-open-challenges-multi-agent-security-2026 (hidden)
+## pub-open-challenges-multi-agent-security-2026
 
 Open Challenges in Multi-Agent Security: Towards Secure Systems of Interacting AI Agents
 
 Source: https://arxiv.org/abs/2505.02077
 
-Notes: Hidden entry; BibTeX year follows the initial arXiv posting while the site date tracks the latest revision currently stored in YAML.
+Notes: BibTeX year follows the initial arXiv posting while the site date tracks the latest revision currently stored in YAML.
 
 ```bibtex
 @misc{schroederdewitt2025open,
