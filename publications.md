@@ -6,3 +6,5 @@ description: Peer-reviewed publications and preprints by Jaron Mink across secur
 ---
 
 {% include publication-list.html %}
+
+<div class="page-bottom-rule" aria-hidden="true"></div>

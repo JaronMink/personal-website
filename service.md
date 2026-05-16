@@ -6,3 +6,5 @@ description: Professional service including program committees, reviewing, and o
 ---
 
 {% include service-list.html %}
+
+<div class="page-bottom-rule" aria-hidden="true"></div>

@@ -6,3 +6,5 @@ description: Teaching experience across information assurance, trustworthy human
 ---
 
 {% include teaching-list.html %}
+
+<div class="page-bottom-rule" aria-hidden="true"></div>
