@@ -300,7 +300,6 @@ body::before {
   background-size: 4.7rem 4.9rem, 5.9rem 5.4rem, 6.6rem 6.1rem, 100% 100%;
   mix-blend-mode: var(--paper-blend-mode);
   opacity: var(--paper-grain-opacity);
-  transition: opacity var(--theme-fade-duration) ease;
 }
 
 .skip-link {
