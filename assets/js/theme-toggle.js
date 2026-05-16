@@ -10,6 +10,7 @@
 
   var button = document.getElementById('theme-toggle');
   if (!button) {
+    renderFavicons(currentTheme());
     releaseThemePreload();
     return;
   }
@@ -39,8 +40,32 @@
     button.setAttribute('aria-label', 'Switch to ' + nextTheme + ' mode');
   }
 
+  function renderFavicons(theme) {
+    var activeIcon = document.querySelector('[data-active-theme-favicon]');
+    var activeShortcutIcon = document.querySelector('[data-active-theme-shortcut-favicon]');
+    var lightIcons = document.querySelectorAll('[data-theme-favicon="light"], [data-theme-shortcut-favicon="light"]');
+    var darkIcons = document.querySelectorAll('[data-theme-favicon="dark"], [data-theme-shortcut-favicon="dark"]');
+    var selectedIcons = theme === 'dark' ? darkIcons : lightIcons;
+    var hiddenIcons = theme === 'dark' ? lightIcons : darkIcons;
+    var selectedHref = selectedIcons.length ? selectedIcons[0].getAttribute('href') : null;
+
+    if (selectedHref) {
+      if (activeIcon) activeIcon.setAttribute('href', selectedHref);
+      if (activeShortcutIcon) activeShortcutIcon.setAttribute('href', selectedHref);
+    }
+
+    selectedIcons.forEach(function (icon) {
+      icon.setAttribute('media', 'all');
+    });
+
+    hiddenIcons.forEach(function (icon) {
+      icon.setAttribute('media', 'not all');
+    });
+  }
+
   var activeTheme = currentTheme();
   renderButton(activeTheme);
+  renderFavicons(activeTheme);
   releaseThemePreload();
 
   button.addEventListener('click', function () {
@@ -51,6 +76,7 @@
     activeTheme = nextTheme;
     document.documentElement.setAttribute('data-theme', nextTheme);
     renderButton(nextTheme);
+    renderFavicons(nextTheme);
 
     try {
       localStorage.setItem(THEME_KEY, nextTheme);

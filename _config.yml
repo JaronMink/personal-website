@@ -4,7 +4,10 @@ pronouns: they/them
 description: I'm an Assistant Professor studying human-centered security for machine learning at Arizona State University.
 keywords: jaron maurice mink arizona state university asu uiuc university of illinois urbana-champaign urbana champaign usable human factors security machine learning
 google_analytics_ga4: "G-HS4P0K11JB"
-favicon: /assets/img/favicon-asu.ico
+favicon: /assets/img/favicon-light.png
+favicon_light: /assets/img/favicon-light.png
+favicon_dark: /assets/img/favicon-dark.png
+favicon_version: "20260515"
 canonical: https://jaronm.ink/
 publication_filters_enabled: true
 social_preview_image: /assets/img/JaronMink_faculty_compressed.jpg
