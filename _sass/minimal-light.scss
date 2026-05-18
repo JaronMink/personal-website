@@ -261,7 +261,6 @@ html {
   background-color: var(--bg);
   color: var(--text);
   color-scheme: light;
-  transition: var(--theme-transition);
 }
 
 * {
@@ -338,7 +337,6 @@ html.theme-preload body *::after {
   .home-identity-icons a,
   .home-interest-grid,
   .home-contact,
-  .home-awards,
   .pub-filter-view-toggle,
   .pub-filter-view--list .pub-filter-panel,
   .pub-area-tree-children,
@@ -374,7 +372,6 @@ html.theme-preload body *::after {
   .pub-area-filter--visual,
   .pub-area-venn-title,
   .pub-area-venn-label,
-  .pub-year-sticky,
   .pub-empty-state,
   .pub-links,
   .pub-more-menu,
@@ -421,6 +418,34 @@ html.theme-preload body *::after {
   .bib-popover__textarea
 ) {
   transition: none;
+}
+
+/* Text-only owners must not carry a theme background unless a later rule overrides it. */
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .top-name,
+  .top-role,
+  .site-title,
+  .pronouns,
+  .site-meta,
+  .page-shell-title,
+  .post-shell-date,
+  .home-title,
+  .pub-equal-note,
+  .pub-filter-summary,
+  .pub-area-venn-title,
+  .pub-area-venn-label,
+  .pub-year-sticky,
+  .pub-empty-state,
+  .jump-nav,
+  .external-link
+) {
+  transition: var(--theme-text-transition);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1709,7 +1734,7 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
   top: 0.9rem;
   align-self: start;
   z-index: 3;
-  background: var(--bg);
+  background-color: transparent;
   display: inline-block;
   padding-right: 0.3rem;
 }
@@ -2118,7 +2143,8 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
     border: 0;
     border-bottom: 1px solid var(--border);
     border-radius: 0;
-    background: var(--bg);
+    background-color: var(--bg);
+    transition: var(--theme-transition);
     width: 100%;
     z-index: 4;
     isolation: isolate;
@@ -2132,7 +2158,8 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--bg);
+    background-color: var(--bg);
+    transition: background-color var(--theme-fade-duration) var(--theme-fade-ease);
     z-index: -1;
   }
 
