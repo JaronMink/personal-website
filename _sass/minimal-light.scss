@@ -221,7 +221,7 @@ $palettes: (
   --accent-font: "Iowan Old Style", "Charter", "Georgia", serif;
   --pressed-rule-shadow-bottom: 0 1px 0 color-mix(in srgb, var(--surface) 46%, transparent), 0 -1px 0 color-mix(in srgb, var(--heading) 8%, transparent);
   --pressed-rule-shadow-top: 0 -1px 0 color-mix(in srgb, var(--surface) 38%, transparent), 0 1px 0 color-mix(in srgb, var(--heading) 7%, transparent);
-  --theme-fade-duration: 220ms;
+  --theme-fade-duration: 260ms;
   --theme-fade-ease: ease;
   --theme-paint-transition:
     background-color var(--theme-fade-duration) var(--theme-fade-ease),
