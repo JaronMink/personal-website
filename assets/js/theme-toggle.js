@@ -1,6 +1,6 @@
 (function () {
   var THEME_KEY = 'theme';
-  var THEME_TOGGLE_COOLDOWN_MS = 250;
+  var THEME_TOGGLE_COOLDOWN_MS = 280;
 
   function releaseThemePreload() {
     window.requestAnimationFrame(function () {

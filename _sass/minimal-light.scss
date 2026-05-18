@@ -219,21 +219,26 @@ $palettes: (
 :root {
   @include emit-theme-vars(light);
   --accent-font: "Iowan Old Style", "Charter", "Georgia", serif;
-  --paper-fiber: #5f4a32;
-  --paper-grain-opacity: 0.24;
-  --paper-blend-mode: multiply;
-  --ink-press-shadow: 0 1px 0 color-mix(in srgb, var(--surface) 48%, transparent), 0 -1px 0 color-mix(in srgb, var(--heading) 7%, transparent);
   --pressed-rule-shadow-bottom: 0 1px 0 color-mix(in srgb, var(--surface) 46%, transparent), 0 -1px 0 color-mix(in srgb, var(--heading) 8%, transparent);
   --pressed-rule-shadow-top: 0 -1px 0 color-mix(in srgb, var(--surface) 38%, transparent), 0 1px 0 color-mix(in srgb, var(--heading) 7%, transparent);
-  --theme-fade-duration: 180ms;
+  --theme-fade-duration: 220ms;
+  --theme-fade-ease: ease;
+  --theme-paint-transition:
+    background-color var(--theme-fade-duration) var(--theme-fade-ease),
+    border-color var(--theme-fade-duration) var(--theme-fade-ease),
+    outline-color var(--theme-fade-duration) var(--theme-fade-ease),
+    text-decoration-color var(--theme-fade-duration) var(--theme-fade-ease);
+  --theme-text-transition:
+    color var(--theme-fade-duration) var(--theme-fade-ease),
+    text-decoration-color var(--theme-fade-duration) var(--theme-fade-ease);
+  --theme-transition:
+    var(--theme-paint-transition),
+    var(--theme-text-transition);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     @include emit-theme-vars(dark);
-    --paper-fiber: #d7c8af;
-    --paper-grain-opacity: 0.11;
-    --paper-blend-mode: screen;
   }
 
   html:not([data-theme='light']) {
@@ -243,17 +248,11 @@ $palettes: (
 
 html[data-theme='light'] {
   @include emit-theme-vars(light);
-  --paper-fiber: #5f4a32;
-  --paper-grain-opacity: 0.24;
-  --paper-blend-mode: multiply;
   color-scheme: light;
 }
 
 html[data-theme='dark'] {
   @include emit-theme-vars(dark);
-  --paper-fiber: #d7c8af;
-  --paper-grain-opacity: 0.11;
-  --paper-blend-mode: screen;
   color-scheme: dark;
 }
 
@@ -262,6 +261,7 @@ html {
   background-color: var(--bg);
   color: var(--text);
   color-scheme: light;
+  transition: var(--theme-transition);
 }
 
 * {
@@ -269,37 +269,13 @@ html {
 }
 
 body {
-  position: relative;
-  isolation: isolate;
   margin: 0;
   min-height: 100vh;
   padding: 1.6rem 1.25rem 2.5rem;
   background-color: var(--bg);
   color: var(--text);
   font: 16px/1.56 "Public Sans", sans-serif;
-  transition: background-color 180ms ease;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle at 18% 16%, color-mix(in srgb, var(--paper-fiber) 18%, transparent) 0 1px, transparent 1.35px),
-    radial-gradient(circle at 78% 42%, color-mix(in srgb, var(--paper-fiber) 14%, transparent) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 36% 82%, color-mix(in srgb, var(--paper-fiber) 12%, transparent) 0 1px, transparent 1.45px),
-    repeating-linear-gradient(
-      102deg,
-      transparent 0 0.72rem,
-      color-mix(in srgb, var(--paper-fiber) 4%, transparent) 0.72rem 0.78rem,
-      transparent 0.78rem 1.55rem
-    );
-  background-position: 0 0, 1.2rem 0.85rem, 0.45rem 1.8rem, 0 0;
-  background-size: 4.7rem 4.9rem, 5.9rem 5.4rem, 6.6rem 6.1rem, 100% 100%;
-  mix-blend-mode: var(--paper-blend-mode);
-  opacity: var(--paper-grain-opacity);
+  transition: var(--theme-transition);
 }
 
 .skip-link {
@@ -335,8 +311,15 @@ a:focus-visible {
   text-decoration: underline;
 }
 
+html.theme-preload,
+html.theme-preload body,
+html.theme-preload body *,
+html.theme-preload body *::before,
+html.theme-preload body *::after {
+  transition: none !important;
+}
+
 :where(
-  a,
   button,
   input,
   textarea,
@@ -345,60 +328,103 @@ a:focus-visible {
   .btn,
   .label,
   .top-bar,
-  .top-nav a,
   .top-theme-toggle,
-  .site-header,
-  .site-content,
-  .site-footer,
+  .skip-link,
+  .post-shell-header,
+  .page-shell-header--ruled,
+  .page-bottom-rule,
+  .social-icons a,
   .home-split,
-  .home-identity,
-  .home-research-board,
+  .home-identity-icons a,
   .home-interest-grid,
-  .home-interest-item,
-  .home-interest-map-label,
-  .home-interest-links-inline,
-  .home-subtle-links,
   .home-contact,
   .home-awards,
+  .pub-filter-view-toggle,
+  .pub-filter-view--list .pub-filter-panel,
+  .pub-area-tree-children,
+  .pub-area-filter,
+  .pub-area-filter--visual,
+  .pub-more-menu,
+  .bib-popover__panel,
+  blockquote,
+  pre,
+  th,
+  td
+) {
+  transition: var(--theme-paint-transition);
+}
+
+:where(
+  a,
+  .top-name,
+  .top-role,
+  .top-nav a,
+  .top-theme-toggle,
+  .skip-link,
+  .site-title,
+  .pronouns,
+  .site-meta,
   .social-icons a,
-  .home-identity-icons a,
+  .page-shell-title,
+  .post-shell-date,
+  .pub-equal-note,
+  .pub-filter-summary,
+  .pub-filter-view-button,
+  .pub-area-filter,
+  .pub-area-filter--visual,
+  .pub-area-venn-title,
+  .pub-area-venn-label,
   .pub-year-sticky,
-  .pub-item,
-  .pub-group-items,
+  .pub-empty-state,
+  .pub-links,
+  .pub-more-menu,
+  .bib-popover__panel,
+  .home-title,
+  .home-identity-icons a,
+  .home-interest-item h3 a,
+  .home-interest-links-inline,
+  .home-subtle-links,
+  .jump-nav,
+  .external-link,
   h1,
   h2,
   h3,
   h4,
   h5,
   h6,
-  p,
-  ul,
-  ol,
-  li,
-  dl,
-  dt,
-  dd,
+  blockquote,
+  pre,
+  code,
+  th,
+  td
+) {
+  transition: var(--theme-transition);
+}
+
+:where(
   span,
   strong,
   em,
   small,
   time,
-  blockquote,
-  pre,
-  th,
-  td
+  i,
+  svg,
+  .home-meta-line,
+  .home-meta-line a,
+  .home-meta-copy,
+  .pub-title,
+  .pub-authors,
+  .pub-venue,
+  .pub-note,
+  .pub-more-link,
+  .pub-more-bib,
+  .bib-popover__textarea
 ) {
-  transition: background-color var(--theme-fade-duration) ease, color var(--theme-fade-duration) ease, border-color var(--theme-fade-duration) ease;
-}
-
-html.theme-preload body,
-html.theme-preload body *,
-html.theme-preload body *::before,
-html.theme-preload body *::after {
-  transition: none !important;
+  transition: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html,
   body,
   body *,
   body *::before,
@@ -407,15 +433,7 @@ html.theme-preload body *::after {
   }
 }
 
-@media print {
-  body::before {
-    display: none;
-  }
-}
-
 .top-shell {
-  position: relative;
-  z-index: 1;
   max-width: 980px;
   margin: 0 auto;
 }
@@ -443,7 +461,6 @@ html.theme-preload body *::after {
   letter-spacing: 0.01em;
   color: var(--heading);
   text-decoration: none;
-  text-shadow: var(--ink-press-shadow);
 }
 
 .top-brand {
@@ -485,7 +502,7 @@ html.theme-preload body *::after {
 }
 
 .top-theme-toggle {
-  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  transition: var(--theme-transition);
 }
 
 .top-theme-toggle {
@@ -617,7 +634,6 @@ html.theme-preload body *::after {
   line-height: 1.1;
   letter-spacing: 0.01em;
   color: var(--heading);
-  text-shadow: var(--ink-press-shadow);
 }
 
 .pronouns {
@@ -660,14 +676,14 @@ html.theme-preload body *::after {
   color: var(--muted) !important;
   background-color: var(--surface);
   text-decoration: none;
-  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+  transition: var(--theme-transition);
 }
 
 .social-icons a i,
 .social-icons a svg,
 .home-identity-icons a i,
 .home-identity-icons a svg {
-  transition: color 180ms ease;
+  transition: none;
 }
 
 .social-icons a:hover {
@@ -693,14 +709,12 @@ h2 {
   font-family: var(--accent-font);
   font-weight: 600;
   letter-spacing: 0.01em;
-  text-shadow: var(--ink-press-shadow);
 }
 
 .top-main:not(.top-main--home) h3 {
   font-family: var(--accent-font);
   font-weight: 600;
   letter-spacing: 0.005em;
-  text-shadow: var(--ink-press-shadow);
 }
 
 h2 {
@@ -739,8 +753,9 @@ a:hover {
 }
 
 strong {
-  color: var(--heading);
+  color: inherit;
   font-weight: 600;
+  transition: none;
 }
 
 span.jaron {
@@ -1374,7 +1389,7 @@ span.jaron {
   background: transparent;
   border-color: color-mix(in srgb, var(--border) 76%, var(--icon-bg) 24%);
   color: color-mix(in srgb, var(--heading) 82%, var(--text) 18%);
-  transition: box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease, transform 180ms ease;
+  transition: color var(--theme-fade-duration) var(--theme-fade-ease), box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease, transform 180ms ease;
   pointer-events: none;
 }
 
@@ -1550,10 +1565,6 @@ span.jaron {
   border-color: color-mix(in srgb, var(--icon-bg) 72%, var(--border));
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--icon-bg) 22%, transparent), 0 6px 14px color-mix(in srgb, var(--icon-bg) 14%, transparent);
   color: var(--heading);
-}
-
-.pub-area-venn-title.is-hover-linked {
-  text-shadow: 0 0 8px color-mix(in srgb, var(--icon-bg) 34%, transparent);
 }
 
 html[data-theme='dark'] .pub-filter-view-button.is-active {
@@ -1733,7 +1744,6 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
   border-radius: 6px;
   outline: 1px solid transparent;
   box-shadow: 0 0 0 0 transparent;
-  will-change: opacity, transform;
   transition: background-color 280ms ease, outline-color 280ms ease, box-shadow 360ms cubic-bezier(0.22, 1, 0.36, 1), opacity 760ms cubic-bezier(0.16, 1, 0.3, 1), transform 920ms cubic-bezier(0.3, 0, 0.12, 1);
 }
 
@@ -1756,24 +1766,14 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
 .pub-item.is-target-highlighted .pub-venue,
 .pub-item.is-target-highlighted .pub-note {
   color: color-mix(in srgb, var(--heading) 94%, #fff 6%);
-  text-shadow: 0 0 10px color-mix(in srgb, var(--accent) 55%, transparent);
 }
 
-.pub-item.is-target-highlighted .pub-links .btn {
+.pub-item.is-target-highlighted .pub-links {
   color: color-mix(in srgb, var(--heading) 96%, #fff 4%);
-  text-shadow: 0 0 10px color-mix(in srgb, var(--accent) 50%, transparent);
 }
 
 .pub-item.is-target-highlighted .pub-title strong {
-  color: color-mix(in srgb, var(--heading) 88%, #fff 12%);
-}
-
-.pub-item.is-target-highlighted .pub-title,
-.pub-item.is-target-highlighted .pub-authors,
-.pub-item.is-target-highlighted .pub-venue,
-.pub-item.is-target-highlighted .pub-note,
-.pub-item.is-target-highlighted .pub-links .btn,
-.pub-item.is-target-highlighted .pub-title strong {
+  color: inherit;
 }
 
 .pub-item .pub-title,
@@ -1847,6 +1847,7 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
   flex-wrap: wrap;
   align-items: center;
   gap: 0.1rem 0.28rem;
+  color: var(--text);
 }
 
 .pub-more {
@@ -1870,7 +1871,7 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
 .pub-more[open] > summary.pub-more-trigger,
 .pub-more > summary.pub-more-trigger:focus-visible {
   border-color: var(--muted);
-  color: var(--text) !important;
+  color: inherit !important;
 }
 
 .pub-more-menu {
@@ -1882,6 +1883,7 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
   border: 1px solid var(--border);
   border-radius: 0.45rem;
   background: var(--surface);
+  color: var(--text);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
   z-index: 12;
 }
@@ -1895,11 +1897,12 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
   padding: 0.2rem 0.06rem;
   margin: 0;
   text-align: left;
-  color: var(--text);
+  color: inherit;
   font-size: 0.8rem;
   line-height: 1.3;
   text-decoration: none;
   cursor: pointer;
+  transition: none;
 }
 
 .pub-more-link:hover,
@@ -1932,6 +1935,7 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
   border: 1px solid var(--border);
   border-radius: 0.52rem;
   background: color-mix(in srgb, var(--surface) 94%, transparent);
+  color: var(--text);
   backdrop-filter: blur(5px) saturate(102%);
   -webkit-backdrop-filter: blur(5px) saturate(102%);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
@@ -1944,12 +1948,13 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
   border: 1px solid var(--border);
   border-radius: 0.32rem;
   background: var(--accent);
-  color: var(--text);
+  color: inherit;
   padding: 0.42rem;
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   font-size: 0.72rem;
   line-height: 1.3;
   resize: vertical;
+  transition: none;
 }
 
 .bib-popover__actions {
@@ -2193,6 +2198,7 @@ td {
   margin-right: 0.3rem;
   margin-bottom: 0.35rem;
   text-decoration: none;
+  transition: var(--theme-paint-transition);
 }
 
 .btn.btn-primary {
@@ -2202,7 +2208,7 @@ td {
 
 .btn.btn-info {
   background: var(--accent);
-  color: var(--text) !important;
+  color: inherit !important;
   border-color: var(--border);
 }
 
@@ -2219,7 +2225,7 @@ td {
 .btn.btn-info:hover,
 .btn.btn-info:focus-visible {
   border-color: var(--muted);
-  color: var(--text) !important;
+  color: inherit !important;
 }
 
 .js-copy-bib {
@@ -2317,7 +2323,6 @@ td {
   font-size: 0.92rem;
   line-height: 1.35;
   color: inherit;
-  transition: none;
 }
 
 .home-meta-line + .home-meta-line {
@@ -2333,8 +2338,8 @@ td {
 }
 
 .home-meta-copy {
-  color: var(--text);
-  transition: color var(--theme-fade-duration) ease;
+  color: inherit;
+  transition: none;
 }
 
 .home-meta-line a:hover .home-meta-copy {
@@ -2364,7 +2369,7 @@ td {
   text-decoration: none;
   font-size: 1.18rem;
   line-height: 1;
-  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+  transition: var(--theme-transition);
 }
 
 .home-identity-icons a:hover {
@@ -2495,7 +2500,7 @@ td {
   background: transparent;
   border: 0;
   border-radius: 0;
-  transition: color 180ms ease;
+  transition: none;
 }
 
 .home-interest-grid::before,
@@ -2517,7 +2522,7 @@ td {
   background-position: 0.12rem 0.08rem;
   background-size: 2.35rem 2.35rem;
   opacity: 0.42;
-  transition: color var(--theme-fade-duration) ease;
+  transition: color var(--theme-fade-duration) var(--theme-fade-ease);
 }
 
 .home-interest-grid::after {
@@ -2531,8 +2536,7 @@ td {
   background-position: center top, left center;
   background-size: 1px 100%, 100% 1px;
   opacity: 0.72;
-  filter: drop-shadow(0 1px 0 color-mix(in srgb, var(--surface) 30%, transparent));
-  transition: color var(--theme-fade-duration) ease;
+  transition: color var(--theme-fade-duration) var(--theme-fade-ease);
 }
 
 .home-interest-item::before {
@@ -2583,9 +2587,8 @@ td {
   letter-spacing: 0.05em;
   line-height: 1;
   text-transform: none;
-  color: var(--text);
+  color: inherit;
   white-space: nowrap;
-  text-shadow: var(--ink-press-shadow);
 }
 
 .home-interest-map-label::before,
@@ -2602,8 +2605,7 @@ td {
     transparent 1.06rem 1.34rem
   );
   opacity: 0.6;
-  filter: drop-shadow(0 1px 0 color-mix(in srgb, var(--surface) 34%, transparent));
-  transition: color var(--theme-fade-duration) ease;
+  transition: color var(--theme-fade-duration) var(--theme-fade-ease);
 }
 
 .home-interest-map-label::before {
@@ -2705,8 +2707,7 @@ td {
     transparent 1.06rem 1.34rem
   );
   opacity: 0.6;
-  filter: drop-shadow(0 1px 0 color-mix(in srgb, var(--surface) 34%, transparent));
-  transition: color var(--theme-fade-duration) ease;
+  transition: color var(--theme-fade-duration) var(--theme-fade-ease);
 }
 
 .home-subtle-links {
@@ -2736,8 +2737,7 @@ td {
     transparent 1.06rem 1.34rem
   );
   opacity: 0.6;
-  filter: drop-shadow(0 1px 0 color-mix(in srgb, var(--surface) 34%, transparent));
-  transition: color var(--theme-fade-duration) ease;
+  transition: color var(--theme-fade-duration) var(--theme-fade-ease);
 }
 
 .home-subtle-links::before {
@@ -2756,7 +2756,6 @@ td {
   font-weight: 500;
   letter-spacing: 0.02em;
   white-space: nowrap;
-  text-shadow: var(--ink-press-shadow);
 }
 
 @media screen and (min-width: 921px) {
@@ -2906,7 +2905,7 @@ td {
     background-position: center top;
     background-size: 1px 100%;
     opacity: 0.6;
-    transition: color var(--theme-fade-duration) ease;
+    transition: color var(--theme-fade-duration) var(--theme-fade-ease);
   }
 
   .home-interest-grid::before {
@@ -2919,7 +2918,7 @@ td {
     background-position: 0.14rem 0.12rem;
     background-size: 2.35rem 2.35rem;
     opacity: 0.46;
-    transition: color var(--theme-fade-duration) ease;
+    transition: color var(--theme-fade-duration) var(--theme-fade-ease);
   }
 
   .home-interest-item {
@@ -2945,7 +2944,7 @@ td {
     background-position: left center;
     background-size: 100% 1px;
     opacity: 0.58;
-    transition: color var(--theme-fade-duration) ease;
+    transition: color var(--theme-fade-duration) var(--theme-fade-ease);
   }
 
   .home-interest-item:first-child::before {
