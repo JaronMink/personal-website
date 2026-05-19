@@ -84,6 +84,7 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
             <span class="home-interest-link-item"><a href="{{ '/publications/#pub-solk-2024' | relative_url }}">Sociodemographics</a></span>
             <span class="home-interest-link-item"><a href="{{ '/publications/#pub-history-early-warning-2023' | relative_url }}">Audit Log SoK</a></span>
             <span class="home-interest-link-item"><a href="{{ '/publications/#pub-beyond-bot-detection-2022' | relative_url }}">Bot Survey Fraud</a></span>
+            <span class="home-interest-link-item"><a href="{{ '/publications/#pub-sok-survey-fraud-2026' | relative_url }}">Survey Fraud SoK</a></span>
             <span class="home-interest-link-item"><a href="{{ '/publications/#pub-users-can-deduce-2022' | relative_url }}">Privacy Zones</a></span>
           </p>
         </section>
