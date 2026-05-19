@@ -48,7 +48,7 @@
           {% endif %}
         {% endfor %}
       {% else %}
-        <span class="btn btn-unavailable btn-xs" role="status">PDF in preparation</span>
+        <span class="btn btn-unavailable btn-xs" role="status">In Preparation</span>
       {% endif %}
       <details class="pub-more">
         <summary class="btn btn-info btn-xs pub-more-trigger">More</summary>
@@ -88,7 +88,7 @@
         {% endfor %}
       {% endif %}
       {% unless has_pdf %}
-        <span class="btn btn-unavailable btn-xs" role="status">PDF in preparation</span>
+        <span class="btn btn-unavailable btn-xs" role="status">In Preparation</span>
       {% endunless %}
       {% if include.pub.links and include.pub.links.size > 0 %}
           {% for link in include.pub.links %}
