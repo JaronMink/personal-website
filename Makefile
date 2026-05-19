@@ -4,7 +4,7 @@ SHELL := /bin/zsh
 CHRUBY_VERSION ?= ruby-3.3.5
 CHRUBY_SH ?= /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 HOST ?= 127.0.0.1
-PORT ?= 4001
+PORT ?= 4002
 LIVERELOAD_PORT ?= 35730
 
 RUBY_SETUP = source "$(CHRUBY_SH)" && chruby "$(CHRUBY_VERSION)"

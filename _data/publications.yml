@@ -117,6 +117,33 @@
         location = {Barcelona, Spain},
         series = {CHI '26}
       }
+- id: pub-sok-survey-fraud-2026
+  year: 2026
+  date: '2026-08-23'
+  title: 'SoK: Mapping Threats to Defenses in Online Survey Fraud'
+  authors:
+  - Shiza Ali
+  - Wellington Esposito Barbosa
+  - Matthias Fassl
+  - Aditi Ganapathi
+  - Jaron Mink
+  - Adam J. Aviv
+  venue: Symposium on Usable Privacy and Security (SOUPS), 2026
+  areas:
+  - non-ml-human-factors
+  citation:
+    source: https://soups.page/
+    verified_date: '2026-05-19'
+    notes: No PDF or final proceedings URL was available when this entry was added; citation uses the supplied SOUPS 2026 publication metadata.
+    bibtex: |
+      @inproceedings{ali2026mapping,
+        author = {Shiza Ali and Wellington Esposito Barbosa and Matthias Fassl and Aditi Ganapathi and Jaron Mink and Adam J. Aviv},
+        title = {{SoK}: Mapping Threats to Defenses in Online Survey Fraud},
+        booktitle = {Twenty-Second Symposium on Usable Privacy and Security (SOUPS 2026)},
+        year = {2026},
+        publisher = {USENIX Association},
+        month = aug
+      }
 - id: pub-like-a-hammer-2026
   year: 2026
   date: '2026-08-23'

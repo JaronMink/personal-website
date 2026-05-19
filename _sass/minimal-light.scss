@@ -2239,6 +2239,14 @@ td {
   border-color: var(--border);
 }
 
+.btn.btn-unavailable {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--muted) !important;
+  cursor: default;
+  opacity: 0.76;
+}
+
 .btn:hover {
   text-decoration: none;
 }

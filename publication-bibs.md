@@ -71,6 +71,25 @@ Notes: ACM DOI and author-formatted ACM reference were available; final ACM DL B
 }
 ```
 
+## pub-sok-survey-fraud-2026
+
+SoK: Mapping Threats to Defenses in Online Survey Fraud
+
+Source: https://soups.page/
+
+Notes: No PDF or final proceedings URL was available when this entry was added; citation uses the supplied SOUPS 2026 publication metadata.
+
+```bibtex
+@inproceedings{ali2026mapping,
+  author = {Shiza Ali and Wellington Esposito Barbosa and Matthias Fassl and Aditi Ganapathi and Jaron Mink and Adam J. Aviv},
+  title = {{SoK}: Mapping Threats to Defenses in Online Survey Fraud},
+  booktitle = {Twenty-Second Symposium on Usable Privacy and Security (SOUPS 2026)},
+  year = {2026},
+  publisher = {USENIX Association},
+  month = aug
+}
+```
+
 ## pub-like-a-hammer-2026
 
 Like a Hammer, It Can Build, It Can Break: Large Language Model Uses, Perceptions, and Adoption in Cybersecurity Operations on Reddit
