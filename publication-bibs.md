@@ -78,15 +78,13 @@ Like a Hammer, It Can Build, It Can Break: Large Language Model Uses, Perception
 Source: https://arxiv.org/abs/2604.09998
 
 ```bibtex
-@misc{nath2026hammer,
-  title = {Like a Hammer, It Can Build, It Can Break: Large Language Model Uses, Perceptions, and Adoption in Cybersecurity Operations on Reddit},
+@inproceedings {nath2026hammer,
   author = {Souradip Nath and Chih-Yi Huang and Aditi Ganapathi and Kashyap Thimmaraju and Jaron Mink and Gail-Joon Ahn},
+  title = {Like a Hammer, It Can Build, It Can Break: Large Language Model Uses, Perceptions, and Adoption in Cybersecurity Operations on Reddit},
+  booktitle = {Twenty-Second Symposium on Usable Privacy and Security (SOUPS 2026)},
   year = {2026},
-  eprint = {2604.09998},
-  archivePrefix = {arXiv},
-  primaryClass = {cs.CR},
-  doi = {10.48550/arXiv.2604.09998},
-  url = {https://arxiv.org/abs/2604.09998}
+  publisher = {USENIX Association},
+  month = aug
 }
 ```
 
