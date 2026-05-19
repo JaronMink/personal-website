@@ -119,8 +119,7 @@
       }
 - id: pub-like-a-hammer-2026
   year: 2026
-  date: '2026-04-11'
-  preprint: true
+  date: '2026-08-23'
   title: 'Like a Hammer, It Can Build, It Can Break: Large Language Model Uses,
     Perceptions, and Adoption in Cybersecurity Operations on Reddit'
   authors:
@@ -130,7 +129,7 @@
   - Kashyap Thimmaraju
   - Jaron Mink
   - Gail-Joon Ahn
-  venue: Pre-Print, 2026
+  venue: Symposium on Usable Privacy and Security (SOUPS), 2026
   areas:
   - ml-for-security-applications
   links:
@@ -141,15 +140,13 @@
     source: https://arxiv.org/abs/2604.09998
     verified_date: '2026-05-03'
     bibtex: |
-      @misc{nath2026hammer,
-        title = {Like a Hammer, It Can Build, It Can Break: Large Language Model Uses, Perceptions, and Adoption in Cybersecurity Operations on Reddit},
+      @inproceedings {nath2026hammer,
         author = {Souradip Nath and Chih-Yi Huang and Aditi Ganapathi and Kashyap Thimmaraju and Jaron Mink and Gail-Joon Ahn},
+        title = {Like a Hammer, It Can Build, It Can Break: Large Language Model Uses, Perceptions, and Adoption in Cybersecurity Operations on Reddit},
+        booktitle = {Twenty-Second Symposium on Usable Privacy and Security (SOUPS 2026)},
         year = {2026},
-        eprint = {2604.09998},
-        archivePrefix = {arXiv},
-        primaryClass = {cs.CR},
-        doi = {10.48550/arXiv.2604.09998},
-        url = {https://arxiv.org/abs/2604.09998}
+        publisher = {USENIX Association},
+        month = aug
       }
 - id: pub-open-challenges-multi-agent-security-2026
   year: 2026
