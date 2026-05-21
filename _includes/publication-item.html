@@ -13,9 +13,9 @@
     {%- for author in include.pub.authors -%}
       {%- assign author_name = author | replace: '*', '' | strip -%}
       {%- if author_name == site.title -%}
-        <span class="pub-author-self">{{ author_name }}</span>{% if author contains '*' %}*{% endif %}
+        <span class="pub-author-name pub-author-self">{{ author_name }}{% if author contains '*' %}*{% endif %}</span>
       {%- else -%}
-        {{ author }}
+        <span class="pub-author-name">{{ author_name }}{% if author contains '*' %}*{% endif %}</span>
       {%- endif -%}
       {%- unless forloop.last -%}, {% endunless -%}
     {%- endfor -%}

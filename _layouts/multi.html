@@ -11,7 +11,7 @@ layout: base
     {% include top-nav.html %}
   </header>
 
-  <main id="main-content" tabindex="-1" class="top-main{% if page.url == '/' %} top-main--home{% endif %}">
+  <main id="main-content" tabindex="-1" class="top-main{% if page.url == '/' %} top-main--home{% endif %}{% if page.url == '/publications/' %} top-main--publications{% endif %}">
     {% unless page.hide_page_title %}
     {% if page.url != '/' and page.title %}
     <header class="page-shell-header{% if page.url == '/contact/' %} page-shell-header--ruled{% endif %}">

@@ -566,6 +566,10 @@ html.theme-preload body *::after {
   max-width: none;
 }
 
+.top-main--publications {
+  max-width: 900px;
+}
+
 .post-shell-header {
   margin-bottom: 1.25rem;
   padding-bottom: 0.75rem;
@@ -1859,6 +1863,10 @@ html[data-theme='dark'] .pub-filter-view--list .pub-area-filter--area.is-partial
 .pub-authors,
 .pub-venue {
   font-size: 0.95rem;
+}
+
+.pub-author-name {
+  white-space: nowrap;
 }
 
 .pub-author-self {
