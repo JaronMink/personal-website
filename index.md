@@ -73,6 +73,7 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
           <p class="home-interest-desc">How sociotechnical factors impact real-world adoption of AI defenses.</p>
           <p class="home-interest-links-inline">
             <span class="home-interest-link-item"><a href="{{ '/publications/#pub-security-not-my-field-2023' | relative_url }}">AML Defense Barriers</a></span>
+            <span class="home-interest-link-item"><a href="{{ '/publications/#pub-open-challenges-multi-agent-security-2026' | relative_url }}">Multi-Agent Security</a></span>
           </p>
         </section>
 
