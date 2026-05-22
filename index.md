@@ -72,8 +72,8 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
           <h3><a href="{{ '/publications/?area=ml-security-and-privacy' | relative_url }}">Security and Privacy of AI</a></h3>
           <p class="home-interest-desc">How sociotechnical factors impact real-world security and privacy of AI.</p>
           <p class="home-interest-links-inline">
-            <span class="home-interest-link-item"><a href="{{ '/publications/#pub-security-not-my-field-2023' | relative_url }}">AML Defense Barriers</a></span>
             <span class="home-interest-link-item"><a href="{{ '/publications/#pub-open-challenges-multi-agent-security-2026' | relative_url }}">Multi-Agent Security</a></span>
+            <span class="home-interest-link-item"><a href="{{ '/publications/#pub-security-not-my-field-2023' | relative_url }}">AML Defense Barriers</a></span>
           </p>
         </section>
 
