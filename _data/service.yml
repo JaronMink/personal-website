@@ -1,8 +1,8 @@
-- section: Organizing Committee
+- section: Lead Organizer
   entries:
-    - venue: CVPR
+    - venue: CVPR Humans of Generative AI
       links:
-        - label: Humans of Generative AI
+        - label: "2026"
           url: https://humansofgenerativeai.github.io/
 
 - section: Program Committee
