@@ -43,7 +43,7 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
 
   <div class="home-main">
     <p class="home-lead">
-      I'm an Assistant Professor of Computer Science at Arizona State University. I direct the {{ site.data.profile.lab.full_name }} ({{ site.data.profile.lab.short_name }}), where we study human-centered security and safety in AI systems.
+      I'm an Assistant Professor of Computer Science at Arizona State University. I work at the {{ site.data.profile.lab.short_name }}, where we study human-centered security and safety in AI systems.
     </p>
     <div class="home-research-board">
       <p class="home-interest-map-label">My Research</p>
