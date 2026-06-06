@@ -3,8 +3,6 @@
   {% assign area_tokens = include.pub.areas | join: ' ' %}
 {% endif %}
 <div class="pub-item" id="{{ include.pub.id }}" data-areas="{{ area_tokens | strip }}">
-  {% assign citation_key = include.pub.id | replace: 'pub-', '' | replace: '-', '' %}
-  {% capture bib_author_line %}{% for author in include.pub.authors %}{{ author | replace: '*', '' }}{% unless forloop.last %} and {% endunless %}{% endfor %}{% endcapture %}
   {% assign action_layout = site.publication_action_layout | default: "flat" %}
   {% assign links_map = site.data.links %}
 
@@ -50,10 +48,10 @@
       {% else %}
         <span class="btn btn-unavailable btn-xs" role="status">In Preparation</span>
       {% endif %}
-      <details class="pub-more">
-        <summary class="btn btn-info btn-xs pub-more-trigger">More</summary>
-        <div class="pub-more-menu">
-          {% if has_non_pdf %}
+      {% if has_non_pdf %}
+        <details class="pub-more">
+          <summary class="btn btn-info btn-xs pub-more-trigger">More</summary>
+          <div class="pub-more-menu">
             {% for link in include.pub.links %}
               {% assign link_label_downcase = link.label | downcase %}
               {% if link_label_downcase != 'pdf' %}
@@ -64,19 +62,9 @@
                 <a class="pub-more-link" href="{{ link_href }}">{{ link.label }}</a>
               {% endif %}
             {% endfor %}
-          {% endif %}
-          <button type="button"
-            class="pub-more-bib js-copy-bib"
-            data-citation-key="{{ citation_key }}"
-            data-title="{{ include.pub.title | escape }}"
-            data-authors="{{ bib_author_line | strip | escape }}"
-            data-booktitle="{{ include.pub.venue | escape }}"
-            data-year="{{ include.pub.year }}"
-            data-bibtex="{{ include.pub.citation.bibtex | jsonify | escape }}">
-            Copy Bib
-          </button>
-        </div>
-      </details>
+          </div>
+        </details>
+      {% endif %}
     {% else %}
       {% assign has_pdf = false %}
       {% if include.pub.links and include.pub.links.size > 0 %}
@@ -104,16 +92,6 @@
             <a class="{{ link_class }}" href="{{ link_href }}">{{ link.label }}</a>{% unless forloop.last %} {% endunless %}
           {% endfor %}
       {% endif %}
-      <button type="button"
-        class="btn btn-info btn-xs js-copy-bib"
-        data-citation-key="{{ citation_key }}"
-        data-title="{{ include.pub.title | escape }}"
-        data-authors="{{ bib_author_line | strip | escape }}"
-        data-booktitle="{{ include.pub.venue | escape }}"
-        data-year="{{ include.pub.year }}"
-        data-bibtex="{{ include.pub.citation.bibtex | jsonify | escape }}">
-        Bib
-      </button>
     {% endif %}
   </div>
 

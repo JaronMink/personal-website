@@ -12,10 +12,6 @@
   var views = Array.prototype.slice.call(filterRoot.querySelectorAll('[data-filter-view]'));
   var items = Array.prototype.slice.call(document.querySelectorAll('.pub-item'));
   var yearGroups = Array.prototype.slice.call(document.querySelectorAll('.pub-year-group'));
-  var listMain = filterRoot.querySelector('.pub-list-main');
-  var PANEL_ANIMATION_MS = 220;
-  var VIEW_ANIMATION_MS = 200;
-  var prefersReducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   var supportsHoverLinks = !!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
   var allArea = 'security-and-privacy';
   var buttonByArea = new Map();
@@ -29,8 +25,6 @@
   var leavesByButton = new Map();
   var buttonStateMeta = [];
   var diagramButtonMeta = [];
-  var viewTransitionSeq = 0;
-  var panelTransitionSeq = 0;
 
   if (buttons.length === 0 || items.length === 0) return;
 
@@ -208,10 +202,6 @@
 
   function applyFilter() {
     var showAll = selectedLeaves.size === allLeafAreas.size;
-    var shouldCompensateScroll = !prefersReducedMotion && !!listMain && window.scrollY > 0;
-    var beforeListTop = shouldCompensateScroll ? listMain.getBoundingClientRect().top : 0;
-    var previousRects = prefersReducedMotion ? null : captureVisibleRects(items);
-    var previousYearRects = prefersReducedMotion ? null : captureVisibleRects(yearGroups);
     var visibilityByItem = new Map();
     var visibleCount = 0;
 
@@ -231,17 +221,6 @@
       setElementVisibility(group, hasVisibleItems);
     });
 
-    animateLayoutShift(yearGroups, previousYearRects);
-    animateLayoutShift(items, previousRects);
-
-    if (shouldCompensateScroll) {
-      var afterListTop = listMain.getBoundingClientRect().top;
-      var topDelta = afterListTop - beforeListTop;
-      if (Math.abs(topDelta) > 0.5) {
-        window.scrollBy(0, topDelta);
-      }
-    }
-
     if (emptyState) {
       emptyState.hidden = visibleCount > 0;
     }
@@ -249,72 +228,8 @@
     setButtonState();
   }
 
-  function captureVisibleRects(elements) {
-    var rects = new Map();
-    elements.forEach(function (el) {
-      if (el.classList.contains('is-filter-hidden')) return;
-      rects.set(el, el.getBoundingClientRect());
-    });
-    return rects;
-  }
-
-  function animateLayoutShift(elements, previousRects) {
-    if (prefersReducedMotion || !previousRects) return;
-
-    elements.forEach(function (el) {
-      if (el.classList.contains('is-filter-hidden')) return;
-      var prev = previousRects.get(el);
-      if (!prev) return;
-      var next = el.getBoundingClientRect();
-      var dy = prev.top - next.top;
-      if (Math.abs(dy) < 1) return;
-
-      el.style.transform = 'translateY(' + dy + 'px)';
-      el.style.transition = 'none';
-      // Force style flush so the transform is applied before animating to zero.
-      void el.offsetHeight;
-      el.style.transition = '';
-      el.style.transform = '';
-    });
-  }
-
-  function animatePublicationShift(previousYearRects, previousItemRects) {
-    if (prefersReducedMotion || !previousYearRects || !previousItemRects) return;
-    window.requestAnimationFrame(function () {
-      animateLayoutShift(yearGroups, previousYearRects);
-      animateLayoutShift(items, previousItemRects);
-    });
-  }
-
   function setElementVisibility(el, shouldShow) {
-    if (el.__filterEnterTimer) {
-      window.clearTimeout(el.__filterEnterTimer);
-      el.__filterEnterTimer = null;
-    }
-
-    if (prefersReducedMotion) {
-      el.classList.toggle('is-filter-hidden', !shouldShow);
-      el.classList.remove('is-filter-entering');
-      return;
-    }
-
-    if (shouldShow) {
-      var wasHidden = el.classList.contains('is-filter-hidden');
-      if (!wasHidden) return;
-      el.classList.remove('is-filter-hidden');
-      el.classList.add('is-filter-entering');
-      // Force style flush so removing the class triggers fade-in.
-      void el.offsetHeight;
-      var enterDelayMs = el.classList.contains('pub-item') ? 140 : 60;
-      el.__filterEnterTimer = window.setTimeout(function () {
-        el.classList.remove('is-filter-entering');
-        el.__filterEnterTimer = null;
-      }, enterDelayMs);
-      return;
-    }
-
-    el.classList.remove('is-filter-entering');
-    el.classList.add('is-filter-hidden');
+    el.classList.toggle('is-filter-hidden', !shouldShow);
   }
 
   function selectAllLeaves() {
@@ -333,7 +248,22 @@
     });
   }
 
-  function clearViewTimers() {
+  function setFilterView(viewName) {
+    viewButtons.forEach(function (button) {
+      var isActive = button.getAttribute('data-filter-view-target') === viewName;
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    var nextView = null;
+
+    views.forEach(function (view) {
+      var isActive = view.getAttribute('data-filter-view') === viewName;
+      if (isActive) nextView = view;
+    });
+
+    if (!nextView) return;
+
     views.forEach(function (view) {
       if (view.__hideTimer) {
         window.clearTimeout(view.__hideTimer);
@@ -342,77 +272,12 @@
       view.classList.remove('is-view-entering');
       view.classList.remove('is-view-leaving');
       view.classList.remove('is-view-overlay');
+      view.hidden = view !== nextView;
     });
-  }
-
-  function setFilterView(viewName, options) {
-    var immediate = !!(options && options.immediate);
-    var transitionSeq = ++viewTransitionSeq;
-    var shouldAnimateLayoutShift = !immediate && !prefersReducedMotion;
-    var previousItemRects = shouldAnimateLayoutShift ? captureVisibleRects(items) : null;
-    var previousYearRects = shouldAnimateLayoutShift ? captureVisibleRects(yearGroups) : null;
-
-    viewButtons.forEach(function (button) {
-      var isActive = button.getAttribute('data-filter-view-target') === viewName;
-      button.classList.toggle('is-active', isActive);
-      button.setAttribute('aria-selected', isActive ? 'true' : 'false');
-    });
-
-    var nextView = null;
-    var currentView = null;
-
-    views.forEach(function (view) {
-      var isActive = view.getAttribute('data-filter-view') === viewName;
-      if (isActive) nextView = view;
-      if (!view.hidden) currentView = view;
-    });
-
-    if (!nextView) return;
-
-    clearViewTimers();
-
-    if (immediate) {
-      views.forEach(function (view) {
-        var isActive = view === nextView;
-        view.hidden = !isActive;
-      });
-      return;
-    }
-
-    if (!currentView || currentView === nextView) {
-      if (nextView.hidden) {
-        nextView.hidden = false;
-        nextView.classList.add('is-view-entering');
-        void nextView.offsetHeight;
-        nextView.classList.remove('is-view-entering');
-        animatePublicationShift(previousYearRects, previousItemRects);
-      }
-      return;
-    }
-
-    currentView.classList.add('is-view-leaving');
-    currentView.classList.add('is-view-overlay');
-    nextView.hidden = false;
-    nextView.classList.add('is-view-entering');
-    void nextView.offsetHeight;
-    nextView.classList.remove('is-view-entering');
-    animatePublicationShift(previousYearRects, previousItemRects);
-
-    currentView.__hideTimer = window.setTimeout(function () {
-      if (transitionSeq !== viewTransitionSeq) return;
-      currentView.hidden = true;
-      currentView.classList.remove('is-view-leaving');
-      currentView.classList.remove('is-view-overlay');
-      currentView.__hideTimer = null;
-    }, VIEW_ANIMATION_MS);
   }
 
   function setFilterPanelOpen(isOpen, options) {
     var immediate = !!(options && options.immediate);
-    var transitionSeq = ++panelTransitionSeq;
-    var shouldAnimateLayoutShift = !immediate && !prefersReducedMotion;
-    var previousItemRects = shouldAnimateLayoutShift ? captureVisibleRects(items) : null;
-    var previousYearRects = shouldAnimateLayoutShift ? captureVisibleRects(yearGroups) : null;
 
     if (!filterToggle || !filterPanel) return;
     if (filterPanel.__hideTimer) {
@@ -434,23 +299,12 @@
 
     if (isOpen) {
       filterPanel.hidden = false;
-      window.requestAnimationFrame(function () {
-        if (transitionSeq !== panelTransitionSeq) return;
-        filterPanel.classList.add('is-open');
-        animatePublicationShift(previousYearRects, previousItemRects);
-      });
+      filterPanel.classList.add('is-open');
       return;
     }
 
     filterPanel.classList.remove('is-open');
-    filterPanel.__hideTimer = window.setTimeout(function () {
-      if (transitionSeq !== panelTransitionSeq) return;
-      var closePreviousItemRects = prefersReducedMotion ? null : captureVisibleRects(items);
-      var closePreviousYearRects = prefersReducedMotion ? null : captureVisibleRects(yearGroups);
-      filterPanel.hidden = true;
-      animatePublicationShift(closePreviousYearRects, closePreviousItemRects);
-      filterPanel.__hideTimer = null;
-    }, PANEL_ANIMATION_MS);
+    filterPanel.hidden = true;
 
     selectAllLeaves();
     applyFilter();

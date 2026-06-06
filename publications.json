@@ -12,7 +12,6 @@ permalink: /publications.json
     "title": {{ pub.title | jsonify }},
     "authors": {{ pub.authors | jsonify }},
     "venue": {{ pub.venue | jsonify }},
-    "citation": {{ pub.citation | jsonify }},
     "links": [
       {% for link in pub.links %}
       {% assign link_href = link.url %}

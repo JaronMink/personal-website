@@ -7,12 +7,10 @@
     {% assign favicon_light = site.favicon_light | default: site.favicon %}
     {% assign favicon_dark = site.favicon_dark | default: favicon_light %}
     {% assign favicon_version = site.favicon_version | default: '1' %}
-    <link rel="icon" href="{{ favicon_light | relative_url }}?v={{ favicon_version }}" type="image/png" data-active-theme-favicon />
-    <link rel="shortcut icon" href="{{ favicon_light | relative_url }}?v={{ favicon_version }}" type="image/png" data-active-theme-shortcut-favicon />
-    <link rel="icon" href="{{ favicon_light | relative_url }}?v={{ favicon_version }}" type="image/png" media="(prefers-color-scheme: light)" data-theme-favicon="light" />
-    <link rel="icon" href="{{ favicon_dark | relative_url }}?v={{ favicon_version }}" type="image/png" media="(prefers-color-scheme: dark)" data-theme-favicon="dark" />
-    <link rel="shortcut icon" href="{{ favicon_light | relative_url }}?v={{ favicon_version }}" type="image/png" media="(prefers-color-scheme: light)" data-theme-shortcut-favicon="light" />
-    <link rel="shortcut icon" href="{{ favicon_dark | relative_url }}?v={{ favicon_version }}" type="image/png" media="(prefers-color-scheme: dark)" data-theme-shortcut-favicon="dark" />
+    <link rel="icon" href="{{ favicon_light | relative_url }}?v={{ favicon_version }}" type="image/png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="{{ favicon_dark | relative_url }}?v={{ favicon_version }}" type="image/png" media="(prefers-color-scheme: dark)" />
+    <link rel="shortcut icon" href="{{ favicon_light | relative_url }}?v={{ favicon_version }}" type="image/png" media="(prefers-color-scheme: light)" />
+    <link rel="shortcut icon" href="{{ favicon_dark | relative_url }}?v={{ favicon_version }}" type="image/png" media="(prefers-color-scheme: dark)" />
     <link rel="preload" href="{{ '/assets/fonts/public-sans/PublicSans-400.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="{{ '/assets/fonts/public-sans/PublicSans-600.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="{{ '/assets/fonts/public-sans/PublicSans-700.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
@@ -33,9 +31,6 @@
     {% if page.url == '/publications/' and site.publication_filters_enabled %}
     <script defer src="{{ '/assets/js/publication-area-filter.js' | relative_url }}"></script>
     {% endif %}
-    <script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
     <script defer src="{{ '/assets/js/publication-highlight.js' | relative_url }}"></script>
-    <script>window.__BIB_POPUP_ENABLED__ = {{ site.bib_popup_enabled | default: false | jsonify }};</script>
-    <script defer src="{{ '/assets/js/copy-bib.js' | relative_url }}"></script>
   </body>
 </html>
