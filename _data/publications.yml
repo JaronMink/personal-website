@@ -56,6 +56,9 @@
   - label: Poster
     url_key: mink_factt_26_poster
     style: info
+  news:
+  - label: Harvard Berkman Klein Center Whitepaper on Survivor-Centered NCII Reporting
+    url: https://asml.cyber.harvard.edu/wp-content/uploads/sites/18/2026/06/NCII-Whitepaper-Final.pdf
   citation:
     source: https://doi.org/10.1145/3805689.3812314
     verified_date: '2026-05-03'
