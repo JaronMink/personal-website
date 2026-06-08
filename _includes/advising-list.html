@@ -1,0 +1,10 @@
+{% for group in site.data.advising %}
+### {{ group.section }}
+<ul>
+  {% for entry in group.entries %}
+  {% unless entry.hidden == true %}
+  <li>{% if entry.url %}<a href="{{ entry.url }}">{{ entry.name }}</a>{% else %}{{ entry.name }}{% endif %}{% if entry.note %} <em>{{ entry.note }}</em>{% endif %}</li>
+  {% endunless %}
+  {% endfor %}
+</ul>
+{% endfor %}

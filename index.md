@@ -45,8 +45,15 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
     <p class="home-lead">
       I'm an Assistant Professor of Computer Science at Arizona State University. I work at the {{ site.data.profile.lab.short_name }}, where we study human-centered security and safety in AI systems.
     </p>
-    <div class="home-research-board">
+    {% assign home_research_grid_variant = site.home_research_grid_variant | default: 'current' %}
+    <div class="home-research-board home-research-board--grid-{{ home_research_grid_variant | slugify }}">
       <p class="home-interest-map-label">My Research</p>
+      <div class="home-grid-switch" aria-label="Research grid style" hidden aria-hidden="true">
+        <button type="button" data-grid-variant="current" aria-pressed="true">Current</button>
+        <button type="button" data-grid-variant="strong" aria-pressed="false">Strong</button>
+        <button type="button" data-grid-variant="dotted" aria-pressed="false">Dotted</button>
+        <button type="button" data-grid-variant="dot-dash" aria-pressed="false">Dot-Dash</button>
+      </div>
       <div class="home-interest-grid">
         <section class="home-interest-item">
           <h3><a href="{{ '/publications/?area=ml-enabled-abuse' | relative_url }}">AI-Enabled Abuse</a></h3>
@@ -94,6 +101,33 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
     </div>
   </div>
 </section>
+
+<script>
+  (() => {
+    const board = document.querySelector('.home-research-board');
+    const switcher = document.querySelector('.home-grid-switch');
+    if (!board || !switcher) return;
+
+    const variants = ['current', 'strong', 'dotted', 'dot-dash'];
+    const buttons = Array.from(switcher.querySelectorAll('[data-grid-variant]'));
+
+    function setVariant(nextVariant) {
+      variants.forEach((variant) => {
+        board.classList.toggle(`home-research-board--grid-${variant}`, variant === nextVariant);
+      });
+      buttons.forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.gridVariant === nextVariant));
+      });
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => setVariant(button.dataset.gridVariant));
+    });
+
+    const initialVariant = variants.find((variant) => board.classList.contains(`home-research-board--grid-${variant}`)) || 'current';
+    setVariant(initialVariant);
+  })();
+</script>
 
 <section class="home-awards">
   <h2>Selected Awards</h2>

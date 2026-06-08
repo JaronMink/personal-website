@@ -1,0 +1,22 @@
+- section: PhD Thesis Chair
+  entries:
+    - name: Farhan Sadaf
+      url: https://farhansadaf.github.io/
+    - name: Aditi Ganapathi
+      url: https://happyresearchlab.com/people/aditi_ganapathi/index.html
+    - name: Michael Tompkins
+      url: https://search.asu.edu/profile/2810543
+      note: (co-advising with Yan Shoshitaishvili)
+      hidden: true
+- section: PhD Committee
+  entries:
+    - name: Yinan Li
+      url: https://iris1215.github.io/
+    - name: Easton Kelso
+      url: https://search.asu.edu/profile/4073620
+    - name: Robert Wasinger
+      url: https://search.asu.edu/profile/3113619
+- section: Masters Committee
+  entries:
+    - name: Easton Kelso
+      url: https://search.asu.edu/profile/4073620

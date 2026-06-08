@@ -10,6 +10,7 @@ favicon_dark: /assets/img/favicon-dark.png
 favicon_version: "20260515"
 canonical: https://jaronm.ink/
 publication_filters_enabled: true
+home_research_grid_variant: current # current, strong, dotted, or dot-dash
 social_preview_image: /assets/img/JaronMink_faculty_compressed.jpg
 twitter_username: JaronMink
 
