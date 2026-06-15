@@ -2826,6 +2826,18 @@ td {
   margin-bottom: 0;
 }
 
+.contact-guidance p {
+  margin: 0;
+}
+
+.contact-guidance-divider {
+  width: 100%;
+  height: 1px;
+  margin: 0.65rem 0;
+  border: 0;
+  background: color-mix(in srgb, var(--map-rule) 54%, transparent);
+}
+
 .home-awards {
   margin-top: 0;
   padding-top: 0.9rem;

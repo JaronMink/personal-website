@@ -136,5 +136,5 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
 
 <section class="home-contact">
   <h2>Contact</h2>
-  <p>{% include contact-guidance.html %}</p>
+  {% include contact-guidance.html %}
 </section>

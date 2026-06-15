@@ -134,10 +134,14 @@
   venue: Symposium on Usable Privacy and Security (SOUPS), 2026
   areas:
   - non-ml-human-factors
+  links:
+  - label: PDF
+    url_key: ali_soups_26_pdf
+    style: primary
   citation:
     source: https://soups.page/
     verified_date: '2026-05-19'
-    notes: No PDF or final proceedings URL was available when this entry was added; citation uses the supplied SOUPS 2026 publication metadata.
+    notes: Citation uses the supplied SOUPS 2026 publication metadata.
     bibtex: |
       @inproceedings{ali2026mapping,
         author = {Shiza Ali and Wellington Esposito Barbosa and Matthias Fassl and Aditi Ganapathi and Jaron Mink and Adam J. Aviv},
