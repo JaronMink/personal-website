@@ -53,6 +53,9 @@
   - label: PDF
     url_key: mink_arxiv26_pdf
     style: primary
+  - label: Website
+    url_key: mink_factt_26_website
+    style: info
   - label: Poster
     url_key: mink_factt_26_poster
     style: info
