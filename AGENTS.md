@@ -9,6 +9,12 @@ This repository is maintained alongside the lab website in `../JaronMink.github.
 - If a file or change is not obviously meant to be public, stop and check with the user before adding it to git.
 - If sensitive information is found in a working tree or staged diff, do not commit it. Tell the user and ask how they want to handle cleanup.
 
+## Git Operations
+
+- Do not run `git push` unless the user explicitly asks to push in the current conversation.
+- A request to commit, save, update, or finish work is not a push request. If changes are committed but not pushed, report the commit and say that it has not been pushed.
+- If the user asks to commit and push, stage only the relevant changes, commit them, and then push.
+
 ## Cross-Website Consistency
 
 - When changing content that exists on both sites, update both websites in the same work session.
