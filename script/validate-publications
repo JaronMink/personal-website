@@ -187,6 +187,8 @@ publications.each_with_index do |pub, index|
   venue = pub['venue']
   year = pub['year']
   date = pub['date']
+  release_date = pub['release_date']
+  sort_date = pub['sort_date']
   preprint = pub['preprint']
 
   errors << "#{pub_id}: title must be a non-empty string" unless title.is_a?(String) && !title.strip.empty?
@@ -199,6 +201,8 @@ publications.each_with_index do |pub, index|
   if parsed_date && year.is_a?(Integer) && parsed_date.year != year
     errors << "#{pub_id}: date year #{parsed_date.year} must match year #{year}"
   end
+  validate_iso_date(release_date, "#{pub_id}: release_date", errors)
+  validate_iso_date(sort_date, "#{pub_id}: sort_date", errors)
   if preprint_venue?(venue)
     errors << "#{pub_id}: preprint must be true when venue marks the entry as a preprint" unless preprint == true
   elsif preprint == true

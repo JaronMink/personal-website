@@ -46,6 +46,25 @@ Notes: ACM DL citation export was not public at verification time; fields follow
 }
 ```
 
+## pub-is-this-ai-2026
+
+Is This AI? Longitudinal Analysis of Strategies Used for AI Detection on Two Subreddits
+
+Source: https://arxiv.org/abs/2606.22689
+
+```bibtex
+@misc{yeung2026thisai,
+  title = {Is This {AI}? Longitudinal Analysis of Strategies Used for {AI} Detection on Two Subreddits},
+  author = {Christina Yeung and Galen Weld and Jaron Mink and Franziska Roesner},
+  year = {2026},
+  eprint = {2606.22689},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CY},
+  doi = {10.48550/arXiv.2606.22689},
+  url = {https://arxiv.org/abs/2606.22689}
+}
+```
+
 ## pub-i-can-se-clearly-2026
 
 I Can SE Clearly Now: Investigating the Effectiveness of GUI-based Symbolic Execution for Software Vulnerability Discovery
@@ -77,7 +96,7 @@ SoK: Mapping Threats to Defenses in Online Survey Fraud
 
 Source: https://soups.page/
 
-Notes: No PDF or final proceedings URL was available when this entry was added; citation uses the supplied SOUPS 2026 publication metadata.
+Notes: Citation uses the supplied SOUPS 2026 publication metadata.
 
 ```bibtex
 @inproceedings{ali2026mapping,
@@ -107,7 +126,7 @@ Source: https://arxiv.org/abs/2604.09998
 }
 ```
 
-## pub-open-challenges-multi-agent-security-2026
+## pub-open-challenges-multi-agent-security-2025
 
 Open Challenges in Multi-Agent Security: Towards Secure Systems of Interacting AI Agents
 

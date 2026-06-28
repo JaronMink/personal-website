@@ -4,11 +4,14 @@ permalink: /publications.json
 ---
 [
 {% assign visible_publications = site.data.publications | where_exp: 'pub', 'pub.hidden != true' %}
-{% for pub in visible_publications %}
+{% assign sorted_publications = visible_publications | sort: 'sort_date' | reverse %}
+{% for pub in sorted_publications %}
   {
     "id": {{ pub.id | jsonify }},
     "year": {{ pub.year | jsonify }},
     "date": {{ pub.date | jsonify }},
+    "release_date": {{ pub.release_date | jsonify }},
+    "sort_date": {{ pub.sort_date | jsonify }},
     "title": {{ pub.title | jsonify }},
     "authors": {{ pub.authors | jsonify }},
     "venue": {{ pub.venue | jsonify }},

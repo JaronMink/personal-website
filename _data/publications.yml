@@ -1,6 +1,8 @@
 - id: pub-ai-cyber-tutors-2026
   year: 2026
   date: '2026-02-19'
+  release_date: '2026-02-19'
+  sort_date: '2026-06-24'
   preprint: true
   title: 'Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Evaluation
     of Cybersecurity Student Behaviors and Performance with AI Tutors'
@@ -40,6 +42,8 @@
 - id: pub-aig-sc-2026
   year: 2026
   date: '2026-06-25'
+  release_date: '2026-01-28'
+  sort_date: '2026-06-25'
   title: '"Unlimited Realm of Exploration and Experimentation": Methods and Motivations
     of AI-Generated Sexual Content Creators'
   authors:
@@ -81,9 +85,45 @@
         location = {Montreal, QC, Canada},
         series = {FAccT '26}
       }
+- id: pub-is-this-ai-2026
+  year: 2026
+  date: '2026-06-21'
+  release_date: '2026-06-21'
+  sort_date: '2026-08-25'
+  preprint: true
+  title: 'Is This AI? Longitudinal Analysis of Strategies Used for AI Detection on
+    Two Subreddits'
+  authors:
+  - Christina Yeung
+  - Galen Weld
+  - Jaron Mink
+  - Franziska Roesner
+  venue: Pre-Print, 2026
+  areas:
+  - ml-enabled-abuse
+  links:
+  - label: PDF
+    url_key: yeung_arxiv26_pdf
+    style: primary
+  citation:
+    source: https://arxiv.org/abs/2606.22689
+    verified_date: '2026-06-28'
+    bibtex: |
+      @misc{yeung2026thisai,
+        title = {Is This {AI}? Longitudinal Analysis of Strategies Used for {AI} Detection on Two Subreddits},
+        author = {Christina Yeung and Galen Weld and Jaron Mink and Franziska Roesner},
+        year = {2026},
+        eprint = {2606.22689},
+        archivePrefix = {arXiv},
+        primaryClass = {cs.CY},
+        doi = {10.48550/arXiv.2606.22689},
+        url = {https://arxiv.org/abs/2606.22689}
+      }
 - id: pub-i-can-se-clearly-2026
   year: 2026
   date: '2026-04-13'
+  release_date: '2026-04-13'
+  sort_date: '2026-04-13'
   title: 'I Can SE Clearly Now: Investigating the Effectiveness of GUI-based Symbolic
     Execution for Software Vulnerability Discovery'
   authors:
@@ -126,6 +166,8 @@
 - id: pub-sok-survey-fraud-2026
   year: 2026
   date: '2026-08-23'
+  release_date: '2026-05-19'
+  sort_date: '2026-08-23'
   title: 'SoK: Mapping Threats to Defenses in Online Survey Fraud'
   authors:
   - Shiza Ali
@@ -137,10 +179,14 @@
   venue: Symposium on Usable Privacy and Security (SOUPS), 2026
   areas:
   - non-ml-human-factors
+  links:
+  - label: PDF
+    url_key: ali_survey_fraud_soups26_pdf
+    style: primary
   citation:
     source: https://soups.page/
     verified_date: '2026-05-19'
-    notes: No public PDF is linked for now; citation uses the supplied SOUPS 2026 publication metadata.
+    notes: Citation uses the supplied SOUPS 2026 publication metadata.
     bibtex: |
       @inproceedings{ali2026mapping,
         author = {Shiza Ali and Wellington Esposito Barbosa and Matthias Fassl and Aditi Ganapathi and Jaron Mink and Adam J. Aviv},
@@ -153,6 +199,8 @@
 - id: pub-like-a-hammer-2026
   year: 2026
   date: '2026-08-23'
+  release_date: '2026-04-11'
+  sort_date: '2026-08-23'
   title: 'Like a Hammer, It Can Build, It Can Break: Large Language Model Uses,
     Perceptions, and Adoption in Cybersecurity Operations on Reddit'
   authors:
@@ -181,9 +229,11 @@
         publisher = {USENIX Association},
         month = aug
       }
-- id: pub-open-challenges-multi-agent-security-2026
-  year: 2026
-  date: '2026-04-29'
+- id: pub-open-challenges-multi-agent-security-2025
+  year: 2025
+  date: '2025-05-04'
+  release_date: '2025-05-04'
+  sort_date: '2025-05-04'
   preprint: true
   title: 'Open Challenges in Multi-Agent Security: Towards Secure Systems of Interacting
     AI Agents'
@@ -212,7 +262,7 @@
   - Steven Young
   - Sarah Scheffler
   - Mary Llewellyn
-  venue: Pre-Print, 2026
+  venue: Pre-Print, 2025
   areas:
   - ml-security-and-privacy
   - ml-for-security-applications
@@ -224,7 +274,7 @@
   citation:
     source: https://arxiv.org/abs/2505.02077
     verified_date: '2026-05-03'
-    notes: BibTeX year follows the initial arXiv posting while the site date tracks the latest revision currently stored in YAML.
+    notes: Date, release date, and BibTeX year follow the initial arXiv posting; arXiv version 2 was revised 29 Apr 2026.
     bibtex: |
       @misc{schroederdewitt2025open,
         title = {Open Challenges in Multi-Agent Security: Towards Secure Systems of Interacting {AI} Agents},
@@ -240,6 +290,8 @@
 - id: pub-solk-2024
   year: 2024
   date: '2024-08-14'
+  release_date: '2024-08-14'
+  sort_date: '2024-08-14'
   title: 'SoK (or SoLK?): On the Quantitative Study of Sociodemographic Factors and
     Computer Security Behaviors'
   authors:
@@ -275,6 +327,8 @@
 - id: pub-deepfake-moderation-2024
   year: 2024
   date: '2024-05-11'
+  release_date: '2024-05-11'
+  sort_date: '2024-05-11'
   title: 'It''s Trying Too Hard To Look Real: Deepfake Moderation Mistakes and Identity-Based
     Bias'
   authors:
@@ -321,6 +375,8 @@
 - id: pub-security-not-my-field-2023
   year: 2023
   date: '2023-08-09'
+  release_date: '2023-08-09'
+  sort_date: '2023-08-09'
   title: '"Security is not my field, I''m a stats guy": A Qualitative Root Cause Analysis
     of Barriers to Adversarial Machine Learning Defenses in Industry'
   authors:
@@ -369,6 +425,8 @@
 - id: pub-everybodys-got-ml-2023
   year: 2023
   date: '2023-05-22'
+  release_date: '2023-05-22'
+  sort_date: '2023-05-22'
   title: 'Everybody''s Got ML, Tell Me What Else You Have: Practitioners'' Perception
     of ML-Based Security Tools and Explanations'
   authors:
@@ -419,6 +477,8 @@
 - id: pub-history-early-warning-2023
   year: 2023
   date: '2023-05-22'
+  release_date: '2023-05-22'
+  sort_date: '2023-05-22'
   title: 'SoK: History is a Vast Early Warning System: Auditing the Provenance of
     System Intrusions'
   authors:
@@ -456,6 +516,8 @@
 - id: pub-faust-2022
   year: 2022
   date: '2022-12-05'
+  release_date: '2022-12-05'
+  sort_date: '2022-12-05'
   title: 'FAuST: Striking a Bargain between Forensic Auditing''s Security and Throughput'
   authors:
   - Muhammad Adil Inam
@@ -496,6 +558,8 @@
 - id: pub-deepphish-2022
   year: 2022
   date: '2022-08-10'
+  release_date: '2022-08-10'
+  sort_date: '2022-08-10'
   title: 'DeepPhish: Understanding User Trust Towards Artificially Generated Profiles
     in Online Social Networks'
   authors:
@@ -550,6 +614,8 @@
 - id: pub-beyond-bot-detection-2022
   year: 2022
   date: '2022-04-25'
+  release_date: '2022-04-25'
+  sort_date: '2022-04-25'
   title: 'Beyond Bot Detection: Combating Fraudulent Online Survey Takers'
   authors:
   - Ziyi Zhang
@@ -590,6 +656,8 @@
 - id: pub-users-can-deduce-2022
   year: 2022
   date: '2022-04-30'
+  release_date: '2022-04-30'
+  sort_date: '2022-04-30'
   title: Users Can Deduce Sensitive Locations Protected by Privacy Zones on Fitness
     Tracking Apps
   authors:
@@ -640,6 +708,8 @@
 - id: pub-forensic-validity-2020
   year: 2020
   date: '2020-12-07'
+  release_date: '2020-12-07'
+  sort_date: '2020-12-07'
   title: On the Forensic Validity of Approximated Audit Logs
   authors:
   - Noor Michael

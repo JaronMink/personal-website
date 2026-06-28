@@ -1,5 +1,5 @@
 {% assign visible_publications = site.data.publications | where_exp: 'pub', 'pub.hidden != true' %}
-{% assign sorted_publications = visible_publications | sort: 'date' | reverse %}
+{% assign sorted_publications = visible_publications | sort: 'sort_date' | reverse %}
 {% assign publication_years = sorted_publications | group_by: 'year' %}
 {% assign publication_areas = site.data.publication-areas %}
 {% assign domain = publication_areas | first %}
