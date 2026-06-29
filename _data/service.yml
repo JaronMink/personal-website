@@ -17,6 +17,8 @@
           url_key: usenix25_web
         - label: "2026"
           url_key: usenix26_web
+        - label: "2027"
+          url_key: usenix27_web
     - venue: IEEE S&P
       links:
         - label: "2025"
@@ -31,6 +33,8 @@
           url_key: satml25_web
         - label: "2026"
           url_key: satml26_web
+        - label: "2027"
+          url_key: satml27_web
     - venue: ACM CHI
       links:
         - label: "2026"
