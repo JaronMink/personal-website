@@ -14,7 +14,6 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
       <p class="home-meta-line"><span class="home-meta-copy">{{ site.data.profile.pronouns_display }}</span></p>
       <p class="home-meta-line"><span class="home-meta-copy">{{ site.position }}</span></p>
       <p class="home-meta-line"><a href="{{ site.data.links.scai_web }}"><span class="home-meta-copy">{{ site.affiliation }}</span></a></p>
-      <p class="home-meta-line"><a href="{{ site.data.profile.lab.url }}"><span class="home-meta-copy">{{ site.data.profile.lab.short_name }}</span></a></p>
       <p class="home-meta-line"><a href="mailto:{{ site.data.profile.email }}"><span class="home-meta-copy">{{ site.data.profile.email }}</span></a></p>
       <div class="home-identity-icons" aria-label="Profile links">
         {% if site.google_scholar %}

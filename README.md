@@ -17,7 +17,6 @@ The site will be available at `http://localhost:4000`.
 - Bio: `bio.md` and `_includes/bio.md`
 - Publications: `_data/publications.yml` and `_includes/publication-list.html`
 - Teaching: `_data/teaching.yml`
-- Advising: `advising.md` and `_data/advising.yml`
 - Service: `_data/service.yml`
 - Links/URLs: `_data/links.yml`
 - Profile/contact info: `_data/profile.yml`

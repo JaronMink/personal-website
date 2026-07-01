@@ -29,7 +29,7 @@
           {% assign link_label_downcase = link.label | downcase %}
           {% if link_label_downcase == 'pdf' %}
             {% assign has_pdf = true %}
-          {% else %}
+          {% elsif link_label_downcase != 'slides' %}
             {% assign has_non_pdf = true %}
           {% endif %}
         {% endfor %}
@@ -54,7 +54,7 @@
           <div class="pub-more-menu">
             {% for link in include.pub.links %}
               {% assign link_label_downcase = link.label | downcase %}
-              {% if link_label_downcase != 'pdf' %}
+              {% if link_label_downcase != 'pdf' and link_label_downcase != 'slides' %}
                 {% assign link_href = link.url %}
                 {% if link.url_key %}
                   {% assign link_href = links_map[link.url_key] %}
@@ -80,6 +80,8 @@
       {% endunless %}
       {% if include.pub.links and include.pub.links.size > 0 %}
           {% for link in include.pub.links %}
+            {% assign link_label_downcase = link.label | downcase %}
+            {% if link_label_downcase != 'slides' %}
             {% assign link_href = link.url %}
             {% if link.url_key %}
               {% assign link_href = links_map[link.url_key] %}
@@ -90,6 +92,7 @@
               {% assign link_class = 'btn btn-info btn-xs' %}
             {% endif %}
             <a class="{{ link_class }}" href="{{ link_href }}">{{ link.label }}</a>{% unless forloop.last %} {% endunless %}
+            {% endif %}
           {% endfor %}
       {% endif %}
     {% endif %}
