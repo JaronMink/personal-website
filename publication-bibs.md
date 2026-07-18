@@ -4,15 +4,21 @@ Generated from curated citation data in `_data/publications.yml`.
 
 ## pub-ai-cyber-tutors-2026
 
-Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Evaluation of Cybersecurity Student Behaviors and Performance with AI Tutors
+Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Measurement of Cybersecurity Student Behaviors and Educational Performance with AI Tutors
 
 Source: https://arxiv.org/abs/2602.17448
 
+Notes: Accepted to CCS 2026; the final proceedings record is not yet available.
+
 ```bibtex
-@misc{tompkins2026hackers,
-  title = {Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Evaluation of Cybersecurity Student Behaviors and Performance with {AI} Tutors},
+@inproceedings{tompkins2026hackers,
+  title = {Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Measurement of Cybersecurity Student Behaviors and Educational Performance with {AI} Tutors},
   author = {Michael Tompkins and Nihaarika Agarwal and Ananta Soneji and Robert Wasinger and Connor Nelson and Kevin Leach and Rakibul Hasan and Adam Doup{\'e} and Daniel Votipka and Yan Shoshitaishvili and Jaron Mink},
   year = {2026},
+  month = nov,
+  booktitle = {Proceedings of the 2026 ACM SIGSAC Conference on Computer and Communications Security},
+  location = {The Hague, The Netherlands},
+  note = {To appear},
   eprint = {2602.17448},
   archivePrefix = {arXiv},
   primaryClass = {cs.HC},
@@ -52,11 +58,17 @@ Is This AI? Longitudinal Analysis of Strategies Used for AI Detection on Two Sub
 
 Source: https://arxiv.org/abs/2606.22689
 
+Notes: Accepted to AIES 2026; the final proceedings record is not yet available.
+
 ```bibtex
-@misc{yeung2026thisai,
+@inproceedings{yeung2026thisai,
   title = {Is This {AI}? Longitudinal Analysis of Strategies Used for {AI} Detection on Two Subreddits},
   author = {Christina Yeung and Galen Weld and Jaron Mink and Franziska Roesner},
   year = {2026},
+  month = oct,
+  booktitle = {Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society},
+  location = {Malmo, Sweden},
+  note = {To appear},
   eprint = {2606.22689},
   archivePrefix = {arXiv},
   primaryClass = {cs.CY},

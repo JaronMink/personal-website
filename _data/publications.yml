@@ -1,11 +1,10 @@
 - id: pub-ai-cyber-tutors-2026
   year: 2026
-  date: '2026-02-19'
+  date: '2026-11-15'
   release_date: '2026-02-19'
-  sort_date: '2026-06-24'
-  preprint: true
-  title: 'Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Evaluation
-    of Cybersecurity Student Behaviors and Performance with AI Tutors'
+  sort_date: '2026-11-15'
+  title: 'Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Measurement
+    of Cybersecurity Student Behaviors and Educational Performance with AI Tutors'
   authors:
   - Michael Tompkins
   - Nihaarika Agarwal
@@ -18,7 +17,7 @@
   - Daniel Votipka
   - Yan Shoshitaishvili
   - Jaron Mink
-  venue: Pre-Print, 2026
+  venue: 33rd ACM Conference on Computer and Communications Security (CCS), 2026
   areas:
   - ml-for-security-applications
   links:
@@ -27,12 +26,17 @@
     style: primary
   citation:
     source: https://arxiv.org/abs/2602.17448
-    verified_date: '2026-05-03'
+    verified_date: '2026-07-18'
+    notes: Accepted to CCS 2026; the final proceedings record is not yet available.
     bibtex: |
-      @misc{tompkins2026hackers,
-        title = {Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Evaluation of Cybersecurity Student Behaviors and Performance with {AI} Tutors},
+      @inproceedings{tompkins2026hackers,
+        title = {Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Measurement of Cybersecurity Student Behaviors and Educational Performance with {AI} Tutors},
         author = {Michael Tompkins and Nihaarika Agarwal and Ananta Soneji and Robert Wasinger and Connor Nelson and Kevin Leach and Rakibul Hasan and Adam Doup{\'e} and Daniel Votipka and Yan Shoshitaishvili and Jaron Mink},
         year = {2026},
+        month = nov,
+        booktitle = {Proceedings of the 2026 ACM SIGSAC Conference on Computer and Communications Security},
+        location = {The Hague, The Netherlands},
+        note = {To appear},
         eprint = {2602.17448},
         archivePrefix = {arXiv},
         primaryClass = {cs.HC},
@@ -66,6 +70,8 @@
   news:
   - label: Harvard Berkman Klein Center Whitepaper on Survivor-Centered NCII Reporting
     url: https://asml.cyber.harvard.edu/wp-content/uploads/sites/18/2026/06/NCII-Whitepaper-Final.pdf
+  - label: 'Lawfare Daily: Consent in the Age of AI'
+    url_key: mink_factt_26_news_lawfare
   citation:
     source: https://doi.org/10.1145/3805689.3812314
     verified_date: '2026-05-03'
@@ -87,10 +93,9 @@
       }
 - id: pub-is-this-ai-2026
   year: 2026
-  date: '2026-06-21'
+  date: '2026-10-12'
   release_date: '2026-06-21'
-  sort_date: '2026-08-25'
-  preprint: true
+  sort_date: '2026-10-12'
   title: 'Is This AI? Longitudinal Analysis of Strategies Used for AI Detection on
     Two Subreddits'
   authors:
@@ -98,7 +103,7 @@
   - Galen Weld
   - Jaron Mink
   - Franziska Roesner
-  venue: Pre-Print, 2026
+  venue: AAAI/ACM Conference on AI, Ethics, and Society (AIES), 2026
   areas:
   - ml-enabled-abuse
   links:
@@ -107,12 +112,17 @@
     style: primary
   citation:
     source: https://arxiv.org/abs/2606.22689
-    verified_date: '2026-06-28'
+    verified_date: '2026-07-16'
+    notes: Accepted to AIES 2026; the final proceedings record is not yet available.
     bibtex: |
-      @misc{yeung2026thisai,
+      @inproceedings{yeung2026thisai,
         title = {Is This {AI}? Longitudinal Analysis of Strategies Used for {AI} Detection on Two Subreddits},
         author = {Christina Yeung and Galen Weld and Jaron Mink and Franziska Roesner},
         year = {2026},
+        month = oct,
+        booktitle = {Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society},
+        location = {Malmo, Sweden},
+        note = {To appear},
         eprint = {2606.22689},
         archivePrefix = {arXiv},
         primaryClass = {cs.CY},
@@ -234,7 +244,6 @@
   date: '2025-05-04'
   release_date: '2025-05-04'
   sort_date: '2025-05-04'
-  preprint: true
   title: 'Open Challenges in Multi-Agent Security: Towards Secure Systems of Interacting
     AI Agents'
   authors:
@@ -262,7 +271,7 @@
   - Steven Young
   - Sarah Scheffler
   - Mary Llewellyn
-  venue: Pre-Print, 2025
+  venue: arXiv, 2025
   areas:
   - ml-security-and-privacy
   - ml-for-security-applications
@@ -437,7 +446,7 @@
   - Ali Ahmadzadeh
   - Daniel Votipka
   - Gang Wang
-  venue: 44th IEEE Symposium on Security and Privacy, 2023
+  venue: 44th IEEE Symposium on Security and Privacy (IEEE S&P), 2023
   areas:
   - ml-for-security-applications
   - ml-security-and-privacy
@@ -491,7 +500,7 @@
   - Sneha Gaur
   - Adam Bates
   - Wajih Ul Hassan
-  venue: 44th IEEE Symposium on Security and Privacy, 2023
+  venue: 44th IEEE Symposium on Security and Privacy (IEEE S&P), 2023
   areas:
   - system-security
   links:
@@ -528,7 +537,7 @@
   - Sneha Gaur
   - Adam Bates
   - Wajih Ul Hassan
-  venue: 38th Annual Computer Security Applications Conference, 2022
+  venue: 38th Annual Computer Security Applications Conference (ACSAC), 2022
   areas:
   - system-security
   links:
@@ -624,7 +633,7 @@
   - Aiping Xiong
   - Linhai Song
   - Gang Wang
-  venue: The ACM Web Conference, 2022
+  venue: The ACM Web Conference (WWW), 2022
   areas:
   - non-ml-human-factors
   links:
@@ -718,7 +727,7 @@
   - Sneha Gaur
   - Wajih Ul Hassan
   - Adam Bates
-  venue: 36th Annual Computer Security Applications Conference, 2020
+  venue: 36th Annual Computer Security Applications Conference (ACSAC), 2020
   areas:
   - system-security
   links:
