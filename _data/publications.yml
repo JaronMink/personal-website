@@ -146,7 +146,7 @@
   - Jaron Mink
   - Daniel Votipka
   - Tiffany Bao
-  venue: ACM CHI Conference on Human Factors in Computing Systems, 2026
+  venue: ACM CHI Conference on Human Factors in Computing Systems (CHI), 2026
   areas:
   - non-ml-human-factors
   - system-security
@@ -310,7 +310,7 @@
   - Tadayoshi Kohno
   - Elissa M. Redmiles
   - Franziska Roesner
-  venue: 33rd USENIX Security Symposium, 2024
+  venue: 33rd USENIX Security Symposium (USENIX Security), 2024
   areas:
   - non-ml-human-factors
   links:
@@ -348,7 +348,7 @@
   - Tadayoshi Kohno
   - Elissa M. Redmiles
   - Gang Wang
-  venue: ACM CHI Conference on Human Factors in Computing Systems, 2024
+  venue: ACM CHI Conference on Human Factors in Computing Systems (CHI), 2024
   areas:
   - ml-enabled-abuse
   links:
@@ -394,7 +394,7 @@
   - Juliane Schmüser*
   - Sascha Fahl
   - Yasemin Acar
-  venue: 32nd USENIX Security Symposium, 2023
+  venue: 32nd USENIX Security Symposium (USENIX Security), 2023
   areas:
   - ml-security-and-privacy
   links:
@@ -578,7 +578,7 @@
   - Olivia Figueria
   - Yang Wang
   - Gang Wang
-  venue: 31st USENIX Security Symposium, 2022
+  venue: 31st USENIX Security Symposium (USENIX Security), 2022
   areas:
   - ml-enabled-abuse
   links:
@@ -675,7 +675,7 @@
   - Uma Pal
   - Adam J Aviv
   - Adam Bates
-  venue: ACM CHI Conference on Human Factors in Computing Systems, 2022
+  venue: ACM CHI Conference on Human Factors in Computing Systems (CHI), 2022
   areas:
   - non-ml-human-factors
   links:
