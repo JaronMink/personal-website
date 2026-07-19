@@ -54,7 +54,7 @@
   - Jaron Mink*
   - Lucy Qin*
   - Elissa M. Redmiles
-  venue: ACM Conference on Fairness, Accountability, and Transparency (FAccT), 2026
+  venue: 9th ACM Conference on Fairness, Accountability, and Transparency (FAccT), 2026
   areas:
   - ml-enabled-abuse
   links:
@@ -103,7 +103,7 @@
   - Galen Weld
   - Jaron Mink
   - Franziska Roesner
-  venue: AAAI/ACM Conference on AI, Ethics, and Society (AIES), 2026
+  venue: 9th AAAI/ACM Conference on AI, Ethics, and Society (AIES), 2026
   areas:
   - ml-enabled-abuse
   links:
@@ -146,7 +146,7 @@
   - Jaron Mink
   - Daniel Votipka
   - Tiffany Bao
-  venue: ACM CHI Conference on Human Factors in Computing Systems (CHI), 2026
+  venue: 44th ACM CHI Conference on Human Factors in Computing Systems (CHI), 2026
   areas:
   - non-ml-human-factors
   - system-security
@@ -186,7 +186,7 @@
   - Aditi Ganapathi
   - Jaron Mink
   - Adam J. Aviv
-  venue: Symposium on Usable Privacy and Security (SOUPS), 2026
+  venue: 22nd Symposium on Usable Privacy and Security (SOUPS), 2026
   areas:
   - non-ml-human-factors
   links:
@@ -220,7 +220,7 @@
   - Kashyap Thimmaraju
   - Jaron Mink
   - Gail-Joon Ahn
-  venue: Symposium on Usable Privacy and Security (SOUPS), 2026
+  venue: 22nd Symposium on Usable Privacy and Security (SOUPS), 2026
   areas:
   - ml-for-security-applications
   links:
@@ -348,7 +348,7 @@
   - Tadayoshi Kohno
   - Elissa M. Redmiles
   - Gang Wang
-  venue: ACM CHI Conference on Human Factors in Computing Systems (CHI), 2024
+  venue: 42nd ACM CHI Conference on Human Factors in Computing Systems (CHI), 2024
   areas:
   - ml-enabled-abuse
   links:
@@ -633,7 +633,7 @@
   - Aiping Xiong
   - Linhai Song
   - Gang Wang
-  venue: The ACM Web Conference (WWW), 2022
+  venue: 31st ACM Web Conference (WWW), 2022
   areas:
   - non-ml-human-factors
   links:
@@ -675,7 +675,7 @@
   - Uma Pal
   - Adam J Aviv
   - Adam Bates
-  venue: ACM CHI Conference on Human Factors in Computing Systems (CHI), 2022
+  venue: 40th ACM CHI Conference on Human Factors in Computing Systems (CHI), 2022
   areas:
   - non-ml-human-factors
   links:
