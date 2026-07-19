@@ -190,7 +190,7 @@ Source: https://doi.org/10.1145/3613904.3641999
 ```bibtex
 @inproceedings{mink2024trying,
   author = {Jaron Mink and Miranda Wei and Collins W. Munyendo and Kurt Hugenberg and Tadayoshi Kohno and Elissa M. Redmiles and Gang Wang},
-  title = {It's Trying Too Hard to Look Real: Deepfake Moderation Mistakes and Identity-Based Bias},
+  title = {It's Trying Too Hard To Look Real: Deepfake Moderation Mistakes and Identity-Based Bias},
   year = {2024},
   isbn = {9798400703300},
   publisher = {Association for Computing Machinery},

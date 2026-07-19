@@ -367,7 +367,7 @@
     bibtex: |
       @inproceedings{mink2024trying,
         author = {Jaron Mink and Miranda Wei and Collins W. Munyendo and Kurt Hugenberg and Tadayoshi Kohno and Elissa M. Redmiles and Gang Wang},
-        title = {It's Trying Too Hard to Look Real: Deepfake Moderation Mistakes and Identity-Based Bias},
+        title = {It's Trying Too Hard To Look Real: Deepfake Moderation Mistakes and Identity-Based Bias},
         year = {2024},
         isbn = {9798400703300},
         publisher = {Association for Computing Machinery},
@@ -575,7 +575,7 @@
   - Jaron Mink
   - Licheng Luo
   - Natã M. Barbosa
-  - Olivia Figueria
+  - Olivia Figueira
   - Yang Wang
   - Gang Wang
   venue: 31st USENIX Security Symposium (USENIX Security), 2022
@@ -673,7 +673,7 @@
   - Jaron Mink
   - Amanda Rose Yuile
   - Uma Pal
-  - Adam J Aviv
+  - Adam J. Aviv
   - Adam Bates
   venue: 40th ACM CHI Conference on Human Factors in Computing Systems (CHI), 2022
   areas:
