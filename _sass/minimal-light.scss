@@ -2887,10 +2887,6 @@ td {
 }
 
 @media screen and (min-width: 1600px) {
-  .top-shell {
-    --wide-text-inset: max(0rem, calc((var(--shell-width) - 62rem) / 2));
-  }
-
   body {
     padding-top: 2rem;
     padding-bottom: 3rem;
@@ -2923,7 +2919,7 @@ td {
 
   .top-main--list-page {
     margin-right: auto;
-    margin-left: var(--wide-text-inset);
+    margin-left: 2.5rem;
   }
 
   .top-main--bio {
@@ -2937,7 +2933,7 @@ td {
   }
 
   .top-main--list-page .page-bottom-rule {
-    left: calc(0rem - var(--wide-text-inset));
+    left: -2.5rem;
     transform: none;
   }
 }
