@@ -681,12 +681,12 @@ html.theme-preload body *::after {
   justify-content: center;
   width: 2.85rem;
   height: 2.25rem;
-  border-radius: 0.72rem;
+  border-radius: 7px;
   border: 1px solid var(--border);
-  color: var(--muted) !important;
-  background-color: var(--surface);
+  color: var(--heading) !important;
+  background-color: color-mix(in srgb, var(--accent) 70%, var(--surface));
   text-decoration: none;
-  transition: var(--theme-transition);
+  transition: none;
 }
 
 .social-icons a i,
@@ -698,9 +698,13 @@ html.theme-preload body *::after {
 
 .social-icons a:hover {
   background-color: var(--accent);
-  border-color: var(--muted);
+  border-color: color-mix(in srgb, var(--icon-bg) 32%, var(--border));
   color: var(--heading) !important;
   text-decoration: none;
+}
+
+.social-icons a:active {
+  transform: translateY(1px);
 }
 
 h1,
@@ -2122,7 +2126,7 @@ td {
   margin-right: 0.3rem;
   margin-bottom: 0.35rem;
   text-decoration: none;
-  transition: var(--theme-paint-transition);
+  transition: none;
 }
 
 .btn.btn-primary {
@@ -2158,6 +2162,17 @@ td {
 .btn.btn-info:focus-visible {
   border-color: var(--muted);
   color: inherit !important;
+}
+
+.pub-filter-view-button,
+.pub-area-filter {
+  transition: none;
+}
+
+.pub-filter-view-button:active,
+.pub-area-filter:active,
+.btn:not(.btn-unavailable):active {
+  transform: translateY(1px);
 }
 
 .label {
@@ -2299,19 +2314,23 @@ td {
   height: 2.35rem;
   border-radius: 7px;
   border: 1px solid var(--border);
-  color: var(--muted);
-  background-color: var(--surface);
+  color: var(--heading);
+  background-color: color-mix(in srgb, var(--accent) 70%, var(--surface));
   text-decoration: none;
   font-size: 1.34rem;
   line-height: 1;
-  transition: var(--theme-transition);
+  transition: none;
 }
 
 .home-identity-icons a:hover:not(.is-pointer-activated) {
   color: var(--heading);
   background-color: var(--accent);
-  border-color: var(--muted);
+  border-color: color-mix(in srgb, var(--icon-bg) 32%, var(--border));
   text-decoration: none;
+}
+
+.home-identity-icons a:active {
+  transform: translateY(1px);
 }
 
 .home-icon-svg {
