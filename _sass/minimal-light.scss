@@ -2887,6 +2887,10 @@ td {
 }
 
 @media screen and (min-width: 1600px) {
+  .top-shell {
+    --wide-text-inset: max(0rem, calc((var(--shell-width) - 62rem) / 2));
+  }
+
   body {
     padding-top: 2rem;
     padding-bottom: 3rem;
@@ -2912,10 +2916,14 @@ td {
   }
 
   .top-main--publications,
-  .top-main--bio,
-  .top-main--list-page {
+  .top-main--bio {
     margin-right: auto;
     margin-left: auto;
+  }
+
+  .top-main--list-page {
+    margin-right: auto;
+    margin-left: var(--wide-text-inset);
   }
 
   .top-main--bio {
@@ -2926,6 +2934,11 @@ td {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .top-main--list-page .page-bottom-rule {
+    left: calc(0rem - var(--wide-text-inset));
+    transform: none;
   }
 }
 
