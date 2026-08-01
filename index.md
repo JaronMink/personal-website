@@ -15,7 +15,7 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
       <p class="home-meta-line"><span class="home-meta-copy">{{ site.position }}</span></p>
       <p class="home-meta-line"><a href="{{ site.data.links.scai_web }}"><span class="home-meta-copy">{{ site.affiliation }}</span></a></p>
       <p class="home-meta-line"><a href="mailto:{{ site.data.profile.email }}"><span class="home-meta-copy">{{ site.data.profile.email }}</span></a></p>
-      <div class="home-identity-icons" aria-label="Profile links">
+      <nav class="home-identity-icons" aria-label="Profile links">
         {% if site.google_scholar %}
         <a href="{{ site.google_scholar }}" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
           <i class="ai ai-google-scholar"></i>
@@ -36,18 +36,18 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
           <i class="fa-brands fa-twitter"></i>
         </a>
         {% endif %}
-      </div>
+      </nav>
     </div>
   </div>
 
   <div class="home-main">
     <p class="home-lead">
-      I'm an Assistant Professor of Computer Science at Arizona State University. I work at the {{ site.data.profile.lab.short_name }}, where we study human-centered security and safety in AI systems.
+      I'm an Assistant Professor of Computer Science at Arizona State University. I work at the {{ site.data.profile.lab.short_name }} and study human-centered security and safety in AI systems.
     </p>
     {% assign home_research_grid_variant = site.home_research_grid_variant | default: 'current' %}
     <div class="home-research-board home-research-board--grid-{{ home_research_grid_variant | slugify }}">
       <p class="home-interest-map-label">My Research</p>
-      <div class="home-grid-switch" aria-label="Research grid style" hidden aria-hidden="true">
+      <div class="home-grid-switch" role="group" aria-label="Research grid style" hidden aria-hidden="true">
         <button type="button" data-grid-variant="current" aria-pressed="true">Current</button>
         <button type="button" data-grid-variant="strong" aria-pressed="false">Strong</button>
         <button type="button" data-grid-variant="dotted" aria-pressed="false">Dotted</button>
