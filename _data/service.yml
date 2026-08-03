@@ -85,10 +85,10 @@
       links:
         - label: "2023"
           url_key: tdsc23_web
-    - venue: Child Safety in AI
+    - venue: NeurIPS - Child Safety in AI
       links:
-        - label: "NeurIPS 2026"
-          url: https://neurips.cc/Conferences/2026
+        - label: "2026"
+          url: https://childsafety-ai.github.io/
     - venue: IEEE S&P SPSI
       links:
         - label: "Gender & Sexuality"
