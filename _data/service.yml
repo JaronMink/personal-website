@@ -15,7 +15,7 @@
       links:
         - label: "2025"
           url_key: usenix25_web
-        - label: "2026"
+        - label: "2026<sup>*</sup>"
           url_key: usenix26_web
         - label: "2027"
           url_key: usenix27_web

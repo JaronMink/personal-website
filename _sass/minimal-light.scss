@@ -735,6 +735,31 @@ h2 {
   margin-bottom: 0.45rem;
 }
 
+.service-note,
+.pub-equal-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.25;
+}
+
+.service-note {
+  margin-bottom: 0.85rem;
+  padding-top: 0.2rem;
+}
+
+.note-mark,
+.top-main--list-page a sup {
+  color: var(--map-rule);
+  font-weight: 700;
+}
+
+.note-mark {
+  font-size: 0.7rem;
+  line-height: 0;
+  vertical-align: super;
+}
+
 .top-main--list-page > ul {
   margin-bottom: 1.35rem;
   padding-left: 1.2rem;
@@ -815,12 +840,6 @@ span.jaron {
   gap: 0.7rem;
   margin: -0.2rem 0 0.65rem;
   flex-wrap: wrap;
-}
-
-.pub-equal-note {
-  margin: 0;
-  font-size: 0.8rem;
-  color: var(--muted);
 }
 
 .pub-list-main {

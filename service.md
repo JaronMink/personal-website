@@ -6,6 +6,8 @@ description: Professional service including program committees, reviewing, and o
 hide_page_title: true
 ---
 
+<p class="service-note"><sup class="note-mark">*</sup> Distinguished Reviewer Award.</p>
+
 {% include service-list.html %}
 
 <div class="page-bottom-rule" aria-hidden="true"></div>
