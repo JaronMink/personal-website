@@ -147,6 +147,9 @@
   areas:
   - ml-enabled-abuse
   links:
+  - label: PDF
+    url_key: qin_aies26_pdf
+    style: primary
   - label: Website
     url: https://www.safedigitalintimacy.org/ai-generated-sexual-content
     style: info
