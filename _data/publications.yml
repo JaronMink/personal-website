@@ -154,9 +154,9 @@
     url: https://www.safedigitalintimacy.org/ai-generated-sexual-content
     style: info
   citation:
-    source: https://www.aies-conference.com/2026/
-    verified_date: '2026-07-31'
-    notes: Accepted to AIES 2026; the paper and final proceedings record are not yet available.
+    source: https://arxiv.org/abs/2608.13659
+    verified_date: '2026-08-16'
+    notes: Accepted to AIES 2026; the arXiv preprint is available, while the final proceedings record is not yet available.
     bibtex: |
       @inproceedings{qin2026uncensored,
         title = {{``I Thought You Were The Uncensored Place''}: Norms, Rules, and Moderation in {AI}-Generated Sexual Content Communities},
