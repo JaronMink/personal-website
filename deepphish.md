@@ -283,7 +283,7 @@ To learn more about our study, please check out our [USENIX Security 2022 paper]
 
 ## Contact
 
-This work is by [Jaron Mink](https://jaronm.ink), Licheng Luo, Natã M. Barbosa, Olivia Figueria, Yang Wang, and [Gang Wang](https://gangw.cs.illinois.edu/). If you have any questions, please feel free to contact Jaron Mink at {{ site.data.profile.email }}.
+This work is by [Jaron Mink](https://jaronm.ink), Licheng Luo, Natã M. Barbosa, Olivia Figueira, Yang Wang, and [Gang Wang](https://gangw.cs.illinois.edu/). If you have any questions, please feel free to contact Jaron Mink at {{ site.data.profile.email }}.
 
 [[1] Tero Karras, Samuli Laine, Miika Aittala, Janne Hellsten, Jaakko Lehtinen, and Timo Aila. Analyzing and improving the image quality of StyleGAN. In Proc. of CVPR, 2020.](https://arxiv.org/abs/1912.04958)
 [[2] Radford, Alec, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. Language models are unsupervised multitask learners. OpenAI blog, 2019.](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
