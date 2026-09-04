@@ -113,6 +113,9 @@
   - label: Website
     url: https://agent-security.cs.washington.edu/is-this-ai.html
     style: info
+  news:
+  - label: The Atlantic
+    url: https://www.theatlantic.com/technology/2026/09/chatgpt-imessage-ai-texting/688507/
   citation:
     source: https://arxiv.org/abs/2606.22689
     verified_date: '2026-07-16'
