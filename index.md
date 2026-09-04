@@ -159,7 +159,7 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
   {% include award-list.md %}
 </section>
 
-<section class="home-contact home-news-coverage">
+<section class="home-awards home-news-coverage">
   <h2>News Coverage</h2>
   {% include news-coverage.html %}
 </section>
