@@ -28,6 +28,8 @@ soups21_web: https://www.usenix.org/conference/soups2021
 raid22_web: https://raid2022.cs.ucy.ac.cy/index.html
 
 # General News
+news_atlantic_is_this_ai_url: https://www.theatlantic.com/technology/2026/09/chatgpt-imessage-ai-texting/688507/
+news_harvard_bkc_ncii_whitepaper_url: https://asml.cyber.harvard.edu/wp-content/uploads/sites/18/2026/06/NCII-Whitepaper-Final.pdf
 news_2024_human_centered_security_url: &news_2024_human_centered_security_url https://open.spotify.com/episode/1sDfqqkM7jHg1SxSKGW98e?si=9f5bf708723b4b69
 mdi_response_nist_ai_rmf_web: https://mdi.georgetown.edu/news/formal-response-mdi-comment-on-nist-ai-executive-order-feb2024/
 
