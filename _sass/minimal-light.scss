@@ -2990,6 +2990,10 @@ td {
   background: color-mix(in srgb, var(--map-rule) 54%, transparent);
 }
 
+.home-section-divider {
+  margin: 0.72rem 0 0;
+}
+
 .home-awards {
   margin-top: 0;
   padding-top: 0.9rem;
@@ -2998,6 +3002,18 @@ td {
 .home-awards h2 {
   margin: 0 0 0.55rem;
   font-size: 1.05rem;
+}
+
+.home-news-coverage {
+  padding-bottom: 0.72rem;
+}
+
+.home-news-coverage p:last-child {
+  margin-bottom: 0;
+}
+
+.home-news-coverage + .home-contact {
+  margin-top: 0;
 }
 
 @media print, screen and (max-width: 920px) {
