@@ -5,7 +5,11 @@ layout: base
   <header class="top-bar">
     <div class="top-brand">
       <div class="top-brand-text">
+        {% if page.url == '/' %}
+        <h1 class="top-name-heading"><a class="top-name" href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+        {% else %}
         <a class="top-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        {% endif %}
       </div>
     </div>
     {% include top-nav.html %}

@@ -1,7 +1,7 @@
 <nav class="top-nav" aria-label="Main navigation">
-  <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} class="is-active" aria-current="page"{% endif %}>Publications</a>
-  <a href="{{ '/bio/' | relative_url }}"{% if page.url == '/bio/' %} class="is-active" aria-current="page"{% endif %}>Bio</a>
-  <a href="{{ '/teaching/' | relative_url }}"{% if page.url == '/teaching/' %} class="is-active" aria-current="page"{% endif %}>Teaching</a>
-  <a href="{{ '/service/' | relative_url }}"{% if page.url == '/service/' %} class="is-active" aria-current="page"{% endif %}>Service</a>
-  <a href="{{ site.data.profile.lab.url }}" target="_blank" rel="noopener noreferrer">Happy Lab</a>
+  <a class="top-nav-link{% if page.url == '/publications/' %} is-active{% endif %}" href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} aria-current="page"{% endif %}>Publications</a>
+  <a class="top-nav-link{% if page.url == '/bio/' %} is-active{% endif %}" href="{{ '/bio/' | relative_url }}"{% if page.url == '/bio/' %} aria-current="page"{% endif %}>Bio</a>
+  <a class="top-nav-link{% if page.url == '/teaching/' %} is-active{% endif %}" href="{{ '/teaching/' | relative_url }}"{% if page.url == '/teaching/' %} aria-current="page"{% endif %}>Teaching</a>
+  <a class="top-nav-link{% if page.url == '/service/' %} is-active{% endif %}" href="{{ '/service/' | relative_url }}"{% if page.url == '/service/' %} aria-current="page"{% endif %}>Service</a>
+  <a class="top-nav-link" href="{{ site.data.profile.lab.url }}" target="_blank" rel="noopener noreferrer">Happy Lab</a>
 </nav>

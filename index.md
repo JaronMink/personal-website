@@ -17,22 +17,22 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
       <p class="home-meta-line"><a href="mailto:{{ site.data.profile.email }}"><span class="home-meta-copy">{{ site.data.profile.email }}</span></a></p>
       <nav class="home-identity-icons" aria-label="Profile links">
         {% if site.google_scholar %}
-        <a href="{{ site.google_scholar }}" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+        <a class="home-icon-link" href="{{ site.google_scholar }}" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar">
           <i class="ai ai-google-scholar"></i>
         </a>
         {% endif %}
         {% if site.linkedin %}
-        <a href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <a class="home-icon-link" href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
           <i class="fa-brands fa-linkedin-in"></i>
         </a>
         {% endif %}
         {% if site.bluesky_link %}
-        <a href="{{ site.bluesky_link }}" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
+        <a class="home-icon-link" href="{{ site.bluesky_link }}" target="_blank" rel="noopener noreferrer" aria-label="Bluesky" title="Bluesky">
           <i class="fa-brands fa-bluesky"></i>
         </a>
         {% endif %}
         {% if site.twitter_link %}
-        <a href="{{ site.twitter_link }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+        <a class="home-icon-link" href="{{ site.twitter_link }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter">
           <i class="fa-brands fa-twitter"></i>
         </a>
         {% endif %}
@@ -42,11 +42,11 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
 
   <div class="home-main">
     <p class="home-lead">
-      I'm an Assistant Professor of Computer Science at ASU. I work at the {{ site.data.profile.lab.short_name }} and study human-centered security and safety in AI systems.
+      I'm an Assistant Professor of Computer Science at ASU, where I work at the {{ site.data.profile.lab.short_name }} and study how people shape the security and safety of AI systems.
     </p>
     {% assign home_research_grid_variant = site.home_research_grid_variant | default: 'current' %}
     <div class="home-research-board home-research-board--grid-{{ home_research_grid_variant | slugify }}">
-      <p class="home-interest-map-label">My Research</p>
+      <h2 class="home-interest-map-label">Research Areas</h2>
       <div class="home-grid-switch" role="group" aria-label="Research grid style" hidden aria-hidden="true">
         <button type="button" data-grid-variant="current" aria-pressed="true">Current</button>
         <button type="button" data-grid-variant="strong" aria-pressed="false">Strong</button>
@@ -154,19 +154,17 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
   })();
 </script>
 
-<section class="home-awards">
+<section class="home-awards home-index-row">
   <h2>Selected Awards</h2>
   {% include award-list.md %}
 </section>
 
-<hr class="contact-guidance-divider home-section-divider">
-
-<section class="home-awards home-news-coverage">
-  <h2>News Coverage</h2>
+<section class="home-awards home-news-coverage home-index-row">
+  <h2>Selected Press</h2>
   {% include news-coverage.html %}
 </section>
 
-<section class="home-contact">
+<section class="home-contact home-index-row">
   <h2>Contact</h2>
   {% include contact-guidance.html %}
 </section>
