@@ -43,15 +43,14 @@
   - Daniel Votipka
   - Yan Shoshitaishvili
   - Jaron Mink
-  venue: 58th ACM Technical Symposium on Computer Science Education (SIGCSE TS),
-    Computing Education Research Track, 2027
+  venue: 58th ACM Technical Symposium on Computer Science Education (SIGCSE TS), 2027
   areas:
   - ml-for-security-applications
   - ml-security-and-privacy
   citation:
     source: https://sigcse.org/events/symposia/index.html
     verified_date: '2026-09-14'
-    notes: Accepted to the SIGCSE TS 2027 Computing Education Research Track; the paper and final proceedings record are not yet available.
+    notes: Accepted to SIGCSE TS 2027; the paper and final proceedings record are not yet available.
     bibtex: |
       @inproceedings{tompkins2027newer,
         title = {Do Newer Models Make Better Tutors?: Characterizing Real-World Failures of {AI} Tutors in Higher Education Across Two Years, Two Prompts, and Five Models},

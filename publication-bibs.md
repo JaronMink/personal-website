@@ -28,7 +28,7 @@ Do Newer Models Make Better Tutors?: Characterizing Real-World Failures of AI Tu
 
 Source: https://sigcse.org/events/symposia/index.html
 
-Notes: Accepted to the SIGCSE TS 2027 Computing Education Research Track; the paper and final proceedings record are not yet available.
+Notes: Accepted to SIGCSE TS 2027; the paper and final proceedings record are not yet available.
 
 ```bibtex
 @inproceedings{tompkins2027newer,
