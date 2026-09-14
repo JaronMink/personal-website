@@ -1,3 +1,67 @@
+- id: pub-operationalizing-welcoming-cybersecurity-2027
+  year: 2027
+  date: '2027-05-17'
+  release_date: '2027-05-17'
+  sort_date: '2027-05-17'
+  title: 'Operationalizing Welcoming in Cybersecurity Communities: How Organizers
+    Try to Shape Culture'
+  authors:
+  - Carson Powers
+  - Aman Shah
+  - Jaron Mink
+  - Ari Schlesinger
+  - Daniel Votipka
+  venue: 48th IEEE Symposium on Security and Privacy (IEEE S&P), 2027
+  areas:
+  - non-ml-human-factors
+  citation:
+    source: https://sp2027.ieee-security.org/
+    verified_date: '2026-09-14'
+    notes: Accepted to IEEE S&P 2027; the paper and final proceedings record are not yet available.
+    bibtex: |
+      @inproceedings{powers2027operationalizing,
+        title = {Operationalizing Welcoming in Cybersecurity Communities: How Organizers Try to Shape Culture},
+        author = {Carson Powers and Aman Shah and Jaron Mink and Ari Schlesinger and Daniel Votipka},
+        year = {2027},
+        month = may,
+        booktitle = {2027 IEEE Symposium on Security and Privacy (SP)},
+        location = {Montreal, QC, Canada},
+        note = {To appear}
+      }
+- id: pub-newer-models-better-tutors-2027
+  year: 2027
+  date: '2027-02-17'
+  release_date: '2027-02-17'
+  sort_date: '2027-02-17'
+  title: 'Do Newer Models Make Better Tutors?: Characterizing Real-World Failures
+    of AI Tutors in Higher Education Across Two Years, Two Prompts, and Five Models'
+  authors:
+  - Michael Tompkins
+  - Nihaarika Agarwal
+  - Robert Wasinger
+  - Connor Nelson
+  - Daniel Votipka
+  - Yan Shoshitaishvili
+  - Jaron Mink
+  venue: 58th ACM Technical Symposium on Computer Science Education (SIGCSE TS),
+    Computing Education Research Track, 2027
+  areas:
+  - ml-for-security-applications
+  - ml-security-and-privacy
+  citation:
+    source: https://sigcse.org/events/symposia/index.html
+    verified_date: '2026-09-14'
+    notes: Accepted to the SIGCSE TS 2027 Computing Education Research Track; the paper and final proceedings record are not yet available.
+    bibtex: |
+      @inproceedings{tompkins2027newer,
+        title = {Do Newer Models Make Better Tutors?: Characterizing Real-World Failures of {AI} Tutors in Higher Education Across Two Years, Two Prompts, and Five Models},
+        author = {Michael Tompkins and Nihaarika Agarwal and Robert Wasinger and Connor Nelson and Daniel Votipka and Yan Shoshitaishvili and Jaron Mink},
+        year = {2027},
+        month = feb,
+        booktitle = {Proceedings of the 58th ACM Technical Symposium on Computer Science Education},
+        location = {Sacramento, CA, USA},
+        note = {To appear}
+      }
 - id: pub-ai-cyber-tutors-2026
   year: 2026
   date: '2026-11-15'

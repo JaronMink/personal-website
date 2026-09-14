@@ -2,6 +2,46 @@
 
 Generated from curated citation data in `_data/publications.yml`.
 
+## pub-operationalizing-welcoming-cybersecurity-2027
+
+Operationalizing Welcoming in Cybersecurity Communities: How Organizers Try to Shape Culture
+
+Source: https://sp2027.ieee-security.org/
+
+Notes: Accepted to IEEE S&P 2027; the paper and final proceedings record are not yet available.
+
+```bibtex
+@inproceedings{powers2027operationalizing,
+  title = {Operationalizing Welcoming in Cybersecurity Communities: How Organizers Try to Shape Culture},
+  author = {Carson Powers and Aman Shah and Jaron Mink and Ari Schlesinger and Daniel Votipka},
+  year = {2027},
+  month = may,
+  booktitle = {2027 IEEE Symposium on Security and Privacy (SP)},
+  location = {Montreal, QC, Canada},
+  note = {To appear}
+}
+```
+
+## pub-newer-models-better-tutors-2027
+
+Do Newer Models Make Better Tutors?: Characterizing Real-World Failures of AI Tutors in Higher Education Across Two Years, Two Prompts, and Five Models
+
+Source: https://sigcse.org/events/symposia/index.html
+
+Notes: Accepted to the SIGCSE TS 2027 Computing Education Research Track; the paper and final proceedings record are not yet available.
+
+```bibtex
+@inproceedings{tompkins2027newer,
+  title = {Do Newer Models Make Better Tutors?: Characterizing Real-World Failures of {AI} Tutors in Higher Education Across Two Years, Two Prompts, and Five Models},
+  author = {Michael Tompkins and Nihaarika Agarwal and Robert Wasinger and Connor Nelson and Daniel Votipka and Yan Shoshitaishvili and Jaron Mink},
+  year = {2027},
+  month = feb,
+  booktitle = {Proceedings of the 58th ACM Technical Symposium on Computer Science Education},
+  location = {Sacramento, CA, USA},
+  note = {To appear}
+}
+```
+
 ## pub-ai-cyber-tutors-2026
 
 Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Measurement of Cybersecurity Student Behaviors and Educational Performance with AI Tutors

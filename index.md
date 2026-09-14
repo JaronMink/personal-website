@@ -74,6 +74,7 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
             <p class="home-interest-desc">How AI can be integrated into security-sensitive environments.</p>
           </a>
           <p class="home-interest-links-inline">
+            <span class="home-interest-link-item"><a href="{{ '/publications/#pub-newer-models-better-tutors-2027' | relative_url }}">AI Tutor Failures Across Models</a></span>
             <span class="home-interest-link-item"><a href="{{ '/publications/#pub-ai-cyber-tutors-2026' | relative_url }}">AI Cyber Tutors</a></span>
             <span class="home-interest-link-item"><a href="{{ '/publications/#pub-like-a-hammer-2026' | relative_url }}">LLM Use in SOCs</a></span>
             <span class="home-interest-link-item"><a href="{{ '/publications/#pub-everybodys-got-ml-2023' | relative_url }}">AI Use in SOCs</a></span>
@@ -97,6 +98,7 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
             <p class="home-interest-desc">Usable security and privacy, system security, and evaluation of HCI methodology.</p>
           </a>
           <p class="home-interest-links-inline">
+            <span class="home-interest-link-item"><a href="{{ '/publications/#pub-operationalizing-welcoming-cybersecurity-2027' | relative_url }}">Welcoming in Cybersecurity</a></span>
             <span class="home-interest-link-item"><a href="{{ '/publications/#pub-i-can-se-clearly-2026' | relative_url }}">Symbolic Exec GUI</a></span>
             <span class="home-interest-link-item"><a href="{{ '/publications/#pub-solk-2024' | relative_url }}">Sociodemographics</a></span>
             <span class="home-interest-link-item"><a href="{{ '/publications/#pub-history-early-warning-2023' | relative_url }}">Audit Log SoK</a></span>
