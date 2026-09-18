@@ -13,7 +13,7 @@ Notes: Accepted to IEEE S&P 2027; the paper and final proceedings record are not
 ```bibtex
 @inproceedings{powers2027operationalizing,
   title = {Operationalizing Welcoming in Cybersecurity Communities: How Organizers Try to Shape Culture},
-  author = {Carson Powers and Aman Shah and Jaron Mink and Ari Schlesinger and Daniel Votipka},
+  author = {Carson Powers and Aman Shah and Jaron Mink and Daniel Votipka and Ari Schlesinger},
   year = {2027},
   month = may,
   booktitle = {2027 IEEE Symposium on Security and Privacy (SP)},
