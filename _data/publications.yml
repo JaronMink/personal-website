@@ -85,7 +85,7 @@
   - ml-for-security-applications
   links:
   - label: PDF
-    url_key: tompkins_arxiv26_pdf
+    url_key: tompkins_ccs26_pdf
     style: primary
   citation:
     source: https://arxiv.org/abs/2602.17448
