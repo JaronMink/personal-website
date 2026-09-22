@@ -7,7 +7,7 @@
     - venue: 'AdvML@SaTML - Human-Centered Trustworthy Machine Learning'
       links:
         - label: "2027"
-          url_key: satml27_web
+          url_key: advml_satml27_web
 
 - section: Program Committee
   entries:
