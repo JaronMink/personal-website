@@ -89,6 +89,10 @@
       links:
         - label: "2023"
           url_key: tdsc23_web
+    - venue: Journal of Cybersecurity
+      links:
+        - label: "2026"
+          url_key: journal_cybersecurity_web
     - venue: NeurIPS - Child Safety in AI
       links:
         - label: "2026"
