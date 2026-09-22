@@ -4,6 +4,10 @@
       links:
         - label: "2026"
           url: https://humansofgenerativeai.github.io/
+    - venue: AdvML @ SaTML (Human-Centered Trustworthy Machine Learning)
+      links:
+        - label: "2027"
+          url_key: satml27_web
 
 - section: Program Committee
   entries:
