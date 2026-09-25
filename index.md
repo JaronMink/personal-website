@@ -14,8 +14,11 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
       <p class="home-meta-line"><span class="home-meta-copy">{{ site.data.profile.pronouns_display }}</span></p>
       <p class="home-meta-line"><span class="home-meta-copy">{{ site.position }}</span></p>
       <p class="home-meta-line"><a href="{{ site.data.links.scai_web }}"><span class="home-meta-copy">{{ site.affiliation }}</span></a></p>
-      <p class="home-meta-line"><a href="mailto:{{ site.data.profile.email }}"><span class="home-meta-copy">{{ site.data.profile.email }}</span></a></p>
-      <nav class="home-identity-icons" aria-label="Profile links">
+      <nav class="home-identity-icons" aria-label="Contact and profile links">
+        <button class="home-icon-link" type="button" data-copy-email="{{ site.data.profile.email }}" aria-label="Copy email address" title="Copy email address">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <span class="home-copy-label" aria-hidden="true">Copied</span>
+        </button>
         {% if site.google_scholar %}
         <a class="home-icon-link" href="{{ site.google_scholar }}" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar">
           <i class="ai ai-google-scholar"></i>
@@ -31,11 +34,7 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
           <i class="fa-brands fa-bluesky"></i>
         </a>
         {% endif %}
-        {% if site.twitter_link %}
-        <a class="home-icon-link" href="{{ site.twitter_link }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter">
-          <i class="fa-brands fa-twitter"></i>
-        </a>
-        {% endif %}
+        <span class="home-copy-status" data-copy-status role="status" aria-live="polite"></span>
       </nav>
     </div>
   </div>
@@ -115,7 +114,7 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
 
 <script>
   (() => {
-    const profileLinks = Array.from(document.querySelectorAll('.home-identity-icons a'));
+    const profileLinks = Array.from(document.querySelectorAll('.home-identity-icons .home-icon-link'));
     profileLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
         if (event.detail === 0) return;
@@ -130,6 +129,50 @@ description: Assistant Professor Jaron Mink studies human-centered security for 
         link.classList.remove('is-pointer-activated');
       });
     });
+
+    const copyEmailButton = document.querySelector('[data-copy-email]');
+    const copyStatus = document.querySelector('[data-copy-status]');
+    let copyResetTimer;
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.setAttribute('readonly', '');
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.select();
+      const copied = document.execCommand('copy');
+      textArea.remove();
+      if (!copied) throw new Error('Copy command failed');
+    }
+
+    if (copyEmailButton) {
+      copyEmailButton.addEventListener('click', async () => {
+        try {
+          await copyText(copyEmailButton.dataset.copyEmail);
+          copyEmailButton.setAttribute('aria-label', 'Email copied');
+          copyEmailButton.title = 'Email copied';
+          copyEmailButton.classList.add('is-copied');
+          if (copyStatus) copyStatus.textContent = 'Email address copied.';
+
+          window.clearTimeout(copyResetTimer);
+          copyResetTimer = window.setTimeout(() => {
+            copyEmailButton.setAttribute('aria-label', 'Copy email address');
+            copyEmailButton.title = 'Copy email address';
+            copyEmailButton.classList.remove('is-copied');
+            if (copyStatus) copyStatus.textContent = '';
+          }, 1800);
+        } catch (_error) {
+          if (copyStatus) copyStatus.textContent = 'Unable to copy the email address.';
+        }
+      });
+    }
 
     const board = document.querySelector('.home-research-board');
     const switcher = document.querySelector('.home-grid-switch');
