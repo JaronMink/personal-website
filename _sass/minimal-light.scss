@@ -197,9 +197,9 @@ $palettes: (
     light: (
       bg: #fffdf5,
       surface: #fffefa,
-      text: #245a91,
-      muted: #547a9e,
-      heading: #245a91,
+      text: #315574,
+      muted: #5b7185,
+      heading: #1e4468,
       link: #245a91,
       link-hover: #17446f,
       border: #dcc8c9,
@@ -207,25 +207,25 @@ $palettes: (
       icon-bg: #245a91,
       icon-bg-hover: #000000,
       map-wash: #f8eddb,
-      map-ink: #245a91,
-      map-rule: #b8797f,
-      map-smudge: #b8797f,
+      map-ink: #1e4468,
+      map-rule: #846469,
+      map-smudge: #846469,
       map-speck: rgba(41, 38, 42, 0.06)
     ),
     dark: (
       bg: #171c23,
       surface: #202832,
-      text: #c9e0fb,
-      muted: #a5c0df,
-      heading: #c9e0fb,
-      link: #c9e0fb,
+      text: #d1e0ef,
+      muted: #9fb3c8,
+      heading: #e0efff,
+      link: #bddcff,
       link-hover: #ffffff,
       border: #66575e,
       accent: #4a4435,
       icon-bg: #426b98,
       icon-bg-hover: #315885,
       map-wash: #202731,
-      map-ink: #c9e0fb,
+      map-ink: #e0efff,
       map-rule: #a88089,
       map-smudge: #a88089,
       map-speck: rgba(220, 228, 236, 0.07)
@@ -3136,13 +3136,6 @@ td {
   margin: 0 0 0.55rem;
   font-size: 1.08rem;
   font-weight: 700;
-}
-
-@if $palette-choice == "tri-pastel" {
-  .home-index-row h2 {
-    width: fit-content;
-    background: linear-gradient(transparent 63%, var(--accent) 63%);
-  }
 }
 
 .home-index-row p {
