@@ -36,7 +36,7 @@
 // - "paper-pencil" = paper-and-pencil combo
 // - "board" = active tan light mode and crisp slate dark mode
 // - "pastel-vase" = warm ivory with cornflower-blue and blush accents
-// - "tri-pastel" = restrained blue, red, and yellow accents
+// - "tri-pastel" = blue ink, deep blue-green rules, and pale yellow paper
 $palette-choice: "tri-pastel";
 $research-board-enabled: false !default;
 
@@ -202,14 +202,14 @@ $palettes: (
       heading: #1e4468,
       link: #245a91,
       link-hover: #17446f,
-      border: #dcc8c9,
+      border: #aab8b8,
       accent: #f5e8bb,
       icon-bg: #245a91,
       icon-bg-hover: #000000,
       map-wash: #f8eddb,
       map-ink: #1e4468,
-      map-rule: #846469,
-      map-smudge: #846469,
+      map-rule: #20383d,
+      map-smudge: #20383d,
       map-speck: rgba(41, 38, 42, 0.06)
     ),
     dark: (
@@ -220,14 +220,14 @@ $palettes: (
       heading: #e0efff,
       link: #bddcff,
       link-hover: #ffffff,
-      border: #66575e,
+      border: #587173,
       accent: #4a4435,
       icon-bg: #426b98,
       icon-bg-hover: #315885,
       map-wash: #202731,
       map-ink: #e0efff,
-      map-rule: #a88089,
-      map-smudge: #a88089,
+      map-rule: #b9d0cd,
+      map-smudge: #b9d0cd,
       map-speck: rgba(220, 228, 236, 0.07)
     )
   ),
