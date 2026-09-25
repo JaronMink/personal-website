@@ -36,8 +36,8 @@
 // - "paper-pencil" = paper-and-pencil combo
 // - "board" = active tan light mode and crisp slate dark mode
 // - "pastel-vase" = warm ivory with cornflower-blue and blush accents
-// - "blue-yellow" = ink-blue type and rules on pale yellow paper
-$palette-choice: "blue-yellow";
+// - "tri-pastel" = restrained blue, red, and yellow accents
+$palette-choice: "tri-pastel";
 $research-board-enabled: false !default;
 
 $palettes: (
@@ -193,23 +193,23 @@ $palettes: (
       map-speck: rgba(220, 228, 236, 0.07)
     )
   ),
-  "blue-yellow": (
+  "tri-pastel": (
     light: (
       bg: #fffdf5,
       surface: #fffefa,
-      text: #294860,
-      muted: #52687b,
-      heading: #193b59,
-      link: #20517d,
-      link-hover: #123a5c,
-      border: #c5d3df,
+      text: #315574,
+      muted: #5b7185,
+      heading: #1e4468,
+      link: #245a91,
+      link-hover: #17446f,
+      border: #dcc8c9,
       accent: #f5e8bb,
-      icon-bg: #2b547a,
+      icon-bg: #245a91,
       icon-bg-hover: #000000,
-      map-wash: #f8f1d9,
-      map-ink: #193b59,
-      map-rule: #315674,
-      map-smudge: #315674,
+      map-wash: #f8eddb,
+      map-ink: #1e4468,
+      map-rule: #846469,
+      map-smudge: #846469,
       map-speck: rgba(41, 38, 42, 0.06)
     ),
     dark: (
@@ -220,14 +220,14 @@ $palettes: (
       heading: #e0efff,
       link: #bddcff,
       link-hover: #ffffff,
-      border: #526579,
+      border: #66575e,
       accent: #4a4435,
       icon-bg: #426b98,
       icon-bg-hover: #315885,
       map-wash: #202731,
       map-ink: #e0efff,
-      map-rule: #718cac,
-      map-smudge: #718cac,
+      map-rule: #a88089,
+      map-smudge: #a88089,
       map-speck: rgba(220, 228, 236, 0.07)
     )
   ),
@@ -321,11 +321,11 @@ $palettes: (
     var(--theme-text-transition);
 }
 
-@if $palette-choice == "blue-yellow" {
+@if $palette-choice == "tri-pastel" {
   :root {
-    --rule-frame-color: var(--map-rule);
-    --rule-section-color: color-mix(in srgb, var(--map-rule) 90%, var(--surface));
-    --rule-detail-color: color-mix(in srgb, var(--map-rule) 72%, var(--surface));
+    --rule-frame-color: color-mix(in srgb, var(--map-rule) 82%, var(--surface));
+    --rule-section-color: color-mix(in srgb, var(--map-rule) 68%, var(--surface));
+    --rule-detail-color: color-mix(in srgb, var(--map-rule) 42%, var(--surface));
   }
 }
 
