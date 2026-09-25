@@ -56,7 +56,7 @@ mink_usenix_23_poster: /assets/pdf/posters/security-is-not-my-field_soups23_post
 mink_usenix_23_slides: https://www.usenix.org/system/files/sec23_slides_mink.pdf
 mink_usenix_23_talk: https://www.youtube.com/watch?v=a9meMcS79pM
 inam_ieee_23_pdf: /assets/pdf/papers/history-is-a-vast-warning-system_ieee-23.pdf
-mink_ieee_23_pdf: /assets/pdf/papers/everybodys-got-ml_ieee23.pdf
+mink_ieee_23_pdf: https://doi.org/10.1109/SP46215.2023.10179321
 mink_ieee_23_teaser: https://drive.google.com/file/d/1pYXwHbTudrwZ-MxGuEBnykbUK4Su0bGz/view?usp=share_link
 mink_ieee_23_slides: /assets/pdf/presentation/everybodys-got-ml_ieee23_talk.pdf
 mink_ieee_23_talk: https://www.youtube.com/watch?v=O6dlZdiJVOQ
@@ -75,7 +75,7 @@ mink_chi_22_supp: https://bitbucket.org/sts-lab/epz-game-chi22
 mink_chi_22_talk: https://www.youtube.com/watch?v=eGElBs1VrZE
 mink_chi_22_slides: https://docs.google.com/presentation/d/1wSqnbfuTtRh-FDq6fE_GYEsEFbU55QKV/edit?usp=sharing&ouid=111263531954489916796&rtpof=true&sd=true
 mink_chi_2022_news_the_21st_show_url: &mink_chi_2022_news_the_21st_show_url https://will.illinois.edu/21stshow/story/how-private-is-your-health-tracking-app-data
-michael20_pdf: /assets/pdf/papers/forensicvalidity_acsac20.pdf
+michael20_pdf: https://doi.org/10.1145/3427228.3427272
 michael20_talk: https://drive.google.com/file/d/1BZu_9k2i830O2Bzt9uXwZkNP-oBEYRdH/view?usp=sharing
 michael20_slides: https://drive.google.com/file/d/1Mmkcrxmp5dYf0Eei3F3-PbE7VgHa1Gp7/view?usp=sharing
 

@@ -5,6 +5,8 @@ post_title: "<b>DeepPhish:</b> Understanding User Trust Towards Artificially Gen
 description: "DeepPhish study overview: how people perceive AI-generated social profiles and implications for social engineering defense."
 image: /assets/img/posts/001/deephish_cover.png
 date: 2022-02-07
+robots: noindex,follow
+sitemap: false
 ---
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>

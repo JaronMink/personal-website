@@ -42,7 +42,7 @@
             {% if link.url_key %}
               {% assign link_href = links_map[link.url_key] %}
             {% endif %}
-            <a class="btn btn-primary btn-xs" href="{{ link_href }}">{{ link.label }}</a>
+            <a class="btn btn-primary btn-xs" href="{{ link_href }}"{% if link_href contains '/assets/pdf/' %} rel="nofollow"{% endif %}>{{ link.label }}</a>
           {% endif %}
         {% endfor %}
       {% else %}
@@ -91,7 +91,7 @@
             {% else %}
               {% assign link_class = 'btn btn-info btn-xs' %}
             {% endif %}
-            <a class="{{ link_class }}" href="{{ link_href }}">{{ link.label }}</a>{% unless forloop.last %} {% endunless %}
+            <a class="{{ link_class }}" href="{{ link_href }}"{% if link_label_downcase == 'pdf' and link_href contains '/assets/pdf/' %} rel="nofollow"{% endif %}>{{ link.label }}</a>{% unless forloop.last %} {% endunless %}
             {% endif %}
           {% endfor %}
       {% endif %}
