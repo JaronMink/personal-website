@@ -30,13 +30,7 @@
   font-display: swap;
 }
 
-// Palette switch:
-// - "old" = pre-paper color combo
-// - "parchment-bold" = heavier parchment/map-paper experiment
-// - "paper-pencil" = paper-and-pencil combo
-// - "board" = active tan light mode and crisp slate dark mode
-// - "pastel-vase" = warm ivory with cornflower-blue and blush accents
-// - "tri-pastel" = blue ink, deep blue-green rules, and pale yellow paper
+// Default palette; visitors can switch among the published palettes in the header.
 $palette-choice: "tri-pastel";
 $research-board-enabled: false !default;
 
@@ -231,6 +225,158 @@ $palettes: (
       map-speck: rgba(220, 228, 236, 0.07)
     )
   ),
+  "blue-rose": (
+    light: (
+      bg: #fffdf5,
+      surface: #fffefa,
+      text: #315574,
+      muted: #5b7185,
+      heading: #1e4468,
+      link: #245a91,
+      link-hover: #17446f,
+      border: #dcc8c9,
+      accent: #f5e8bb,
+      icon-bg: #245a91,
+      icon-bg-hover: #000000,
+      map-wash: #f8eddb,
+      map-ink: #1e4468,
+      map-rule: #846469,
+      map-smudge: #846469,
+      map-speck: rgba(41, 38, 42, 0.06)
+    ),
+    dark: (
+      bg: #171c23,
+      surface: #202832,
+      text: #d1e0ef,
+      muted: #9fb3c8,
+      heading: #e0efff,
+      link: #bddcff,
+      link-hover: #ffffff,
+      border: #66575e,
+      accent: #4a4435,
+      icon-bg: #426b98,
+      icon-bg-hover: #315885,
+      map-wash: #202731,
+      map-ink: #e0efff,
+      map-rule: #a88089,
+      map-smudge: #a88089,
+      map-speck: rgba(220, 228, 236, 0.07)
+    )
+  ),
+  "blue-yellow": (
+    light: (
+      bg: #fffdf5,
+      surface: #fffefa,
+      text: #294860,
+      muted: #52687b,
+      heading: #193b59,
+      link: #20517d,
+      link-hover: #123a5c,
+      border: #c5d3df,
+      accent: #f5e8bb,
+      icon-bg: #2b547a,
+      icon-bg-hover: #000000,
+      map-wash: #f8f1d9,
+      map-ink: #193b59,
+      map-rule: #315674,
+      map-smudge: #315674,
+      map-speck: rgba(41, 38, 42, 0.06)
+    ),
+    dark: (
+      bg: #171c23,
+      surface: #202832,
+      text: #d1e0ef,
+      muted: #9fb3c8,
+      heading: #e0efff,
+      link: #bddcff,
+      link-hover: #ffffff,
+      border: #526579,
+      accent: #4a4435,
+      icon-bg: #426b98,
+      icon-bg-hover: #315885,
+      map-wash: #202731,
+      map-ink: #e0efff,
+      map-rule: #718cac,
+      map-smudge: #718cac,
+      map-speck: rgba(220, 228, 236, 0.07)
+    )
+  ),
+  "forest-ivory": (
+    light: (
+      bg: #faf9f1,
+      surface: #fffefa,
+      text: #334b42,
+      muted: #68776c,
+      heading: #1d3e35,
+      link: #2b6252,
+      link-hover: #184a3d,
+      border: #c7c4b6,
+      accent: #efe6d4,
+      icon-bg: #2a5c4d,
+      icon-bg-hover: #173e35,
+      map-wash: #edf0e4,
+      map-ink: #1d3e35,
+      map-rule: #6f7155,
+      map-smudge: #6f7155,
+      map-speck: rgba(29, 62, 53, 0.06)
+    ),
+    dark: (
+      bg: #1a211e,
+      surface: #242d28,
+      text: #d7e1d8,
+      muted: #aebdaf,
+      heading: #e8f2e9,
+      link: #b2dac5,
+      link-hover: #e0f4e7,
+      border: #596657,
+      accent: #394034,
+      icon-bg: #466c5a,
+      icon-bg-hover: #547e68,
+      map-wash: #293129,
+      map-ink: #e8f2e9,
+      map-rule: #b3b99a,
+      map-smudge: #b3b99a,
+      map-speck: rgba(220, 232, 220, 0.07)
+    )
+  ),
+  "plum-sage": (
+    light: (
+      bg: #fbfaf6,
+      surface: #fffefa,
+      text: #4b434a,
+      muted: #756e75,
+      heading: #3d3341,
+      link: #684b65,
+      link-hover: #4f354d,
+      border: #c7d3cb,
+      accent: #e7eee5,
+      icon-bg: #5b4960,
+      icon-bg-hover: #3d3341,
+      map-wash: #f1eee9,
+      map-ink: #3d3341,
+      map-rule: #617c70,
+      map-smudge: #617c70,
+      map-speck: rgba(61, 51, 65, 0.06)
+    ),
+    dark: (
+      bg: #1c1b20,
+      surface: #28262b,
+      text: #ddd5df,
+      muted: #b5aab8,
+      heading: #f0e6f1,
+      link: #d9c1dc,
+      link-hover: #f0e6f1,
+      border: #5c6c62,
+      accent: #344239,
+      icon-bg: #745f79,
+      icon-bg-hover: #876d8c,
+      map-wash: #2a2c2a,
+      map-ink: #f0e6f1,
+      map-rule: #a9c1b2,
+      map-smudge: #a9c1b2,
+      map-speck: rgba(235, 225, 237, 0.07)
+    )
+  ),
   "board": (
     light: (
       bg: #f4ead8,
@@ -271,31 +417,31 @@ $palettes: (
   )
 );
 
-@function theme-token($mode, $token) {
-  @return map-get(map-get(map-get($palettes, $palette-choice), $mode), $token);
+@function theme-token($palette, $mode, $token) {
+  @return map-get(map-get(map-get($palettes, $palette), $mode), $token);
 }
 
-@mixin emit-theme-vars($mode) {
-  --bg: #{theme-token($mode, bg)};
-  --surface: #{theme-token($mode, surface)};
-  --text: #{theme-token($mode, text)};
-  --muted: #{theme-token($mode, muted)};
-  --heading: #{theme-token($mode, heading)};
-  --link: #{theme-token($mode, link)};
-  --link-hover: #{theme-token($mode, link-hover)};
-  --border: #{theme-token($mode, border)};
-  --accent: #{theme-token($mode, accent)};
-  --icon-bg: #{theme-token($mode, icon-bg)};
-  --icon-bg-hover: #{theme-token($mode, icon-bg-hover)};
-  --map-wash: #{theme-token($mode, map-wash)};
-  --map-ink: #{theme-token($mode, map-ink)};
-  --map-rule: #{theme-token($mode, map-rule)};
-  --map-smudge: #{theme-token($mode, map-smudge)};
-  --map-speck: #{theme-token($mode, map-speck)};
+@mixin emit-theme-vars($palette, $mode) {
+  --bg: #{theme-token($palette, $mode, bg)};
+  --surface: #{theme-token($palette, $mode, surface)};
+  --text: #{theme-token($palette, $mode, text)};
+  --muted: #{theme-token($palette, $mode, muted)};
+  --heading: #{theme-token($palette, $mode, heading)};
+  --link: #{theme-token($palette, $mode, link)};
+  --link-hover: #{theme-token($palette, $mode, link-hover)};
+  --border: #{theme-token($palette, $mode, border)};
+  --accent: #{theme-token($palette, $mode, accent)};
+  --icon-bg: #{theme-token($palette, $mode, icon-bg)};
+  --icon-bg-hover: #{theme-token($palette, $mode, icon-bg-hover)};
+  --map-wash: #{theme-token($palette, $mode, map-wash)};
+  --map-ink: #{theme-token($palette, $mode, map-ink)};
+  --map-rule: #{theme-token($palette, $mode, map-rule)};
+  --map-smudge: #{theme-token($palette, $mode, map-smudge)};
+  --map-speck: #{theme-token($palette, $mode, map-speck)};
 }
 
 :root {
-  @include emit-theme-vars(light);
+  @include emit-theme-vars($palette-choice, light);
   --accent-font: "Iowan Old Style", "Charter", "Georgia", serif;
   --shell-width: clamp(61.25rem, 64vw, 72.5rem);
   --pressed-rule-shadow-bottom: 0 1px 0 color-mix(in srgb, var(--surface) 46%, transparent), 0 -1px 0 color-mix(in srgb, var(--heading) 8%, transparent);
@@ -321,17 +467,38 @@ $palettes: (
     var(--theme-text-transition);
 }
 
-@if $palette-choice == "tri-pastel" {
-  :root {
-    --rule-frame-color: color-mix(in srgb, var(--map-rule) 82%, var(--surface));
-    --rule-section-color: color-mix(in srgb, var(--map-rule) 68%, var(--surface));
-    --rule-detail-color: color-mix(in srgb, var(--map-rule) 42%, var(--surface));
+:root {
+  --rule-frame-color: color-mix(in srgb, var(--map-rule) 82%, var(--surface));
+  --rule-section-color: color-mix(in srgb, var(--map-rule) 68%, var(--surface));
+  --rule-detail-color: color-mix(in srgb, var(--map-rule) 42%, var(--surface));
+}
+
+@if $palette-preview-enabled {
+@each $name in ("tri-pastel", "blue-rose", "blue-yellow", "forest-ivory", "plum-sage", "board", "pastel-vase") {
+  html[data-palette='#{$name}'][data-theme='light'] {
+    @include emit-theme-vars($name, light);
+    @if $name != "tri-pastel" and $name != "blue-rose" and $name != "blue-yellow" {
+      --rule-frame-color: color-mix(in srgb, var(--map-rule) 92%, transparent);
+      --rule-section-color: color-mix(in srgb, var(--map-rule) 82%, transparent);
+      --rule-detail-color: color-mix(in srgb, var(--map-rule) 68%, transparent);
+    }
   }
+
+  @media (prefers-color-scheme: dark) {
+    html[data-palette='#{$name}']:not([data-theme='light']) {
+      @include emit-theme-vars($name, dark);
+    }
+  }
+
+  html[data-palette='#{$name}'][data-theme='dark'] {
+    @include emit-theme-vars($name, dark);
+  }
+}
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    @include emit-theme-vars(dark);
+    @include emit-theme-vars($palette-choice, dark);
   }
 
   html:not([data-theme='light']) {
@@ -340,17 +507,18 @@ $palettes: (
 }
 
 html[data-theme='light'] {
-  @include emit-theme-vars(light);
+  @include emit-theme-vars($palette-choice, light);
   color-scheme: light;
 }
 
 html[data-theme='dark'] {
-  @include emit-theme-vars(dark);
+  @include emit-theme-vars($palette-choice, dark);
   color-scheme: dark;
 }
 
 html {
   scrollbar-gutter: stable;
+  overscroll-behavior-y: none;
   background-color: var(--bg);
   color: var(--text);
   color-scheme: light;
@@ -367,7 +535,7 @@ body {
   background-color: var(--bg);
   color: var(--text);
   font: 16px/1.6 "Public Sans", sans-serif;
-  transition: var(--theme-transition);
+  transition: var(--theme-text-transition);
 }
 
 .skip-link {
@@ -625,6 +793,94 @@ html.theme-preload body *::after {
 .top-nav a:focus-visible {
   outline: var(--rule-section-width) solid var(--heading);
   outline-offset: 2px;
+}
+
+@if $palette-preview-enabled {
+.palette-picker {
+  position: relative;
+  align-self: center;
+  margin-left: 0.35rem;
+  font-size: 0.88rem;
+}
+
+.palette-picker summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.35rem;
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+  border-radius: 3px;
+}
+
+.palette-picker summary::-webkit-details-marker {
+  display: none;
+}
+
+.palette-picker summary:hover,
+.palette-picker[open] summary {
+  color: var(--heading);
+}
+
+.palette-picker summary:focus-visible {
+  outline: 2px solid var(--heading);
+  outline-offset: 2px;
+}
+
+.palette-picker-menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 12.5rem;
+  padding: 0.35rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 5px 16px color-mix(in srgb, var(--heading) 12%, transparent);
+}
+
+.palette-picker-menu button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.43rem 0.5rem;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.palette-picker-menu button:hover,
+.palette-picker-menu button:focus-visible,
+.palette-picker-menu button[aria-pressed='true'] {
+  background: var(--accent);
+  color: var(--heading);
+}
+
+.palette-picker-menu button[aria-pressed='true'] {
+  font-weight: 700;
+}
+
+.palette-swatch {
+  flex: 0 0 1.5rem;
+  width: 1.5rem;
+  height: 1.3rem;
+  border: 1px solid color-mix(in srgb, var(--heading) 25%, transparent);
+  background: linear-gradient(90deg, var(--swatch-ink) 40%, var(--swatch-rule) 40% 70%, var(--swatch-paper) 70%);
+}
+
+.palette-swatch--pine { --swatch-ink: #1e4468; --swatch-rule: #20383d; --swatch-paper: #fffdf5; }
+.palette-swatch--rose { --swatch-ink: #1e4468; --swatch-rule: #846469; --swatch-paper: #fffdf5; }
+.palette-swatch--yellow { --swatch-ink: #193b59; --swatch-rule: #315674; --swatch-paper: #f5e8bb; }
+.palette-swatch--forest { --swatch-ink: #1d3e35; --swatch-rule: #6f7155; --swatch-paper: #faf9f1; }
+.palette-swatch--plum { --swatch-ink: #3d3341; --swatch-rule: #617c70; --swatch-paper: #fbfaf6; }
+.palette-swatch--tan { --swatch-ink: #18262b; --swatch-rule: #81786b; --swatch-paper: #f4ead8; }
+.palette-swatch--vase { --swatch-ink: #171519; --swatch-rule: #677fb5; --swatch-paper: #fffdf2; }
 }
 
 .top-main {

@@ -1,6 +1,7 @@
 ---
 ---
 
+$palette-preview-enabled: {{ site.palette_preview_enabled | default: false }};
 @import "minimal-light";
 .avatar {
   vertical-align: middle;

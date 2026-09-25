@@ -31,10 +31,10 @@ setup:
 	$(RUBY_SETUP) && bundle install
 
 serve:
-	$(RUBY_SETUP) && bundle exec jekyll serve --host $(HOST) --port $(PORT)
+	$(RUBY_SETUP) && bundle exec jekyll serve --config _config.yml,_config_preview.yml --host $(HOST) --port $(PORT)
 
 serve-live:
-	$(RUBY_SETUP) && bundle exec jekyll serve --host $(HOST) --port $(PORT) --livereload --livereload-port $(LIVERELOAD_PORT)
+	$(RUBY_SETUP) && bundle exec jekyll serve --config _config.yml,_config_preview.yml --host $(HOST) --port $(PORT) --livereload --livereload-port $(LIVERELOAD_PORT)
 
 build:
 	$(RUBY_SETUP) && bundle exec jekyll build

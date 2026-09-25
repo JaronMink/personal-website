@@ -1,33 +1,43 @@
 <style>
   :root {
-    background-color: #f4ead8;
-    color: #243038;
+    background-color: var(--bg, #fffdf5);
+    color: var(--text, #315574);
     color-scheme: light;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      background-color: #171c23;
-      color: #e3e7eb;
+      background-color: var(--bg, #171c23);
+      color: var(--text, #d1e0ef);
       color-scheme: dark;
     }
   }
 
   html[data-theme='light'] {
-    background-color: #f4ead8;
-    color: #243038;
+    background-color: var(--bg, #fffdf5);
+    color: var(--text, #315574);
     color-scheme: light;
   }
 
   html[data-theme='dark'] {
-    background-color: #171c23;
-    color: #e3e7eb;
+    background-color: var(--bg, #171c23);
+    color: var(--text, #d1e0ef);
     color-scheme: dark;
   }
 </style>
 <script>
   (function () {
     document.documentElement.classList.add('theme-preload');
+    {% if site.palette_preview_enabled %}
+    try {
+      var palette = window.localStorage.getItem('site-palette');
+      if (['tri-pastel', 'blue-rose', 'blue-yellow', 'forest-ivory', 'plum-sage', 'board', 'pastel-vase'].indexOf(palette) !== -1) {
+        document.documentElement.setAttribute('data-palette', palette);
+      }
+    } catch (error) {
+      // Private browsing can make local storage unavailable.
+    }
+    {% endif %}
 
     var query = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
 

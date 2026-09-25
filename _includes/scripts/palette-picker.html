@@ -1,0 +1,42 @@
+<script>
+(function () {
+  var picker = document.querySelector('[data-palette-picker]');
+  if (!picker) return;
+
+  var root = document.documentElement;
+  var buttons = Array.prototype.slice.call(picker.querySelectorAll('[data-palette-choice]'));
+
+  function updateSelection() {
+    var selected = root.getAttribute('data-palette') || 'tri-pastel';
+    buttons.forEach(function (button) {
+      button.setAttribute('aria-pressed', String(button.dataset.paletteChoice === selected));
+    });
+  }
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var palette = button.dataset.paletteChoice;
+      root.setAttribute('data-palette', palette);
+      try {
+        window.localStorage.setItem('site-palette', palette);
+      } catch (error) {
+        // The current page still switches if storage is unavailable.
+      }
+      updateSelection();
+      picker.open = false;
+      picker.querySelector('summary').focus();
+    });
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!picker.contains(event.target)) picker.open = false;
+  });
+  picker.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      picker.open = false;
+      picker.querySelector('summary').focus();
+    }
+  });
+  updateSelection();
+})();
+</script>

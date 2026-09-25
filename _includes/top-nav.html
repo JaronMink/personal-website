@@ -4,4 +4,18 @@
   <a class="top-nav-link{% if page.url == '/teaching/' %} is-active{% endif %}" href="{{ '/teaching/' | relative_url }}"{% if page.url == '/teaching/' %} aria-current="page"{% endif %}>Teaching</a>
   <a class="top-nav-link{% if page.url == '/service/' %} is-active{% endif %}" href="{{ '/service/' | relative_url }}"{% if page.url == '/service/' %} aria-current="page"{% endif %}>Service</a>
   <a class="top-nav-link" href="{{ site.data.profile.lab.url }}" target="_blank" rel="noopener noreferrer">Happy Lab</a>
+  {% if site.palette_preview_enabled %}
+  <details class="palette-picker" data-palette-picker>
+    <summary title="Choose site colors" aria-label="Choose site colors"><i class="fa-solid fa-palette" aria-hidden="true"></i><span>Colors</span></summary>
+    <div class="palette-picker-menu" role="group" aria-label="Site colors">
+      <button type="button" data-palette-choice="tri-pastel"><span class="palette-swatch palette-swatch--pine" aria-hidden="true"></span>Blue + pine</button>
+      <button type="button" data-palette-choice="blue-rose"><span class="palette-swatch palette-swatch--rose" aria-hidden="true"></span>Blue + rose</button>
+      <button type="button" data-palette-choice="blue-yellow"><span class="palette-swatch palette-swatch--yellow" aria-hidden="true"></span>Blue + yellow</button>
+      <button type="button" data-palette-choice="forest-ivory"><span class="palette-swatch palette-swatch--forest" aria-hidden="true"></span>Forest + ivory</button>
+      <button type="button" data-palette-choice="plum-sage"><span class="palette-swatch palette-swatch--plum" aria-hidden="true"></span>Plum + sage</button>
+      <button type="button" data-palette-choice="board"><span class="palette-swatch palette-swatch--tan" aria-hidden="true"></span>Tan + charcoal</button>
+      <button type="button" data-palette-choice="pastel-vase"><span class="palette-swatch palette-swatch--vase" aria-hidden="true"></span>Pastel vase</button>
+    </div>
+  </details>
+  {% endif %}
 </nav>

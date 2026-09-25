@@ -32,5 +32,6 @@
     <script defer src="{{ '/assets/js/publication-area-filter.js' | relative_url }}"></script>
     {% endif %}
     <script defer src="{{ '/assets/js/publication-highlight.js' | relative_url }}"></script>
+    {% if site.palette_preview_enabled %}{% include scripts/palette-picker.html %}{% endif %}
   </body>
 </html>
